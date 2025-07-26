@@ -91,6 +91,61 @@
 # elif number % 5 == 0:
 #     print("Buzz")
 
+# Guess the output of each answer before you click RUN
+# Try to write down your answer before and see how you do... keep it mind I made it a little tricky for you :)
+
+# print((5 + 4) * 10 / 2)
+
+# print(((5 + 4) * 10) / 2)
+
+# print((5 + 4) * (10 / 2))
+
+# print(5 + (4 * 10) / 2)
+
+# print(5 + 4 * 10 // 2)
+
+# print("results")
+# print(45)
+# print(45)
+# print(45)
+# print(25)
+# print(25)
+
+# counter = 0
+
+# counter += 1
+# counter += 1
+# counter += 1
+# counter += 1
+# counter -= 1
+# counter *=2
+
+# #Before you click RUN, guess what the counter variable holds in memory!
+# print(counter)
+
+# print("guess")
+# print(6)
+
+# username = "fransheska"
+# password = "secret"
+
+# print(f"{username}, your password {("*" * len(password))} is {len(password)} long")
+
+
+# username = "fransheska"
+# password = "secret"
+# password_lenght =  len(password)
+# hidden_password = password_lenght * "*"
+
+# print(f"{username}, your password {hidden_password} is {password_lenght} letters long")
+
+is_member = False
+
+message = "allow to post" if is_member else "not allowed to post"
+
+print(message)
+
+
 
 
 
