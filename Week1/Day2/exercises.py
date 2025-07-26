@@ -139,13 +139,63 @@
 
 # print(f"{username}, your password {hidden_password} is {password_lenght} letters long")
 
-is_member = False
+# is_member = False
 
-message = "allow to post" if is_member else "not allowed to post"
+# message = "allow to post" if is_member else "not allowed to post"
 
-print(message)
+# print(message)
+
+# while True:
+#     try:
+#         age = int(input("what's your age? "))
+#         break
+#     except ValueError:
+#         print("Oops, please enter a number.")
+# if age > 10:
+#     print("you are good to go")
+# else:
+#     print("you are too young")
+
+# Exercise 1 : Hello World-I love Python
+# Instructions
+# Print the following output in one line of code:
+
+# Hello world
+# Hello world
+# Hello world
+# Hello world
+# I love python
+# I love python
+# I love python
+# I love python
 
 
+print(("Hello world\n" * 4) + ("I love Python\n" * 4))
 
+# Exercise 2 : What is the Season ?
+# Instructions
+# Ask the user to input a month (1 to 12).
+# Display the season of the month received :
+# Spring runs from March (3) to May (5)
+# Summer runs from June (6) to August (8)
+# Autumn runs from September (9) to November (11)
+# Winter runs from December (12) to February (2)
+
+while True:
+    try:
+        season = int(input("Which month is it? "))
+        break
+    except ValueError:
+        print("Please enter a number")
+if 3 <= season <= 5:
+    print("you are in spring")
+elif 6 <= season <= 8:
+    print("you are in summer")
+elif 9 <= season <=11:
+    print("you are in autum")
+elif season == 12 or season == 2 or season == 1:
+    print("you are in winter")
+else:
+    print("that's not a valid month")
 
 
