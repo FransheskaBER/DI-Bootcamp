@@ -26,6 +26,12 @@ with open(json_file, 'w') as file_obj: #let's open the json file and add the jso
     json.dump(my_family, file_obj) # save my ptyhon dictionarry in my json object
    #json.dump(obj2save , destination_file)
 
+#OR 
+with open("myfam.json", 'w') as f: #let's open the json file and add the json object
+    json.dump(my_family, f, indent=2, sort_keys=True) # save my ptyhon dictionarry in my json object
+   #json.dump(obj2save , destination_file)
+   # I added two parameters indent and sort key for better readability of the dictionary
+
 
 # CONVERT A PYTHON DICT INTO A JSON STRING:
 my_family = {
