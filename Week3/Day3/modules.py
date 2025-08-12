@@ -35,8 +35,52 @@
 
 import os
 
-os.mkdir("Week4")
+os.mkdir("Week4") # to create a folder
+
+os.mksir(os.path.join("Week4", "Day1")) # to create another sub-folder within a folder
+
+# to create a file within a sub-folder, use the pathlib function from module path
+from pathlib import Path
+
+base = Path("week 3")
+base.mkdir(parents=True, exist_ok=True)
+file = base / "notes.py"
+file.touch(exist_ok=True)
+
+#parents=True: also create any missing parent folders.
+#exist_ok=True: don’t error if it already exists.
+#touch makes an empty file if it’s missing (or just updates its timestamp if it exists).
 
 
 
 
+# TO MEASURE HOW MUCH TIME YOUR CODE TAKES TO EXECUTE USE THE TIME MODULE, example:
+import time
+
+before = time.time()
+#your code block
+after = time.time()
+
+print(f"It took {after - before} seconds to execute my code in comment")
+
+
+
+#To know the date of today or later, use:
+import datetime
+
+today_date = datetime.date.today()
+actual_datetime = datetime.datetime.now()
+in_15_hours = actual_datetime + datetime.timedelta(hours=15, minutes=10)
+
+print(f"Today is the {today_date.day}/{today_date.month}")
+print(f"In 15 hours and 10 minutes it will be the {in_15_hours.day}/{in_15_hours.month}")
+
+# to change the format of the date, use "strftime":
+import datetime
+
+today_date = datetime.date.today()
+actual_datetime = datetime.datetime.now()
+in_15_hours = actual_datetime + datetime.timdelta(hours=15, minutes=10)
+
+print(f"Today is the {today_date.strftime("%d/%m")}")
+print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime("%d/%m")}")

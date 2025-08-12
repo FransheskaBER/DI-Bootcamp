@@ -9,7 +9,7 @@
 # print("my dog is", Dog.my_dog)
 
 class Dog():
-    number_of_dogs = 0
+    number_of_dogs = 0 # you can add a counter when you can increment by the number of dogs instances you create outside the class
     dogs_king = "Bernie IV"
 
     # Initializer / Instance Attributes
