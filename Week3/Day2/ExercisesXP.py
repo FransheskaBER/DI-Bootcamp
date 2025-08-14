@@ -264,3 +264,54 @@ Add members to the family using the born() method.
 Use check_majority() to see if someone is allowed to go out.
 Display family information with family_presentation().
 Don’t forget to test your classes by creating an instance of Family, adding members, and calling each method to see the expected output."""
+
+class Person():
+    def __init__(self, fname, age):
+        self.fname = fname
+        self.age = age
+        self.lname = ""
+    
+    def is_18(self):
+        if self.age >= 18:
+            return True
+        else:
+            return False
+    
+class Family():
+    def __init__(self, lname):
+        self.lname = lname
+        self.members = []
+
+    def born(self, fname, age):
+        new_person = Person(fname, age)
+        new_person.lname = self.lname
+        self.members.append(new_person)
+
+    def check_majority(self, fname):
+        for member in self.members:
+            if member.fname == fname and member.is_18():
+                print("You are over 18, your parents Jane and John accept that you will go out with your friends")
+                return    
+        print("Sorry, you are not allowed to go out with your friends.")
+    
+    def family_presentation(self):
+        print(f"\nWelcome to the family {self.lname}\nFamily members are:\n")
+        for member in self.members:
+            print(f"First Name: {member.fname} - Age: {member.age} years old")
+
+
+my_fam = Family("Echevarria Rojas")
+my_fam.born("Verushka", 25)
+my_fam.born("Stefanny", 20)
+my_fam.born("Fiorella", 18)
+my_fam.born("Yuriko", 13)
+my_fam.born("Fransheska", 10)
+
+my_fam.check_majority("Fransheska")
+my_fam.family_presentation()
+
+        
+
+
+
+
