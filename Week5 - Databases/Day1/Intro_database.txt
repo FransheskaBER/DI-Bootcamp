@@ -1,0 +1,46 @@
+Databases:
+
+- A database is a data structure that stores organize info
+- most databases contain multiple tables
+- it is a systematic collection of data and makes data managment easy
+- it can be RELATIONAL and NON-RELATIONAL
+
+WHAT IS PostgreSQL?
+- It is an open source OBJECT-RELATIONAL database system (that uses the language SQL)
+- In other words, it is a database management sytem similar to RELATIONAL database but with an object-oriented database model (objects, classes, inheritance).
+
+TYPES OF DATABASE MANAGEMENT SYSTEM (DBMS):
+1. Relational (save data in table formats - predefined database)
+2. Non-relational
+3. Hierarchical (tree structures with notes)
+4. Networks (servers)
+5. object oriented relation (storage of new data types in form of objects)
+
+
+RELATIONAL DATABASE:
+- A type of database that uses a specific structure that allows us to identify and access data IN RELATION to another piece of data.
+- You can access, update, and search stored info/data in different tables
+- They are used in complicated queries like analysis data, database transactions, etc.
+
+What is a Relational Database Managment System:
+- Allows to create, update, and manage relational database, mainly using sql language.
+
+What is SQL language?
+- Structure Query Language > it is a programming language used to communicate with store info from a relational database managment system.
+
+Examples of RELATIONAL DATABASES (they represent and store data in tables and rows):
+- MySQL
+- PostgreSQL
+- SQLite3
+
+NON-RELATIONAL DATABASE:
+- Refer as NoSQL databases
+- Handle LARGE amounts of data with no or little structure
+- Examples of NON-RELATIONAL DB: MongoDB (Represent data in collections of json docs)
+- They scale out - they are easy to scale
+- 
+
+
+
+
+

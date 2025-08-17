@@ -1,0 +1,25 @@
+Relational Database Management System - RDBMS
+
+- RDMS is the basis for SQL and all modern dabatase system like: MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft access
+- Represent data in tables
+
+
+WHAT IS A TABLE?
+- Also knows as database objects
+- A table is a collection of related data entries
+- A table consist of numerous columns and rows
+
+WHAT IS A FIELD?
+- Every table is broken into smaller entities called FIELDS like for ID, name, email etc.. (the rows are user actual info)
+
+WHAT IS A RECORD OR ROW?
+- A row of data > an horizontal entry that exist in a table
+
+
+WHAT IS A COLUMN?
+- a vertical entity in a table containing all info associated with a specific field in the table
+
+WHAT IS A NULL VALUE?
+- a value in a field that appears to be blank 
+- a field with NULL value is a field with no value
+- Null is not the same as zero or spaces - it is just a value left blank during record creation
