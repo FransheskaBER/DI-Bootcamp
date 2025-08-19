@@ -1,0 +1,87 @@
+SYNTAX:
+
+1. SELECT columns from a table:
+
+SELECT
+   field_name
+FROM
+   table_name;
+
+
+
+2. SELECT multiple columns from a table:
+
+SELECT
+   field_name1,
+   field_name2,
+   field_name3
+FROM
+   table_name;
+
+
+
+3. WHERE statement:
+
+SELECT select_list FROM table_name WHERE condition;
+
+SELECT * FROM actors WHERE first_name = 'Matt';
+
+SELECT * FROM actors WHERE number_oscars >= 3;
+
+SELECT last_name FROM actors WHERE first_name != 'Matt' ;
+
+SELECT first_name, last_name FROM actors WHERE first_name = 'Matt' AND last_name = 'Damon';
+SELECT first_name, last_name FROM actors WHERE first_name = 'Matt' OR number_oscars = 2;
+SELECT * FROM customers WHERE (age > 30 OR num_of_children > 2) AND NOT (is_vip = FALSE);
+
+
+
+4. NULL/NOT NULL statement:
+SELECT * FROM customers WHERE phone_number IS NOT NULL;
+SELECT * FROM customers WHERE age IS NULL;
+
+
+
+5. LIKE statement (use it to search for a specific keyword using %keyword% and not necessarily the exact value):
+SELECT * FROM actors WHERE last_name LIKE '%mom%';
+
+- To search for a specific keyword that ends with a specific word/letter use '%y' and for start 'da%'
+
+- Use LIKE for case sensitive, so if we look for sth as you actually search it uppercase, lower case, etc. if it Tom and find tom it wont retrieved until it is exactly Tom
+- use ILIKE for case unsensitive, so doesn't matter upper/lower cases.
+
+
+
+6. LIMIT and OFFSET:
+
+- use LIMIT to limit the number of results like:
+
+SELECT * FROM table_name LIMIT number;
+
+- to select the first actor in a list, use:
+
+SELECT * FROM table_name LIMIT 1;
+
+- You can combine it with a WHERE clause as well:
+
+SELECT * FROM actors WHERE age > '1960-01-01' LIMIT 1;
+
+- use OFFSET means SKIP > for example if you are looking for actors and you want to skip the first two and display only the next 3 then use OFFSET. example:
+
+SELECT * FROM actors WHERE age > '1960-01-01' LIMIT 3 OFFSET 2;
+
+
+
+7. ORDER BY (to sort the result in ascending ASC order or descending DESC order):
+
+SELECT
+    column_1,
+    column_2
+FROM
+    table_name
+ORDER BY
+    column_1 [ASC | DESC],
+    column_2 [ASC | DESC];
+
+
+SELECT * FROM actors WHERE age > '1960-01-01' ORDER BY first_name ASC

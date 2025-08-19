@@ -1,0 +1,55 @@
+1. UPDATE statement (to change values in a table):
+
+UPDATE table_name
+SET column1 = value1,
+    column2 = value2
+WHERE
+   condition;
+
+- to change values of the whole table then remove the WHERE condition.
+
+- if you want that it will return the updated table use:
+
+RETURNING
+   column1,
+   column2;
+
+
+EXAMPLES:
+
+- Change the birthdate of ‘Matt Damon’
+
+UPDATE actors SET age='1970-01-01' WHERE first_name='Matt' AND last_name='Damon';
+
+
+2. DELETE (delete data from a table):
+
+DELETE FROM table_name WHERE condition;
+
+- to delete all rows, remove WHERE condition
+
+DELETE FROM table_name;
+
+- you can also return the delete record with RETURNING
+DELETE FROM actors WHERE actor_id=4
+RETURNING actor_id, first_name, last_name, number_oscars;
+
+
+3. TRUNCATE (to delete all data all rows from the table):
+
+TRUNCATE TABLE table_name RESTART IDENTITY
+
+
+
+4. ALTER (to add a new column, remove/rename existing column, rename table, change datatype):
+
+ALTER TABLE table_name ADD COLUMN new_column_name TYPE;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name RENAME COLUMN column_name TO new_column_name;
+ALTER TABLE table_name RENAME TO new_table;
+ALTER TABLE table_name ALTER COLUMN column_name [SET DATA] TYPE new_data_type;
+
+
+5. DROP statement (to remove a table altogether):
+
+DROP TABLE IF EXISTS table_name;
