@@ -1,0 +1,98 @@
+HOW TO CREATE FUNCTIONS IN POSTGRESQL
+
+You can create functions instead of having many SELECT requests. For example, in the actors table, if you want to retrieve the birthdate of each actor, you can have many SELECTs or use a function. 
+
+Syntax:
+
+CREATE FUNCTION function_name(parameter_name1 parameter_type1, para_name2 para_type2)
+RETURNS return_type
+AS $...$
+BEGIN
+ -- logic
+END;
+$...$ LANGUAGE language_name;
+
+Notes:
+The return type is what kind of output you want, a number, text, table, date, etc...
+the "AS" is just a marker saying "Here below comes the body of this function:"
+
+Real examples:
+
+CREATE FUNCTION age_actor(a varchar(50), b varchar(100))
+RETURN date AS $birthdate$
+BEGIN
+   RETURN(SELECT age FROM actors WHERE actors.first_name = a AND actors.last_name = b);
+END;
+$birthdate$ LANGUAGE plpgsql;
+
+Call the function: SELECT * FROM age_actor('George', 'Clooney');
+
+
+
+CREATE or REPLACE FUNCTION fullname_actor(a varchar(50), b varchar(100))
+RETURNS VARCHAR(100)
+AS $fullname$
+BEGIN
+   RETURN(SELECT CONCAT(first_name, ' ', last_name) FROM actors WHERE actors.first_name = a AND actors.last_name=b);
+END;
+$fullname$ LANGUAGE plpgsql;
+
+Notes:
+the replace function means "If the function already exists, just overwrite it with the new definition."
+the CONCAT() is a string function that joins two strings so ('Hello', ' ', 'World') would be Hello World.
+
+
+
+CREATE or REPLACE FUNCTION current_age_actor(fn varchar(50), lan varchar(100)) 
+RETURNS RECORD
+AS $$
+declare
+    current_age integer;
+    birthdate date;
+    now_date date := CURRENT_DATE; 
+    all_info RECORD;
+BEGIN
+   birthdate := (SELECT age FROM actors WHERE actors.first_name = fn AND actors.last_name=lan);
+   current_age := DATE_PART('year', now_date) - DATE_PART('year', birthdate);
+   SELECT fn , lan, current_age INTO all_info;
+   RETURN all_info;
+END;
+$$ LANGUAGE plpgsql;
+
+Notes:
+The RECORD output in RETURNS means a custom row with multiple values.
+
+The "declare" statement means:
+	- In PL/pgSQL functions, DECLARE is where you set up your local variables.
+	- A variable is like a temporary storage box that lives only while the function runs.
+	- You declare it before the BEGIN block because PostgreSQL needs to know what boxes 	  you’ll use before you start the steps.
+	- Think of it like a chef laying out empty bowls before cooking.
+
+
+DECLARE
+    current_age integer;
+    birthdate date;
+    now_date date := CURRENT_DATE; 
+    all_info RECORD;
+
+current_age integer;
+→ Create a box named current_age that can hold a whole number. (We’ll use it to store the actor’s age).
+
+birthdate date;
+→ Create a box for a date (the actor’s birthday).
+
+now_date date := CURRENT_DATE;
+→ Create a date box called now_date.
+→ Immediately put today’s date into it (that’s what := means: assign a starting value).
+
+all_info RECORD;
+→ Create a box of type RECORD.
+→ A RECORD can hold a whole row of mixed values (like name + age all together).
+
+
+
+
+
+
+
+

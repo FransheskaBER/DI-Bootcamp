@@ -1,0 +1,68 @@
+- Let's say you have a FOREIGN KEY (child table) that REFERENCE another table (parent), what would happen if you delete the PARENT table:
+
+
+- you get a failed but you can use CASCADE to delete the referenced table and all related/tables or data like:
+
+DROP TABLE table_name CASCADE;
+
+
+- When defining a FK, you can specify HOW you want to delete a referenced table and how deleting it will affect the referencing (the table you are creating now the field you are linking to the reference table) table with ON DELETE like:
+
+ON DELETE CASCADE
+
+Example: 
+
+CREATE TABLE cars(
+car_id SERIAL PRIMARY KEY,
+car_color INTEGER REFERENCES colors (color_id) ON DELETE CASCADE,
+car_name TEXT);
+
+This means: the child data (fk) is deleted when the parent data is deleted.
+
+
+
+OTHER DELETE CONDITION OPTIONS:
+
+ON DELETE SET NULL > sets the the child data (fk) to NULL when the parent data is deleted.
+
+2. ON DELETE SET DEFAULT > sets the child data (fk) to the default value when parent data is deleted.
+
+3. ON DELETE RESTRICT > blocks delete(default)
+
+Example (the FK is car_color): 
+
+CREATE TABLE cars (
+  car_id SERIAL PRIMARY KEY,
+  car_color INTEGER REFERENCES colors(color_id) ON DELETE RESTRICT,
+  car_name TEXT
+);
+
+
+4. ON DELETE NO ACTION > no action is performed with the child's data (fk) when the parent data is deleted.
+
+It means that the child data won't be deleted and the deletion of the parent table will fail.
+
+Example:
+
+CREATE TABLE child_table (
+    id SERIAL PRIMARY KEY,
+    parent_id INT,
+    -- Define foreign key with ON DELETE NO ACTION
+    CONSTRAINT fk_parent
+        FOREIGN KEY (parent_id)
+        REFERENCES parent_table(id)
+        ON DELETE NO ACTION
+)
+
+note: the NOT ACTION means that you can delete a parent data id and update its child data id with a new info. So you delete and then update and then you commit. By the time you commit, it won't be any failed because you use "ON DELETE NO ACTION DEFERRABLE INITIALLY DEFERRED"
+
+example:
+
+BEGIN;
+
+DELETE FROM parent WHERE id=1;
+UPDATE child SET parent_id=2 WHERE parent_id=1;
+
+COMMIT;
+
+

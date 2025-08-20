@@ -1,0 +1,103 @@
+1. FOREIGN KEY
+
+- It is a RULE in a database that connect 2 tables, you can connect a value of a table to another table so you don't need to create it from scratch but you can use the values from another table for a specific column.
+- "The value of this column must match a value in another table"
+- It helps us create relationships between 2 tables
+
+Example:
+
+- So let's say you have two tables, one for students with student IDs and another table for enrolments and you want to link the student ID in the enrolments table with the student ID from the students table:
+
+CREATE TABLE students(
+ 	student_id SERIAL PRIMARY KEY,
+ 	name TEXT
+);
+
+
+CREATE TABLE enrolments(
+ 	enrolment_id SERIAL PRIMARY KEY,
+ 	student_id INT,
+ 	course TEXT,
+ 	FOREIGN KEY (student_id) REFERENCE students(student_id)
+);
+
+
+- so in the example above, the student_id INT in enrolments TABLE is the foreign key that will reference the student_id in the STUDENTS table
+
+
+
+PostgreSQL joins
+
+JOINS are used to retrieved data from two tables
+the difference between these joins below are which rows do we keep when there's no match
+
+
+1. INNER JOIN
+
+Keep only rows that exist in BOTH tables, if there is not match, drop the row. Use this join when you only care about data that's connected in BOTH tables.
+
+from the example below with students and enrolments tables, would be like:
+ 	"Student Alice from students table exist in both tables so SHOW HER"
+*"Student Bob from students table doesn't exist in enrolments table, so DROPPED"*
+
+
+
+
+Returns rows of multiple tables when the join condition is met.
+Results are like this: left table (table1) matches > right table (table2))
+
+Take 2 tables and keep the rows where they have a matching value
+think of it like "show me only the things that exist in both lists"
+so in the example with students and enrolments, if you use INNER JOIN it will show you only the students that have enrolled (students that haven't enrolled wont be shown).
+
+Syntax:
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name; (ON table1.primary_key - table2.foreign_key)
+
+
+Examples:
+
+SELECT a.student_id, a.name, b.course
+FROM students a (table1 - this is an alias for the STUDENTs table)
+INNER JOIN enrollments b (table 2 + alias)
+ON a.student_id = b.student_id; (this is the matching condition, in other words, we're saying show me only the students who have enrolled)
+
+- the query above says "Match students with enrolments, where the student_id is the same"
+
+SELECT actors.first_name, actors.last_name, movies.movie_title
+FROM actors
+INNER JOIN movies
+ON actors.actor_id = movies.actor_playing_id; (ON table1.primary_key - table2.foreign_key)
+
+
+
+2. LEFT OUTER JOIN
+
+Keep everything from the left. If no match in the right, show NULL
+The result is going to show you all the left table and only the matching ones from the right
+
+So, let's use the same example as above:
+
+SELECT a.name, b.course
+FROM students a
+LEFT JOIN enrollments b
+ON a.student_id = b.student_id; (ON table1.primary_key - table2.foreign_key)
+
+Use this join to show you all the rows from table a even tho they don't have any match from table b which it will show NULL
+
+
+
+3. RIGHT OUTER JOIN
+
+Keep everything from the right. If no match in the right, show NULL
+
+Like in the example for the left join, the result is going to show you all the rows from the table enrolments even if there are not matching students to a course, it will show NULL
+
+4. FULL OUTER JOIN
+
+
+keep everything from BOTH tables, where there is no match, fill in with NULL
+
+use this when you want to see all rows from both tables, even if their values match or not.

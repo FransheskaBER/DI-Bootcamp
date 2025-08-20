@@ -1,0 +1,74 @@
+Sub-query:
+it is a query within a query.
+Subqueries have 3 clauses: SELECT, FROM, WHERE like:
+
+SELECT (SELECT...(sub-query))
+… FROM (SELECT...(sub-query))
+… WHERE (SELECT...(sub-query))
+
+
+Example:
+
+Without AS keyword (instead use alias directly like a and b):
+
+SELECT a.emp_id, a.first_name, a.last_name, b.rating
+FROM Employee a, ratings b
+WHERE a.emp_id = b.emp_id AND b.rating > 
+(SELECT rating
+FROM ratings
+WHERE rating=3);
+
+
+with AS keyword:
+
+SELECT a.emp_id, a.first_name, a.last_name, b.rating
+FROM Employee AS a, ratings AS b
+WHERE a.emp_id = b.emp_id AND b.rating > 
+(SELECT rating
+FROM ratings
+WHERE rating=3);
+
+
+JOIN MULTIPLE TABLES:
+
+So when joining 2 tables, you used ON:
+
+ON = how tables are related to each other
+You want to combine rows from table A with matching rows from table B
+
+Example (that matches students with their grades):
+
+SELECT students.name, grades.course, grades.grade
+FROM students
+JOIN grades ON students.id = grades.student_id;
+
+
+2. To join 3 or more tables, used ON
+
+Nested Join means > You want to combine rows from table A with matching rows from table B AND then match that result with table C, maybe D, E, etc)
+
+Example
+
+SELECT ...
+FROM Table1
+JOIN Table2 ON ...
+JOIN Table3 ON ...
+
+SELECT e.ID, e.Name, s.Salary, d.Name
+FROM (Employee e
+JOIN Salary s ON e.ID = s.Emp_ID)
+JOIN Department d ON e.Dep_ID = d.ID
+
+3. Use WHERE > to filter results after rows have been joined (or matched).
+
+Examples:
+
+FROM Employee e
+JOIN Salary s JOIN Department d
+WHERE e.ID = s.Emp_ID AND e.Dep_ID = d.ID
+
+SELECT *
+FROM orders o
+JOIN customers c
+  ON o.customer_id = c.id
+WHERE c.country = 'USA';

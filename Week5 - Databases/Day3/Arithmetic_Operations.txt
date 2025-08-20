@@ -1,0 +1,53 @@
+ARITHMETIC OPERATION IN POSTGRESQL
+
+- Bitwise operators can be used ONLY with INT
+
+- Operations:
+
+
+1. Module (%): the answer/output will be what's left over after diving one number by another
+
+syntax: SELECT 15 % 2; (result = 1)
+
+
+
+2. Raised To (^): Multiple a number by itself a certain number of times
+
+syntax: SELECT 4 ^ 2; (This means “4 times itself 2 times > 4 × 4 = 16)
+
+
+
+3. Square Root (|/): What number, if multiply by itself, give this number?
+
+syntax: SELECT |/16; (result = 4)
+
+
+
+4. Factorial (!): Multiply a number by all the smaller numbers down to 1
+
+syntax: SELECT !6; (6 * 5 * 4 * 3 * 2 * 1 = 720)
+
+
+
+5. Absolute value (@): Drop the minus sign if there is one
+
+syntax: SELECT @-15.07; (result: 15.07)
+
+
+
+To do an operation on a table use this syntax:
+
+SELECT field1, field2, field3, field3 math_op
+   AS "new_field" FROM table_name
+
+examples:
+
+SELECT id, name, marks, marks -15
+   As "marks-15" FROM students;
+
+SELECT id, name, marks, marks *12
+   As "marks*12" FROM students;
+
+SELECT id, name, marks, marks /3
+   AS "marks/3" FROM Students;
+

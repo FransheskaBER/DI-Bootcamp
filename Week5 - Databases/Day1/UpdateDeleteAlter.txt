@@ -2,17 +2,17 @@
 
 UPDATE table_name
 SET column1 = value1,
-    column2 = value2
+    column2 = value2
 WHERE
-   condition;
+   condition;
 
 - to change values of the whole table then remove the WHERE condition.
 
 - if you want that it will return the updated table use:
 
 RETURNING
-   column1,
-   column2;
+   column1,
+   column2;
 
 
 EXAMPLES:

@@ -1,0 +1,42 @@
+IMPORT:
+
+You can import data from CSV files to PostgreSQL.
+
+With pgAdmin - COPY ... FROM (server-side)
+
+Steps:
+Create a table in PostgreSQL with the proper table structure (number of columns, data types, etc.) and then import the data from CSV file or just import the csv file to an existing data but make sure it follows the same data structure.
+If you are trying to import it from pgAdmin4, make sure the CSV file is in your C:\Users\Public ("Public Documents" in Window) or /tmp (in Mac) so PostgreSQL can access the file.
+
+Note: The CSV HEADER in the syntax below means skip the first row if the file has columns    labels.
+
+COPY actors(first_name,last_name,age,number_oscars) 
+FROM 'path_of_the_file(/tmp or /Users/Public)' DELIMITER ',' CSV HEADER;
+
+Windows:
+COPY my_table FROM 'C:\\Users\\Public\\mydata.csv' DELIMITER ',' CSV HEADER;
+
+With psql command - \copy ... from (client-side, in psql)
+
+If you don't want to change the file location, you can import using the terminal and psql command.
+
+Steps:
+In terminal: psql -U postgres -d your_database
+\copy your_table FROM 'C:/Users/YourName/Desktop/mydata.csv' DELIMITER ',' CSV HEADER;
+SELECT * FROM your_table LIMIT 5;
+
+
+EXPORT:
+
+With pgAdmin
+
+Create a new excel file
+File must be in /tmp (Mac) or ‘C:\Users\Public‘ (Windows)
+Enter:
+COPY actors(actor_id, first_name,last_name,age,number_oscars)TO 'C:\Users\Public\export_db_actors.csv' DELIMITER ',' CSV HEADER;
+
+With psql command
+
+Create a new excel file
+Enter:
+Hollywood=# \copy actors TO 'path_initial_location' WITH CSV HEADER 

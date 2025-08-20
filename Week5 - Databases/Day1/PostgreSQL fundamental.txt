@@ -3,20 +3,20 @@ SYNTAX:
 1. SELECT columns from a table:
 
 SELECT
-   field_name
+   field_name
 FROM
-   table_name;
+   table_name;
 
 
 
 2. SELECT multiple columns from a table:
 
 SELECT
-   field_name1,
-   field_name2,
-   field_name3
+   field_name1,
+   field_name2,
+   field_name3
 FROM
-   table_name;
+   table_name;
 
 
 
@@ -75,13 +75,13 @@ SELECT * FROM actors WHERE age > '1960-01-01' LIMIT 3 OFFSET 2;
 7. ORDER BY (to sort the result in ascending ASC order or descending DESC order):
 
 SELECT
-    column_1,
-    column_2
+    column_1,
+    column_2
 FROM
-    table_name
+    table_name
 ORDER BY
-    column_1 [ASC | DESC],
-    column_2 [ASC | DESC];
+    column_1 [ASC | DESC],
+    column_2 [ASC | DESC];
 
 
 SELECT * FROM actors WHERE age > '1960-01-01' ORDER BY first_name ASC

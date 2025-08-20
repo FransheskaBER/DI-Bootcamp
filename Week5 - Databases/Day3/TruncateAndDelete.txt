@@ -1,0 +1,14 @@
+MAIN DIFFERENCES BETWEEN TRUNCATE AND DELETE
+
+- both are to delete the table's data
+
+- When deleting a table's data, TRUNCATE resets its identity whereas DELETE doesn't
+
+- Syntax:
+		TRUNCATE TABLE table_name
+			vs
+		DELETE FROM table_name
+
+- TRUNCATE is definition whereas DELETE is manipulation
+
+- DELETE is slower than TRUNCATE

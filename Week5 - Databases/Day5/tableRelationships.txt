@@ -1,0 +1,108 @@
+ONE-TO-ONE
+
+You can relate one table to another with FOREIGN KEYS. However, a foreign key can also be a PRIMARY KEY.
+
+Example:
+
+Let's say you want to create a "movies" table:
+
+CREATE TABLE movies (
+  movie_id SERIAL,
+  movie_title VARCHAR(45) NOT NULL,
+  released_date date NOT NULL,
+  PRIMARY KEY (movie_id)
+);
+
+Now, you want to create another table "scenerios" and want to relate it one to one to the "movies" table and have that foreign key as the primary key as well in the created table:
+
+CREATE TABLE scenarios (
+  pk_movie_id INTEGER NOT NULL,
+  scenario_story TEXT NOT NULL,
+  PRIMARY KEY (pk_movie_id),
+  CONSTRAINT fk_movie_id FOREIGN KEY (pk_movie_id) REFERENCES movies (movie_id)
+);
+
+So, in the example above, the movie_id is the PRIMARY KEY of the table "movies"
+and it is also the PRIMARY KEY and FOREIGN KEY of the table "scenarios".
+
+
+How to insert in both tables:
+
+INSERT into movies(movie_title, released_date) VALUES 
+('Good Will Hunting', '1997-12-02'),
+('The Martian', '2015-09-11'),
+('Oceans Twelve', '2004-12-10'),
+('Up in the Air', '2009-09-5');
+
+INSERT into scenarios(pk_movie_id, scenario_story) VALUES 
+((SELECT movie_id FROM movies where movie_title = 'Up in the Air'),
+'Ryan Bingham enjoys living out of a suitcase for his job, 
+traveling around the country firing people, but finds that lifestyle 
+threatened by the presence of a potential love interest, and a new hire.'),
+((SELECT movie_id FROM movies where movie_title = 'The Martian'),
+'In 2035, the crew of the Ares III mission to Mars is exploring 
+Acidalia Planitia on Martian solar day (sol) 18 of their 31-sol expedition. ');
+
+
+
+
+ONE-TO-MANY
+
+
+This is when you want to link a table data id with many entries from another table database. 
+
+Example:
+You have a "books" table, each book with a distinct ID and
+You have another table called "reviews" where many reviews IDs can be associated to one book id
+
+CREATE TABLE books (
+  book_id SERIAL,
+  name VARCHAR(30) NOT NULL,
+  PRIMARY KEY (book_id)
+);
+
+/*
+ one to many: A book has many reviews
+*/
+
+CREATE TABLE reviews (
+  review_id SERIAL,
+  title VARCHAR(45) NOT NULL,
+  published_date date NOT NULL,
+  fk_book_id INTEGER NOT NULL,
+  PRIMARY KEY (review_id),
+  FOREIGN KEY (fk_book_id) REFERENCES books(book_id) ON DELETE CASCADE
+);
+
+In this example, when creating the second table, you use the PK of the first table "books" as the FK for this table "reviews."
+
+
+
+
+
+MANY-TO-MANY
+
+
+So imagine you have 3 tables: "books", "authors", and "books_and_authors",
+
+In the books table, you have just the name of the book - book_id
+
+In the authors table, you have just the name of the author - author_id
+
+In the books_and_authors table, you have both the book_id and the author_id together as one entry
+
+
+In this example, you implement a third-cross-reference table that holds the relationship between two entities (two entries, two data sets)
+
+Example:
+
+CREATE TABLE books_and_authors (
+  book_id INTEGER NOT NULL,
+  author_id INTEGER NOT NULL,
+  PRIMARY KEY (book_id, author_id),
+  FOREIGN KEY (book_id) REFERENCES books(book_id) ON UPDATE CASCADE,
+  FOREIGN KEY (author_id) REFERENCES authors(authors_id) ON UPDATE CASCADE
+);
+
+
+In this example, when creating the thrid cross-reference table, you use the PK of "books" table and "authors" table as the PK and FK of this third cross-reference table "books_and_authors".

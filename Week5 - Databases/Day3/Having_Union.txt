@@ -1,0 +1,52 @@
+1. HAVING function:
+
+- It is a like a filter that works in GROUPS only (not rows)
+- WHERE filters rows (before rows have been grouped) but HAVING filters groups (after rows have been grouped)
+
+syntax:
+SELECT
+    column_1,
+    aggregate_function (column_2)
+FROM
+    tbl_name
+GROUP BY
+    column_1
+HAVING
+    condition;
+
+
+Example: "show cities that have more than 1 student"
+
+SELECT city, COUNT(*) AS student_count
+FROM students
+GROUP BY city
+HAVING COUNT(*) > 1;
+
+
+2. UNION function:
+
+- It combines results from two queries into one list and automatically remove duplicates, unless you use UNION ALL.
+
+syntax:
+SELECT
+    column_1,
+    column_2
+FROM
+    tbl_name_1
+UNION
+SELECT
+    column_1,
+    column_2
+FROM
+    tbl_name_2;
+
+
+Example:
+
+SELECT first_name
+FROM actors_usa
+UNION
+SELECT first_name
+FROM actors_uk;
+
+- This gives you a single list of unique actor names from both tables. If “Emma” exists in both, you’ll see her only once (because of UNION).
