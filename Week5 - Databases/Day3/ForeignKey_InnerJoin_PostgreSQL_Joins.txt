@@ -40,9 +40,6 @@ from the example below with students and enrolments tables, would be like:
  	"Student Alice from students table exist in both tables so SHOW HER"
 *"Student Bob from students table doesn't exist in enrolments table, so DROPPED"*
 
-
-
-
 Returns rows of multiple tables when the join condition is met.
 Results are like this: left table (table1) matches > right table (table2))
 

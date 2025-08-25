@@ -1,0 +1,50 @@
+# Connect to a database in python
+
+1. first import the proper library psycopg2 for PostgreSQL
+
+pip install psycopg2
+
+2. import it into your python code
+
+import psycopg2
+
+3. define the proper connection details:
+
+HOSTNAME = 'localhost'
+USERNAME = 'postgres'
+PASSWORD = 'letmein'
+DATABASE = 'dvdrental'
+
+4. using those details above, create a connection object:
+
+connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE )
+
+5. From the connection object, we can get a cursor. Think of this as the place that runs your queries, kind like the pgAdmin query tool.
+
+cursor = connection.cursor()
+
+
+6. Now we can define our query:
+
+query = "SELECT * FROM customer LIMIT 20;"
+
+
+7. And submit it to the cursor to execute it:
+
+cursor.execute(query)
+
+
+8. The cursor now contains a result set. We need to fetch it into Python memory. This will give us a list of results:
+
+results = cursor.fetchall()
+
+
+9. And now you can close your database connection, or make another request:
+
+connection.close()
+
+
+10. You can process the results object however you like:
+
+for item in results:
+        print(item)

@@ -1,0 +1,35 @@
+Connect databases to python to write queries from the python file
+
+Use a code library for relational database like:
+
+- psycopg2 for PostgreSQL
+- MySQLdb for MySQL
+- cx_Oracle for Oracle
+- SQLite (built into python 2.7 - import sqlite3)
+
+
+Python's built-in module sqlite3 works with SQL databases.
+
+Everytime you execute a query you need to open the connection, then the query, then commit and then close. 
+
+- Open connection:
+
+conn = sqlite3.connect('your_database_name.sqlite')
+cur = conn.cursor()
+
+- Perform your query:
+
+cur.execute("""
+YOUR SQL QUERY
+""")
+
+- Commit changes and close (if you use these commands, you will need to open the connection
+again to do another query):
+
+conn.commit() #the commit save your changes
+conn.close()
+
+
+However, you don't need to close the connection but the cursor/query and then perform another query:
+
+cursor.close()
