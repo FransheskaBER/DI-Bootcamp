@@ -1,0 +1,17 @@
+- To create a new environment, fo to VSC go to open new terminal, go to the designated folder you want the environment and then add this to create the env:
+
+py -m venv name_of_env
+
+- hen activate the environment as:
+
+name_of_env/Scripts/activate
+
+name_of_env/Bin/activate
+
+
+
+- If you get an error, open the powershel as "RUN AS administrator" and then paste:
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+- Then press Y for yes and then enter
