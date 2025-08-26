@@ -31,7 +31,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS countries(
                ''')
 connection.commit()
 
-response = requests.get('https://www.apicountries.com/countries')
+response = requests.get('https://restcountries.com/v3.1/all')
 data = response.json()
 random_countries = random.sample(data, 10)
 # print(random_countries)
