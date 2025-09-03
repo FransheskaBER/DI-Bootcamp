@@ -94,16 +94,16 @@ for (let i=0; i<colors.length; i++){
 // Instructions
 // Prompt the user for a number.
 // Hint : Check the data type you receive from the prompt (ie. Use the typeof method)
-// let userNumber = prompt("Enter a number:");
-// console.log(typeof(userNumber))
+let userNumber = prompt("Enter a number:");
+console.log(typeof(userNumber))
 
 // While the number is smaller than 10 continue asking the user for a new number.
 // Tip : Which w{hile loop is more relevant for this situation?
-// let newNumber;
-// do {
-//     newNumber = parseInt(prompt("Enter your favorite number:"), 10);
-//     console.log(newNumber)
-// } while (newNumber < 10)
+let newNumber;
+do {
+    newNumber = parseInt(prompt("Enter your favorite number:"), 10);
+    console.log(newNumber)
+} while (newNumber < 10)
 
 
 // 🌟 Exercise 4 : Building Management
