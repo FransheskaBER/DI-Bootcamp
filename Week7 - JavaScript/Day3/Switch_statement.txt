@@ -1,0 +1,80 @@
+SWITCH statement:
+-----------------
+- Controls the flow of a program and is part of JS conditional statements.
+- Let's you check one value against different options and run different code depending on which option matches the value.
+
+Terminology
+--------------------
+let > creates a variable and value (it is a block-scoped - only available inside) - for values that wont change
+var > same as let but variables and values can be used outside the block scoped
+switch > check one variable or one expression
+cases > are possible values to compare against
+break > stop checking once a match in found
+default >  is the else case when not match has been found
+
+
+
+
+
+syntax:
+---------------
+switch (expression){
+}
+
+
+Inside the curly braces, there are different cases defined and they are followed by a value that matches the evaluated expression. For example:
+
+switch (expression){
+
+  case value1:
+      /* implement the statement(s) to be executed when
+      expression = value1 */
+      break;
+  case value2:
+      /* implement the statement(s) to be executed when
+      expression = value2 */
+      break;
+  case value3:
+      /* implement the statement(s) to be executed when
+      expression = value3 */
+      break;
+  default:
+     /* implement the statement(s) to be executed if expression 
+     doesn't match any of the above cases */ 
+}
+
+
+the BREAK statement exists the switch structure after the exercusiton of a case. 
+
+
+Example:
+----------------
+Run the program until you find what is the day of the week today:
+
+var day = 2;   //change and try with different values
+
+switch(day)
+{
+  case 1:      //if day = 1
+    console.log("Monday");
+    break;
+  case 2:      //if day = 2
+    console.log("Tuesday");
+    break;
+  case 3:      //if day = 3
+    console.log("Wednesday");
+    break;
+  case 4:      //if day = 4
+    console.log("Thursday");
+    break;
+  case 5:      //if day = 5
+    console.log("Friday");
+  case 6:      //if day = 6
+    console.log("Saturday");
+  case 7:      //if day = 7
+    console.log("Sunday");
+    break;
+  default:    //if day doesn't match any of above
+    console.log("Invalid");
+}
+

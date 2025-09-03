@@ -1,0 +1,433 @@
+// LOOPS
+
+
+// START; CONDITION; UPDATE (INCREMENT)
+undefined
+for (let i = 0; i < 2; i++) {
+    console.log("the current number is " + i)
+}
+VM350:2 the current number is 0
+VM350:2 the current number is 1
+undefined
+for (let i = 0; i < 20; i++) {
+    console.log("the current number is " + i)
+}
+VM358:2 the current number is 0
+VM358:2 the current number is 1
+VM358:2 the current number is 2
+VM358:2 the current number is 3
+VM358:2 the current number is 4
+VM358:2 the current number is 5
+VM358:2 the current number is 6
+VM358:2 the current number is 7
+VM358:2 the current number is 8
+VM358:2 the current number is 9
+VM358:2 the current number is 10
+VM358:2 the current number is 11
+VM358:2 the current number is 12
+VM358:2 the current number is 13
+VM358:2 the current number is 14
+VM358:2 the current number is 15
+VM358:2 the current number is 16
+VM358:2 the current number is 17
+VM358:2 the current number is 18
+VM358:2 the current number is 19
+undefined
+for (let i = 0; i < 20; i+=2) {
+    console.log("the current number is " + i)
+}
+VM365:2 the current number is 0
+VM365:2 the current number is 2
+VM365:2 the current number is 4
+VM365:2 the current number is 6
+VM365:2 the current number is 8
+VM365:2 the current number is 10
+VM365:2 the current number is 12
+VM365:2 the current number is 14
+VM365:2 the current number is 16
+VM365:2 the current number is 18
+undefined
+let arr = [1, 4, 7, 10]
+for (let i=0; i<arr.length; i++){
+    console.log(arr[i]);
+}
+VM534:3 1
+VM534:3 4
+VM534:3 7
+VM534:3 10
+undefined
+for (let i = 0; i > 16; i++){
+    if (i / 2 == 0){
+        console.log(i + "is even")        
+    } else {
+        console.log(i + "is odd")
+    }
+}
+undefined
+for (let i = 0; i > 16; i++){
+    if (i / 2 == 0){
+        console.log(i + "is even")        
+    } else {
+        console.log(i + "is odd")
+    }
+}
+undefined
+for (let i = 0; i > 16; i++){
+    if (i / 2 == 0){
+        console.log(i + "is even")        
+    } else {
+        console.log(i + "is odd")
+    }
+}
+undefined
+for (let i = 0; i < 16; i++){
+    if (i / 2 == 0){
+        console.log(i + "is even")        
+    } else {
+        console.log(i + "is odd")
+    }
+}
+VM777:3 0is even
+VM777:5 1is odd
+VM777:5 2is odd
+VM777:5 3is odd
+VM777:5 4is odd
+VM777:5 5is odd
+VM777:5 6is odd
+VM777:5 7is odd
+VM777:5 8is odd
+VM777:5 9is odd
+VM777:5 10is odd
+VM777:5 11is odd
+VM777:5 12is odd
+VM777:5 13is odd
+VM777:5 14is odd
+VM777:5 15is odd
+undefined
+for (let i = 0; i < 16; i++){
+    if (i / 2 == 0){
+        console.log(i + " is even")        
+    } else {
+        console.log(i + " is odd")
+    }
+}
+VM783:3 0 is even
+VM783:5 1 is odd
+VM783:5 2 is odd
+VM783:5 3 is odd
+VM783:5 4 is odd
+VM783:5 5 is odd
+VM783:5 6 is odd
+VM783:5 7 is odd
+VM783:5 8 is odd
+VM783:5 9 is odd
+VM783:5 10 is odd
+VM783:5 11 is odd
+VM783:5 12 is odd
+VM783:5 13 is odd
+VM783:5 14 is odd
+VM783:5 15 is odd
+undefined
+for (let i = 0; i < 16; i++){
+    if (i / 2 == 0){
+        console.log(i + " is even")        
+    } else if (i/2 != 0){
+        console.log(i + " is odd")
+    }
+}
+VM807:3 0 is even
+VM807:5 1 is odd
+VM807:5 2 is odd
+VM807:5 3 is odd
+VM807:5 4 is odd
+VM807:5 5 is odd
+VM807:5 6 is odd
+VM807:5 7 is odd
+VM807:5 8 is odd
+VM807:5 9 is odd
+VM807:5 10 is odd
+VM807:5 11 is odd
+VM807:5 12 is odd
+VM807:5 13 is odd
+VM807:5 14 is odd
+VM807:5 15 is odd
+undefined
+for (let i = 0; i <= 15; i++){
+    if (i%2 == 0){
+        console.log(i + " is even")        
+    } else {
+        console.log(i + " is odd")
+    }
+}
+VM825:3 0 is even
+VM825:5 1 is odd
+VM825:3 2 is even
+VM825:5 3 is odd
+VM825:3 4 is even
+VM825:5 5 is odd
+VM825:3 6 is even
+VM825:5 7 is odd
+VM825:3 8 is even
+VM825:5 9 is odd
+VM825:3 10 is even
+VM825:5 11 is odd
+VM825:3 12 is even
+VM825:5 13 is odd
+VM825:3 14 is even
+VM825:5 15 is odd
+undefined
+// FOR IN LOOP
+
+
+
+
+undefined
+let person = {fname: "John", lname: "Doe", age:25}
+for (let x in person) {
+    console.log(x)
+    console.log(person[x])
+}
+VM1087:3 fname
+VM1087:4 John
+VM1087:3 lname
+VM1087:4 Doe
+VM1087:3 age
+VM1087:4 25
+undefined
+let person = {fname: "John", lname: "Doe", age:25}
+for (let x in person) {
+    console.log(x)
+}
+VM1093:3 fname
+VM1093:3 lname
+VM1093:3 age
+undefined
+let person = {fname: "John", lname: "Doe", age:25}
+for (let x in person) {
+    console.log(person[x])
+}
+VM1115:3 John
+VM1115:3 Doe
+VM1115:3 25
+undefined
+let person = {fname: "John", lname: "Doe", age:25}
+for (let key in person) {
+    console.log(person[key])
+}
+VM1131:3 John
+VM1131:3 Doe
+VM1131:3 25
+undefined
+let person = {fname: "John", lname: "Doe", age:25}
+for (let key in person) {
+    console.log(key)
+}
+VM1161:3 fname
+VM1161:3 lname
+VM1161:3 age
+undefined
+let fruits = ["banana", "apple", "kiwi"]
+for (let index in fruits) {
+    console.log(index)
+}
+VM1318:3 0
+VM1318:3 1
+VM1318:3 2
+undefined
+let fruits = ["banana", "apple", "kiwi"]
+for (let index in fruits) {
+    console.log(fruits[index])
+}
+VM1359:3 banana
+VM1359:3 apple
+VM1359:3 kiwi
+undefined
+// LOOP - FOR OF
+
+
+
+undefined
+let fruits = ["banana", "apple", "kiwi"]
+for (let i of fruits) { // use OF to access values only
+    console.log(i)
+}
+VM1543:3 banana
+VM1543:3 apple
+VM1543:3 kiwi
+undefined
+// FOR OF doesnt work with objects (dicts {})
+undefined
+// WHILE LOOPS
+
+
+
+undefined
+let a = 0
+while (a < 5){
+    a++;
+    console.log(a)
+}
+    
+VM1795:4 1
+VM1795:4 2
+VM1795:4 3
+VM1795:4 4
+VM1795:4 5
+undefined
+let x = 100
+while (x<150){
+    console.log(x)
+    x++
+}
+VM1970:3 100
+VM1970:3 101
+VM1970:3 102
+VM1970:3 103
+VM1970:3 104
+VM1970:3 105
+VM1970:3 106
+VM1970:3 107
+VM1970:3 108
+VM1970:3 109
+VM1970:3 110
+VM1970:3 111
+VM1970:3 112
+VM1970:3 113
+VM1970:3 114
+VM1970:3 115
+VM1970:3 116
+VM1970:3 117
+VM1970:3 118
+VM1970:3 119
+VM1970:3 120
+VM1970:3 121
+VM1970:3 122
+VM1970:3 123
+VM1970:3 124
+VM1970:3 125
+VM1970:3 126
+VM1970:3 127
+VM1970:3 128
+VM1970:3 129
+VM1970:3 130
+VM1970:3 131
+VM1970:3 132
+VM1970:3 133
+VM1970:3 134
+VM1970:3 135
+VM1970:3 136
+VM1970:3 137
+VM1970:3 138
+VM1970:3 139
+VM1970:3 140
+VM1970:3 141
+VM1970:3 142
+VM1970:3 143
+VM1970:3 144
+VM1970:3 145
+VM1970:3 146
+VM1970:3 147
+VM1970:3 148
+VM1970:3 149
+149
+let x = 100
+while (x<150){
+    console.log(x)
+    x++
+}
+VM1974:3 100
+VM1974:3 101
+VM1974:3 102
+VM1974:3 103
+VM1974:3 104
+VM1974:3 105
+VM1974:3 106
+VM1974:3 107
+VM1974:3 108
+VM1974:3 109
+VM1974:3 110
+VM1974:3 111
+VM1974:3 112
+VM1974:3 113
+VM1974:3 114
+VM1974:3 115
+VM1974:3 116
+VM1974:3 117
+VM1974:3 118
+VM1974:3 119
+VM1974:3 120
+VM1974:3 121
+VM1974:3 122
+VM1974:3 123
+VM1974:3 124
+VM1974:3 125
+VM1974:3 126
+VM1974:3 127
+VM1974:3 128
+VM1974:3 129
+VM1974:3 130
+VM1974:3 131
+VM1974:3 132
+VM1974:3 133
+VM1974:3 134
+VM1974:3 135
+VM1974:3 136
+VM1974:3 137
+VM1974:3 138
+VM1974:3 139
+VM1974:3 140
+VM1974:3 141
+VM1974:3 142
+VM1974:3 143
+VM1974:3 144
+VM1974:3 145
+VM1974:3 146
+VM1974:3 147
+VM1974:3 148
+VM1974:3 149
+149
+let x = 1
+while (x<15){
+    console.log(x)
+    x++
+}
+VM1992:3 1
+VM1992:3 2
+VM1992:3 3
+VM1992:3 4
+VM1992:3 5
+VM1992:3 6
+VM1992:3 7
+VM1992:3 8
+VM1992:3 9
+VM1992:3 10
+VM1992:3 11
+VM1992:3 12
+VM1992:3 13
+VM1992:3 14
+14
+let x = 1
+while (x<15){
+    console.log(x)
+    x++
+    if (x === 7) {
+        break
+    }
+}
+VM2023:3 1
+VM2023:3 2
+VM2023:3 3
+VM2023:3 4
+VM2023:3 5
+VM2023:3 6
+undefined
+while (x<15){
+    if (x === 10){
+        continue
+    }
+    console.log(x)
+    x++
+}
+VM2232:5 7
+VM2232:5 8
+VM2232:5 9

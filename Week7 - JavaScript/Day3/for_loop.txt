@@ -1,0 +1,31 @@
+FOR-LOPP
+------------------------
+- like a loop, it executes a block of codes a number of times.
+- each execution of the code is called iteration
+- instead of writing the same line 10 times, you tell the loop "do this action 10 times"
+
+
+
+SYNTAX
+----------------------
+for (start; condition; update) {
+  // code to run
+}
+
+
+ARGUMENTS
+-----------------------
+start → create a counter (e.g., let i = 0).
+
+condition → decide when to stop (e.g., i < 5).
+
+update → how the counter changes each time (e.g., i++ means add 1).
+
+
+
+EXAMPLES
+-------------------------
+for (var temp = 0; temp < 5; temp++) {
+  // Runs 5 times, with values of temp 0 through 4.
+  console.log(temp + ": Institute!");
+}

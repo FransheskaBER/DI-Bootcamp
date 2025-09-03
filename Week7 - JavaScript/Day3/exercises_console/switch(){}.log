@@ -1,0 +1,336 @@
+len age = 34
+VM1987:1 Uncaught SyntaxError: Unexpected identifier 'age'
+len age = 34
+console.log(age)
+VM2095:1 Uncaught SyntaxError: Unexpected identifier 'age'
+let age - 34
+VM2121:1 Uncaught SyntaxError: Unexpected token '-'
+let age = 35;
+undefined
+console.log(age)
+VM2223:1 35
+undefined
+if (true){
+    let age1 = 23;
+    var age2 = 34;
+}
+undefined
+console.log(age1)
+VM2351:1 Uncaught ReferenceError: age1 is not defined
+    at <anonymous>:1:13
+(anonymous) @ VM2351:1
+console.log(age2)
+VM2408:1 34
+undefined
+var day = 4
+undefined
+switch(day){}
+undefined
+switch(day)
+{
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesdat");
+        
+}
+undefined
+switch(day)
+{
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break:
+    case 3:
+        console.log("Wednesday"):
+        break:
+    case 4:
+        console.log("Thrusday"):
+        break:
+    case 5:
+        console.log("Friday");
+        break;
+    case default:
+        console.log("Invalid");
+        break;
+}
+VM2898:8 Uncaught SyntaxError: Unexpected token ':'
+switch(day)
+{
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break:
+    case 3:
+        console.log("Wednesday");
+        break:
+    case 4:
+        console.log("Thrusday");
+        break:
+    case 5:
+        console.log("Friday");
+        break;
+    case default:
+        console.log("Invalid");
+        break;
+}
+VM2907:8 Uncaught SyntaxError: Unexpected token ':'
+switch(day)
+{
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thrusday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case default:
+        console.log("Invalid");
+        break;
+}
+VM2922:18 Uncaught SyntaxError: Unexpected token 'default'
+switch(day)
+{
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thrusday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    default:
+        console.log("Invalid");
+        break;
+}
+
+VM2946:13 Thrusday
+undefined
+console.log(day)
+VM3000:1 4
+undefined
+var num1 = 3
+undefined
+var num2 = 5
+undefined
+var operator = "+";
+undefined
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3509:12 8
+undefined
+var operator = "-"
+undefined
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3568:3 -2
+undefined
+operator = "*"
+'*'
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3605:6 15
+undefined
+operator = "*"
+'*'
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3745:6 15
+undefined
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    case "**":
+        console.log(num1 ** num2);
+        break;
+    case "%":
+        console.log(num1 % num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3894:6 15
+undefined
+num1 = 2
+2
+num2 = 3
+3
+operator = "**"
+'**'
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    case "**":
+        console.log(num1 ** num2);
+        break;
+    case "%":
+        console.log(num1 % num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM3988:15 8
+undefined
+num1 = 10
+10
+num2 = 5
+5
+operator = "%"
+'%'
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    case "**":
+        console.log(num1 ** num2);
+        break;
+    case "%":
+        console.log(num1 % num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM4084:18 0
+undefined
+num2 = 4
+4
+switch(operator){
+    case "-":
+        console.log(num1 - num2);
+        break;
+    case "*":
+        console.log(num1 * num2);
+        break;
+    case "/":
+        console.log(num1 / num2);
+        break;
+    case "+":
+        console.log(num1 + num2);
+        break;
+    case "**":
+        console.log(num1 ** num2);
+        break;
+    case "%":
+        console.log(num1 % num2);
+        break;
+    default:
+        console.log("invalid");
+        break;
+}
+VM4121:18 2
+undefined
+console.log(num2)
+VM4200:1 4
+undefined

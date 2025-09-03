@@ -1,0 +1,92 @@
+for (let i = 1; i <=10; i++) {console.log(i);}
+VM246:1 1
+VM246:1 2
+VM246:1 3
+VM246:1 4
+VM246:1 5
+VM246:1 6
+VM246:1 7
+VM246:1 8
+VM246:1 9
+VM246:1 10
+undefined
+for (let n = 1; i <=15; i+=2) {console.log(n);}
+VM295:1 Uncaught ReferenceError: i is not defined
+    at <anonymous>:1:19
+(anonymous) @ VM295:1
+for (let n = 1; n <=15; n+=2) {console.log(n);}
+VM309:1 1
+VM309:1 3
+VM309:1 5
+VM309:1 7
+VM309:1 9
+VM309:1 11
+VM309:1 13
+VM309:1 15
+undefined
+for (let n = 0; n <=15; n+=2) {console.log(n);}
+VM316:1 0
+VM316:1 2
+VM316:1 4
+VM316:1 6
+VM316:1 8
+VM316:1 10
+VM316:1 12
+VM316:1 14
+undefined
+var colors = ["blue", "red", "black", "white"];
+undefined
+for (let i = 0; i < colors.lenght; i++) {console.log(colors[i])}
+undefined
+for (let i = 0; i < colors.lenght; i++) {console.log(colors[i]);}
+undefined
+for (let i = 0; i < colors.length; i++) {
+  console.log(colors[i]);
+}
+VM518:2 blue
+VM518:2 red
+VM518:2 black
+VM518:2 white
+undefined
+for (let i = 10; i > 1; i--) {console.log(i);}
+VM549:1 10
+VM549:1 9
+VM549:1 8
+VM549:1 7
+VM549:1 6
+VM549:1 5
+VM549:1 4
+VM549:1 3
+VM549:1 2
+undefined
+for (let i = 10; i > 0; i--) {console.log(i);}
+VM556:1 10
+VM556:1 9
+VM556:1 8
+VM556:1 7
+VM556:1 6
+VM556:1 5
+VM556:1 4
+VM556:1 3
+VM556:1 2
+VM556:1 1
+undefined
+for (let i = 10; i >= 1; i--) {console.log(i);}
+VM564:1 10
+VM564:1 9
+VM564:1 8
+VM564:1 7
+VM564:1 6
+VM564:1 5
+VM564:1 4
+VM564:1 3
+VM564:1 2
+VM564:1 1
+undefined
+let total = 0
+    for (let x = 1; x <= 5; total + x++) {
+    total = total + x;
+}
+console.log(total);
+VM875:5 15
+undefined

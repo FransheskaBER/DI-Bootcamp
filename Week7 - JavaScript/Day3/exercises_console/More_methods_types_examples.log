@@ -1,0 +1,46 @@
+let addressNumber = 33;
+let addressStreet = "saemundargata";
+let country = "iceland"
+undefined
+let globalAddress = "I live in " + addressStreet + addressNumber + country
+undefined
+console.log(globalAddress)
+VM882:1 I live in saemundargata33iceland
+undefined
+globalAddress = "I live in " + addressStreet + " " + addressNumber ", in " +  country
+
+VM937:1 Uncaught SyntaxError: Unexpected string
+globalAddress = "I live in " + addressStreet + " " + addressNumber + ", in " +  country
+
+'I live in saemundargata 33, in iceland'
+let dog = "pepper";
+let person = "yotam";
+let city = "tel aviv";
+let full_info = "${person} lives in ${city} with his adorable ${dog}";
+console.log(full_info)
+VM1273:5 ${person} lives in ${city} with his adorable ${dog}
+undefined
+let dog = "pepper";
+let person = "yotam";
+let city = "tel aviv";
+let full_info = '${person} lives in ${city} with his adorable ${dog}';
+console.log(full_info)
+VM1282:5 ${person} lives in ${city} with his adorable ${dog}
+undefined
+let dog = "pepper";
+let person = "yotam";
+let city = "tel aviv";
+let full_info = `${person} lives in ${city} with his adorable ${dog}`;
+console.log(full_info)
+VM1306:5 yotam lives in tel aviv with his adorable pepper
+undefined
+let birthyear = 1992
+let futureYear = 2026
+let myFutureAge = `I will be ${futureYear - birthyear} years old in ${futureYear}.`
+console.log(myFutureAge);
+VM1626:4 I will be 34 years old in 2026.
+undefined
+let x = true
+console.log(!x)
+VM1734:2 false
+undefined

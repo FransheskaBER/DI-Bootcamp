@@ -1,0 +1,12 @@
+SPLIT()
+
+Use to break down a string into an array of smaller strings.
+
+syntax:
+
+string = "A-quick-brown-fox"
+
+array_of_strings = tring.split("-")
+
+console.log(string)
+console.lod(array_of_strings)

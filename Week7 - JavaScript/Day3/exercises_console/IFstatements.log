@@ -1,0 +1,142 @@
+let myObj = {person1: "Tom", person2: "Olga"}
+undefined
+myObj
+{person1: 'Tom', person2: 'Olga'}
+myObj.person1
+'Tom'
+myObj["person3"] = "Sofia"
+'Sofia'
+myObj
+{person1: 'Tom', person2: 'Olga', person3: 'Sofia'}
+// IF STATEMENT
+
+
+undefined
+a=13
+13
+if (a == 13){
+    console.log("yay we win!")
+}
+    else {
+        console.log("No... we lose")
+}
+VM5603:2 yay we win!
+undefined
+if (a === 13){
+    console.log("yay we win!")
+}
+    else if (a === 12) {
+        console.log("No... we tie")
+} 
+    else {
+        console.log("we lose")
+}
+VM5734:2 yay we win!
+undefined
+let age = prompt("How old are you?")
+undefined
+if (age < 18){
+    console.log("Sorry, you are too young to drive")
+}
+    else if (age === 18){
+        console.log("Congrrats on you first day of driving")
+}
+    else {
+        console.log("Powering on... enjoy the ride")
+}
+VM6112:8 Powering on... enjoy the ride
+undefined
+console.log(alert("hello"))
+VM6197:1 undefined
+undefined
+aler("hello")
+VM6226:1 Uncaught ReferenceError: aler is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM6226:1
+alert("hi")
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age === 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age === 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age === 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age === 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age == 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age == 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+let age = prompt("How old are you?")
+if (age < 18){
+    alert("Sorry, you are too young to drive")
+}
+    else if (age == 18){
+        alert("Congrrats on you first day of driving")
+}
+    else {
+        alert("Powering on... enjoy the ride")
+}
+undefined
+// LOOPs
+
+
+
+
+
+
+undefined

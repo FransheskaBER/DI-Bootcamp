@@ -1,0 +1,124 @@
+Think of JS as the VERB you do on the website like, you click, you save, you close, etc...
+
+with JS, You can do:
+- VR games
+- program drones
+- build a robot
+- instagram app interaction/functionality
+
+
+Node.js, express.js and React is JS
+
+JS is a file you write instructions to a computer (if I press this button, move to the right, and if i press this butoon, move to the left)
+
+
+JAVASCRIPT TYPES
+-----------------
+1. Number (NaN = Not a number)
+2. String
+3. Boolean
+4. Undefined
+5. Null
+<!-- 6. Symbol (new in ECMAScript 6) -->
+7. Object
+
+
+JAVASCRIPT COMPARISONS
+-----------------
+=== equal
+!== not equal
+<=
+>=
+<
+>
+
+JAVASCRIPT VARIABLES
+-----------------
+var
+<!-- let (new in ECMAScript 6)-->  
+<!-- const (new in ECMAScript 6)-->
+
+
+JAVASCRIPT CONDITIONALS
+-----------------
+if
+else
+else if
+<!-- ternary operator -->
+<!-- switch -->
+
+
+JAVASCRIPT LOGICAL OPERATORS
+-----------------
+&&
+||
+!
+
+JAVASCRIPT FUNCTIONS
+-----------------
+var a = function name() {}
+function name() {}
+return
+<!-- () => (new in ECMAScript 6) -->
+
+JAVASCRIPT DATA STRUCTURES
+-----------------
+Array
+Object
+
+JAVASCRIPT LOOPING
+-----------------
+for
+while
+do 
+forEach (new in ECMAScript 5) 
+
+
+JAVASCRIPT KEYWORDS
+-----------------
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+
+
+DEFINITIONS
+---------------------
+1. HTML DOM (document object model):
+- it is a map of your webpage that browsers create so JS can read and change the page. 
+- HTML DOM is an structured tree. Each HTML element becomes a "node" in the tree.
+- The browsers give you a special OBJECT called document in JS.
+- So, you can use JS to find elements, change content/styles and add/remove elements.
+- the DOM connect static HTML with dynamic JS
+- So DOM represents the doc as nodes and objects (in other words DOM is the object-oriented representation of the webpage whcih can be modified with scripted language like JS)
+- Modern DOM is built using multiple APIs that work together. Also, other APIs can add new features/capabilities to the DOM. 
+

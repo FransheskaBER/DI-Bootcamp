@@ -1,0 +1,39 @@
+let user_info = {
+    username: "john",
+    password: "secret",
+};
+undefined
+let database = [user_info];
+undefined
+let members = {
+    username: "Mary",
+    timeline: "x"
+}
+undefined
+let newsfeed = [user_info, mem]
+VM761:1 Uncaught ReferenceError: mem is not defined
+    at <anonymous>:1:28
+(anonymous) @ VM761:1
+let newsfeed = [user_info, members]
+undefined
+console.log(database);
+VM837:1 [{…}]0: {username: 'john', password: 'secret'}length: 1[[Prototype]]: Array(0)
+undefined
+console.log(newsfeed);
+VM892:1 (2) [{…}, {…}]0: {username: 'john', password: 'secret'}1: {username: 'Mary', timeline: 'x'}length: 2[[Prototype]]: Array(0)
+undefined
+console.log(user_info.username);
+VM1013:1 john
+undefined
+console.log(members.timeline)
+VM1098:1 x
+undefined
+user_info.username = "sarah";
+user_info.birthyear = 1992;
+console.log(user_info);
+VM1344:3 {username: 'sarah', password: 'secret', birthyear: 1992}birthyear: 1992password: "secret"username: "sarah"[[Prototype]]: Object
+undefined
+delete members.timeline;
+console.log(members);
+VM1525:2 {username: 'Mary'}username: "Mary"[[Prototype]]: Object
+undefined

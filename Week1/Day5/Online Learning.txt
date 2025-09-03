@@ -1,0 +1,61 @@
+USING MAP()
+
+1. define a list function
+
+my_list = [1, 2, 3]
+
+def multiply_by2(item):
+	return item * 2
+
+2. use map for loop and iterations:
+
+map(multiply_by2, [my_list])
+
+
+LIST UNPACKING:
+
+a, b, c = 1, 2, 3
+
+print(a) # Ouput: 1
+
+
+a, b, c, *other, d = [1, 2, 3, 4, 5, 6, 7, 8]
+
+print(a) > 1
+print(other) > 5, 6, 7
+print(d) > 8
+
+
+
+DATA STRUCTURES (What data to use and when to use it):
+
+LIST: []
+- they have order (0, 1, 2, 3).
+ 
+DICTIONARY: {}
+- it is not sorted, not order. 
+- holds more info, since it has a key and value
+- e.g. for games, user's profiles for example like name, weapons, etc.
+
+SETs: ()
+- no duplicates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

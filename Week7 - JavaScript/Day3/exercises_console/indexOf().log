@@ -1,0 +1,27 @@
+console.log('To be or not to be'.indexOf('To'));
+VM847:1 0
+undefined
+console.log('To be or not to be'.indexOf(' '));
+VM883:1 2
+undefined
+console.log('To be or not to be'.indexOf('o', 2));
+VM888:1 6
+undefined
+console.log('To be or not to be'.indexOf('be', 4));
+VM893:1 16
+undefined
+console.log('To be or not to be'.indexOf('to'));
+VM914:1 13
+undefined
+console.log('To be or not to be'.indexOf('B'));
+VM919:1 -1
+undefined
+console.log('To be or not to be'.indexOf('', 9));
+VM924:1 9
+undefined
+console.log('To be or not to be'.indexOf('', 4));
+VM957:1 4
+undefined
+console.log('To be or not to be'.indexOf('', 12));
+VM977:1 12
+undefined

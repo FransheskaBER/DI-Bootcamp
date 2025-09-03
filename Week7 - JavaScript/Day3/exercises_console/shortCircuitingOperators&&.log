@@ -1,0 +1,122 @@
+console.log(3 || 'Orange');
+VM4220:1 3
+undefined
+console.log('' || 'Orange');
+VM4224:1 Orange
+undefined
+console.log(true || 0);
+VM4228:1 true
+undefined
+console.log(undefined || null);
+
+VM4232:1 null
+undefined
+var person = {
+  name: 'Jack',
+  age: 34
+}
+console.log(person.job || 'unemployed');
+VM4236:5 unemployed
+undefined
+console.log(0 && 'Orange');
+VM4256:1 0
+undefined
+console.log('' && 'Orange');
+VM4260:1 
+undefined
+console.log(true && null);
+VM4264:1 null
+undefined
+console.log('Apple' && 'Orange');
+VM4268:1 Orange
+undefined
+let name = "";
+let displayName = name || "Anonymous";
+console.log(displayName);
+VM4304:3 Anonymous
+undefined
+let isLoggedIn = true;
+isLoggedIn && console.log("Welcome back!");
+VM4308:2 Welcome back!
+undefined
+let age = 0;
+let result = age || 18;
+console.log(result); 
+VM4328:3 18
+undefined
+var person = {
+  name: 'Jack',
+  age: 34
+}
+console.log(person.job || 'unemployed');
+VM4333:5 unemployed
+undefined
+console.log(person.age > 18 && 'Driving allowed');
+VM4340:1 Driving allowed
+undefined
+var username = ""
+console.log(username || "guests");
+VM4491:2 guests
+undefined
+var username = ""
+console.log(username && "guests");
+VM4503:2 
+undefined
+var isMember = true 
+var hasCoupon = false
+console.log(hasCoupon || "Discount Applied")
+VM4700:3 Discount Applied
+undefined
+var isMember = true 
+var hasCoupon = false
+console.log(isMember || "Discount Applied");
+VM4715:3 true
+undefined
+var isMember = true 
+var hasCoupon = false
+console.log((isMember OR hasCoupon) || "Discount Applied")
+VM4790:3 Uncaught SyntaxError: Unexpected identifier 'OR'
+var isMember = true 
+var hasCoupon = false
+console.log((isMember || hasCoupon) || "Discount Applied")
+VM4804:3 true
+undefined
+console.log((isMember || hasCoupon) && "Discount Applied")
+VM4900:1 Discount Applied
+undefined
+var isAdmin = false
+var isModerator = true
+console.log((isAdmin || isModerator) && "Access granted")
+
+VM5084:3 Access granted
+undefined
+var age = 20
+console.log(age>=18 && "Adult");
+VM5199:1 Uncaught SyntaxError: Identifier 'age' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM5199:1
+var age = 20
+console.log((age>=18) && "Adult");
+VM5210:1 Uncaught SyntaxError: Identifier 'age' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM5210:1
+var age1 = 20
+console.log(age1>=18 && "Adult");
+VM5220:2 Adult
+undefined
+var theme = ""
+console.log(theme || "light");
+VM5347:2 light
+undefined
+var loggedIn = false
+console.log( loggedIn && "Welcome back");
+VM5524:2 false
+undefined
+console.log((loggedIn && "Welcome back") || "Please login");
+VM5694:1 Please login
+undefined
+loggedIn = true
+true
+console.log((loggedIn && "Welcome back") || "Please login");
+VM5731:1 Welcome back
+undefined

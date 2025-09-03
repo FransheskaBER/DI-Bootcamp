@@ -1,0 +1,62 @@
+SHORT-CIRCUITING
+----------------------------
+- Used to combine 2 Boolean values
+- they use logical operators (&& and ||) that can stop evaluating as soon as the result is clear and returns a value instead of just true or false.
+
+
+
+OPERATORS
+----------------------------
+1. && (AND) → stops and returns the first falsy value it finds; if all are true, returns the last value.
+
+"Do I have money AND is the store open?"
+If you don’t have money, you don’t even bother checking if the store is open.
+
+
+2. || (OR) → stops and returns the first truthy value it finds; if none, returns the last one
+
+“Do I have money OR a gift card?”
+If you already have money, you don’t care about the gift card.
+
+
+- That’s how short-circuiting works: stop early when the answer is already decided.
+- “Falsy” = values like 0, "", null, undefined, false, NaN. Everything else is truthy.
+
+
+EXAMPLES
+-----------------------------
+
+// AND (&&)
+console.log(true && "Hello");   // "Hello" (both true → returns last)
+console.log(false && "Hello");  // false  (stops early)
+
+// OR (||)
+console.log("Hi" || "Bye");     // "Hi" (first truthy wins)
+console.log("" || "Bye");       // "Bye" (first falsy, so returns second)
+
+
+
+MORE EXAMPLES
+-------------------------------
+
+var person = {
+  name: 'Jack',
+  age: 34
+}
+console.log(person.job || 'unemployed');
+// 'unemployed'
+
+Since person.job doesn’t exist, we get undefined. Since undefined is a falsy value, JavaScript will instead go to the other side of the || and accept whatever value is there.
+
+
+
+- we want to check if an object person key age value is higher than 18. And if yes, we state that this person is allowed to drive:
+
+var person = {
+  name: 'Jack',
+  age: 34
+}
+console.log(person.age > 18 && 'Driving allowed');
+// 'Driving allowed'
+
+Since person.age is higher than 18, we get true. In this case, JavaScript has no false value, so the && operator returns the last true value.

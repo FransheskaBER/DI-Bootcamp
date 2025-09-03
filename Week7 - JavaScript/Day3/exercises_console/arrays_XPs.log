@@ -1,0 +1,61 @@
+let pets =  ['cat','dog','fish','rabbit','cow'];
+console.log(pets[0]);
+VM3131:2 cat
+undefined
+console.log(pets[1])
+VM3203:1 dog
+undefined
+let deletedPet = pets.splice(3, 1);
+console.log(deletedPet)
+VM3481:2 ['rabbit']
+undefined
+console.log(pets)
+VM3526:1 (4) ['cat', 'dog', 'fish', 'cow']
+undefined
+pets.push("horse");
+console.log(pets)
+VM3673:2 (5) ['cat', 'dog', 'fish', 'cow', 'horse']
+undefined
+console.log(pets.length)
+VM3742:1 5
+undefined
+let modifiedPet = pets.splice(2, 1, "rabbit", "bird")
+console.log(pets)
+VM3947:2 (6) ['cat', 'dog', 'rabbit', 'bird', 'cow', 'horse']
+undefined
+console.log(modifiedPet)
+VM4000:1 ['fish']
+undefined
+let mostFavoritePets = pets.slice(0, 2)
+let leastFavPets - pets.slice(2)
+console.log(mostFavoritePets)
+VM4263:2 Uncaught SyntaxError: Unexpected token '-'
+let mostFavoritePets = pets.slice(0, 2)
+let leastFavPets = pets.slice(2)
+console.log(mostFavoritePets)
+VM4269:3 (2) ['cat', 'dog']
+undefined
+console.log(leastFavPets)
+VM4332:1 (4) ['rabbit', 'bird', 'cow', 'horse']
+undefined
+console.log(pets)
+VM4382:1 (6) ['cat', 'dog', 'rabbit', 'bird', 'cow', 'horse']
+undefined
+let newText = ["I", "love", "JS"]
+console.log(newText.join(" "))
+VM4534:2 I love JS
+undefined
+console.log(pets.shift())
+VM4610:1 cat
+undefined
+console.log(pets)
+VM4677:1 (5) ['dog', 'rabbit', 'bird', 'cow', 'horse']
+undefined
+console.log(pets.unshift({"cat"}))
+VM4786:1 Uncaught SyntaxError: Unexpected string
+console.log(pets.unshift("cat"))
+VM4814:1 6
+undefined
+console.log(pets)
+VM4863:1 (6) ['cat', 'dog', 'rabbit', 'bird', 'cow', 'horse']
+undefined
