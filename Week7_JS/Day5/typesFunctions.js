@@ -63,15 +63,15 @@ console.log(fixedName())
 
 // CLASS EXERCISES
 //-----------------------------------
-let calculator = (x, y, operator) => {
+let calculator = (a, b, operator) => {
     if (operator === "+"){
-        return x+y;
+        return a+b;
     } else if (operator === "*"){
-        return x*y;
+        return a*b;
     } else if (operator === "-"){
-        return x-y;
+        return a-b;
     } else if (operator === "/"){
-        return x/y;
+        return a/b;
     } else {
         return "Invalid operator";
     }
@@ -79,11 +79,12 @@ let calculator = (x, y, operator) => {
 console.log(calculator(23, 45, "*"))
 
 // same code but shorten syntax:
-// const calculator = (a, b, operator) => {
-//   return operator === "+" ? a + b
-//        : operator === "-" ? a - b
-//        : operator === "*" ? a * b
-//        : operator === "/" ? a / b
-//        : "Invalid operator";
-// };
+let calculator2 = (a, b, operator) => {
+    operator === "+" ? a + b :
+    operator === "-" ? a - b :
+    operator === "*" ? a * b :
+    operator === "/" ? a / b :
+    "Invalid operator";
+};
+
 

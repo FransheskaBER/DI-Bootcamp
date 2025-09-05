@@ -86,10 +86,10 @@ function myAge(myage){
 myAge(33)
 
 
-function ageAgain(mAge){
-    return mAge * 2
+function age2(myage){
+    return myage*2
 }
-let munA = ageAgain(33)
-console.log(munA)
+let mumAge = age2(20)
+console.log(mumAge)
 
 
