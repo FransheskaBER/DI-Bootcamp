@@ -193,59 +193,59 @@ function totalVacationCost(){
 
 
 
-// 🌟 Exercise 5 : Users
-// Instructions
-// Retrieve the div and console.log it
-console.log(document.getElementById("container"));
+// // 🌟 Exercise 5 : Users
+// // Instructions
+// // Retrieve the div and console.log it
+// console.log(document.getElementById("container"));
 
-// Change the name “Pete” to “Richard”.
-let list = document.querySelectorAll("ul")[0];
-let nameValue = list.querySelectorAll("li")[1];
-nameValue.textContent = "Richard"
-console.log(nameValue);
+// // Change the name “Pete” to “Richard”.
+// let list = document.querySelectorAll("ul")[0];
+// let nameValue = list.querySelectorAll("li")[1];
+// nameValue.textContent = "Richard"
+// console.log(nameValue);
 
-// Delete the second <li> of the second <ul>.
-let list2 = document.querySelectorAll("ul")[1];
-let item = list2.querySelectorAll("li")[1];
-list2.removeChild(item)
+// // Delete the second <li> of the second <ul>.
+// let list2 = document.querySelectorAll("ul")[1];
+// let item = list2.querySelectorAll("li")[1];
+// list2.removeChild(item)
 
-// Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
-let items = document.querySelectorAll(".list")
-items.forEach(list =>{
-    let firstLi = list.querySelector("li");
-    firstLi.textContent = "Fransheska";
-});
+// // Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
+// let items = document.querySelectorAll(".list")
+// items.forEach(list =>{
+//     let firstLi = list.querySelector("li");
+//     firstLi.textContent = "Fransheska";
+// });
 
-// Add a class called student_list to both of the <ul>'s.
-items.forEach(list =>{
-    list.classList.add("student_list");
-})
+// // Add a class called student_list to both of the <ul>'s.
+// items.forEach(list =>{
+//     list.classList.add("student_list");
+// })
 
-// Add the classes university and attendance to the first <ul>.
-list.classList.add("university", "attendance");
+// // Add the classes university and attendance to the first <ul>.
+// list.classList.add("university", "attendance");
 
-// Add a “light blue” background color and some padding to the <div>.
-// Bonus: If the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
-let itemDiv = document.querySelector("#container");
-let user1 = "John";
-let user2 = "Mary";
-itemDiv.style.cssText = "background-color: lightblue; padding: 10px";
-itemDiv.textContent = `Users: ${user1} and ${user2}`;
-if (itemDiv.style.backgroundColor === "lightblue"){
-    alert(`Hello ${user1} and ${user2}`)
-}
+// // Add a “light blue” background color and some padding to the <div>.
+// // Bonus: If the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
+// let itemDiv = document.querySelector("#container");
+// let user1 = "John";
+// let user2 = "Mary";
+// itemDiv.style.cssText = "background-color: lightblue; padding: 10px";
+// itemDiv.textContent = `Users: ${user1} and ${user2}`;
+// if (itemDiv.style.backgroundColor === "lightblue"){
+//     alert(`Hello ${user1} and ${user2}`)
+// }
 
-// Do not display the <li> that contains the text node “Dan”. (the last <li> of the second <ul>)
-let lastitem = list2.lastElementChild
-lastitem.style.display = "none";
+// // Do not display the <li> that contains the text node “Dan”. (the last <li> of the second <ul>)
+// let lastitem = list2.lastElementChild
+// lastitem.style.display = "none";
 
-// Add a border to the <li> that contains the text node “Richard”. (the second <li> of the first <ul>)
-let firstItem = list.querySelector("li");
-firstItem.style.border = "1px solid black";
+// // Add a border to the <li> that contains the text node “Richard”. (the second <li> of the first <ul>)
+// let firstItem = list.querySelector("li");
+// firstItem.style.border = "1px solid black";
 
-// Change the font size of the whole body.
-let content = document.querySelector("body");
-content.style.fontSize = 30;
+// // Change the font size of the whole body.
+// let content = document.querySelector("body");
+// content.style.fontSize = 30;
 
 
 
