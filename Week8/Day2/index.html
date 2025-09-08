@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Exercise 1 -->
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+    <br>
+
+    <!-- Exercise 2 -->
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <ul class="usersAnswer"></ul>
+    <br>
+
+    <!-- Exercise 3 -->
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+    <strong>end</strong> you <strong>will</strong> be great Developers!
+    <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+
+
+    <style>
+        .fadeOut {
+            animation: fadeOut 2s forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+
+
+    <script>
+
+        // EXERCISE 1
+        let h1 = document.getElementsByTagName("h1")[0];
+        console.log(h1);
+
+        h1.addEventListener("mouseover", () =>{
+            let size = Math.floor(Math.random() * 101); //Random int from 0-100
+            h1.style.fontSize = size + "px";
+        });
+
+        let article = document.getElementsByTagName("article")[0];
+        let allP = article.querySelectorAll("p");
+
+        let secondP = allP[1];
+        secondP.addEventListener("mouseover", () => {
+            secondP.classList.add("fadeOut");
+        });
+
+        let lastP = allP[allP.length -1];
+        lastP.remove()
+
+        let h2 = document.getElementsByTagName("h2")[0];
+        h2.addEventListener("click", () => {
+            h2.style.backgroundColor = "red";
+        });
+
+        let h3 = document.getElementsByTagName("h3")[0];
+        h3.addEventListener("click", () => {
+            h3.style.display = "none";
+        });
+
+        let button = document.createElement("button");
+        button.textContent = "Click Me";
+        article.appendChild(button);
+
+        button.addEventListener("click", () => {
+            allP.forEach(p => {
+                p.style.fontWeight = "bold";
+        });
+        });
+
+
+        // EXERCISE 2
+        let form = document.querySelector("form");
+        console.log(form);
+
+        let firstName = document.getElementById("fname");
+        let lastName = document.getElementById("lname");
+        let submitBtn = document.getElementById("submit");
+        console.log(firstName);
+        console.log(lastName);
+        console.log(submitBtn);
+
+        let fN = document.querySelector('input[name="firstname"]');
+        let lN = document.querySelector('input[name="lastname"]');
+        console.log(fN);
+        console.log(lN);
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let userFirstName = firstName.value;
+            let userLastName = lastName.value;
+
+            if (userFirstName.trim() === "" || userLastName.trim() === "") {
+                e.preventDefault(); // do not submit
+                alert("First name and last name must be filled out");
+                return; //stop the code down so empty lis wont be created
+            }
+
+            let ul = document.querySelector(".usersAnswer");
+            
+            let newLi = document.createElement("li");
+            newLi.textContent = ('First Name: ' + userFirstName);
+
+            let newLi2 = document.createElement("li");
+            newLi2.textContent = ('Last Name: ' + userLastName);
+
+            ul.appendChild(newLi);
+            ul.appendChild(newLi2);
+        });
+
+        // EXERCISE 3
+        let allBoldItems = [];
+
+        function getBoldItems(){
+            let boldText = document.querySelectorAll("strong");
+            allBoldItems = Array.from(boldText);
+        };
+
+        getBoldItems();
+
+        function highlight(){
+            allBoldItems.forEach(item => { // since it is an array, style cannot be applied, i need a loop
+                item.style.color = "blue";
+            });
+        };
+
+        function returnItemsToDefault(){
+            allBoldItems.forEach(item => {
+            item.style.color = "black";
+            });
+        };
+
+        allBoldItems.forEach(item => {
+            item.addEventListener("mouseover", highlight);
+            item.addEventListener("mouseout", returnItemsToDefault);
+        });
+    </script>
+
+</body>
+</html>
