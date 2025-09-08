@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Exercise 1 -->
+    <table id="sampleTable" border="1"> 
+    <tr>
+        <td>Row1 cell1</td> 
+        <td>Row1 cell2</td>
+    </tr> 
+    <tr>
+        <td>Row2 cell1</td> 
+        <td>Row2 cell2</td>
+    </tr> 
+    </table>
+
+    <input type="button" onclick="insertRow()" value="Insert row">
+    
+    <!-- Exercise 2 -->
+    <button id="jsstyle">Style</button> 
+
+    <!-- Exercise 3 -->
+    <div>
+        <button id="jsstyle2">Style2</button>
+    </div>
+
+    <script>
+
+        // Exercise 1
+        function insertRow(){
+            // find the table element
+            let table = document.getElementById("sampleTable");
+            
+            // create new row <tr> and new cells
+            let newRow = table.insertRow();
+            let newCell1 = newRow.insertCell();
+            newCell1.textContent = "New cell 1";
+            let newCell2 = newRow.insertCell();
+            newCell2.textContent = "New cell 2"
+        }
+
+        // Exercise 2
+        let btn = document.getElementById("jsstyle");
+        btn.addEventListener("click", () => {
+            btn.style.backgroundColor = "red"
+            console.log("btn background color changed")
+        } )
+
+        // Exercise 3
+        let div = document.querySelector("div");
+        let btndiv = document.getElementById("jsstyle2");
+
+        div.addEventListener("click", () => {
+            console.log("Div clicked");
+        });
+
+        btndiv.addEventListener("click", (e) => {
+            btndiv.style.backgroundColor = "blue";
+            console.log("Button clicked");
+            e.stopPropagation();
+        });
+
+        btndiv.addEventListener("mouseover", () => {
+            btndiv.style.color = "white";
+        });
+
+        btndiv.addEventListener("mouseout", () => {
+            btndiv.style.color = "black";
+        });
+
+    </script>
+
+</body>
+</html>
