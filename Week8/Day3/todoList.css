@@ -1,0 +1,24 @@
+body {
+    background-color: pink;
+}
+
+#title {
+    text-align: center;
+}
+
+#todoForm {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    text-align: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
