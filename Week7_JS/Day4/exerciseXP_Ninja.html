@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise XP Ninja</title>
+</head>
+<body>
+    <script>
+    // Exercises XP Ninja
+    // Last Updated: March 6th, 2025
+
+    // What we will learn:
+    // Variables
+    // Conditionnals
+    // Loops
+
+
+    // Exercise 1 : Checking the BMI
+    // Instructions
+    // Hint: You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
+
+    // Create two objects, each object should hold a person’s details. Here are the details:
+    // FullName
+    // Mass
+    // Height
+
+    // Each object should also have a key which value is a function (ie. A method), that calculates the Body Mass Index (BMI) of each person
+    // Outside of the objects, create a JS function that compares the BMI of both objects.
+    // Display the name of the person who has the largest BMI.
+
+    const person1 = {
+        FullName: "Louise Vasquez",
+        BMI: function(){
+            return this.Weight / (this.Height ** 2);          
+        },
+        Weight: 70,
+        Height: 1.70
+    };
+
+    const person2 = {
+        FullName: "Mary Rodriguez",
+        BMI: function(){
+            return this.Weight / (this.Height ** 2);      
+        },
+        Weight: 60,
+        Height: 1.85
+    };
+
+    function largestBMI(){
+        if (person1.BMI() > person2.BMI()){
+            console.log(`${person1.FullName} has the largest BMI: ${Math.round(person1.BMI())}`)
+        } else {
+            console.log(`${person2.FullName} has the largest BMI: ${Math.round(person2.BMI())}`)
+        };
+    };
+
+    largestBMI();
+
+
+
+
+    // Exercise 2 : Grade Average
+    // Instructions
+    // Hint: This Exercise is trickier then the others. You have to think about its structure before you start coding.
+    // You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
+
+    // In this exercise we will be creating a function which takes an array of grades as an argument and will console.log the average.
+
+    // Create a function called findAvg(gradesList) that takes an argument called gradesList.
+
+    // Your function must calculate and console.log the average.
+
+    // If the average is above 65 let the user know they passed
+
+    // If the average is below 65 let the user know they failed and must repeat the course.
+    // Bonus Try and split parts 1,2 and 3,4 of this exercise to two separate functions.
+    // Hint One function must call the other.
+
+    function findAvg(gradesList){
+        let sum = 0
+        for (let i=0; i < gradesList.length; i++){
+            sum += gradesList[i];
+        };
+        const average = sum / gradesList.length;
+        return average;
+    };
+
+    function passed(grades){
+        const average = findAvg(grades);
+        if (average > 65){
+            console.log(`You passed the course with an average grade of ${average}`);
+        } else {
+            console.log(`You failed the course with an average grade of ${average}`);
+        };
+    };
+
+    passed([90, 95, 100, 85]);
+
+
+    </script>
+</body>
+</html>

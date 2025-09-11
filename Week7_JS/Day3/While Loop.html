@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+  // while (condition) { 
+  //     /* do something */
+  // };
+
+  const queue = ["email Ana", "backup DB", "deploy"];
+
+  while (queue.length > 0) {         // keep going while we still have tasks
+    const task = queue.shift();      // task is the first task you remove, which is email ana, then once remove, the backup becomes the first task to remove, and so on...
+    console.log("Doing:", task);     // do it
+  };
+  // -> stops when queue.length is 0 -->
+
+  let n = 3; // ← you choose the starting number here
+  while (n > 0) {
+  console.log(n); // prints the current value
+  n = n - 1; // then lowers it by 1
+  }
+  console.log("Lift off!");
+
+
+  // do...while (close cousin)
+
+  // Runs at least once, then keeps going while the condition is true:
+  const input;
+  do {
+    input = getUserInput(); // runs once even if input is already valid
+    } while (!isValid(input));
+
+  
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
+
+
