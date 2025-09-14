@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 3px 5px;
+    }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>1:1</td>
+            <td>2:1</td>
+            <td>3:1</td>
+            <td>4:1</td>
+            <td>5:1</td>
+        </tr>
+        <tr>
+            <td>1:2</td>
+            <td>2:2</td>
+            <td>3:2</td>
+            <td>4:2</td>
+            <td>5:2</td>
+        </tr>
+        <tr>
+            <td>1:3</td>
+            <td>2:3</td>
+            <td>3:3</td>
+            <td>4:3</td>
+            <td>5:3</td>
+        </tr>
+        <tr>
+            <td>1:4</td>
+            <td>2:4</td>
+            <td>3:4</td>
+            <td>4:4</td>
+            <td>5:4</td>
+        </tr>
+        <tr>
+            <td>1:5</td>
+            <td>2:5</td>
+            <td>3:5</td>
+            <td>4:5</td>
+            <td>5:5</td>
+        </tr>
+    </table>
+
+    <script>
+
+    // Exercises XP Gold
+
+    // What we will learn:
+    // Variables, Conditionals, Loops
+    // Functions
+    // DOM Manipulation
+    // Styling with CSS and the DOM
+
+    // Exercise 1 : is_Blank
+    // Instructions: Write a program to check whether a string is blank or not.
+
+    function isBlank(string){
+        return string === ""; // directly returns true or false
+    };
+    console.log(isBlank(""));
+    console.log(isBlank("abc"));
+
+    // Exercise 2 : Abbrev_name
+    // Instructions: Write a JavaScript function to convert a string into an abbreviated form.
+
+    function abbrevName(fullName){
+        const names = fullName.split(" ");
+        const firstName = names[0];
+        const lastName = names[1];
+        const letter = lastName[0]
+        return `${firstName} ${letter}.`
+
+    };
+    console.log(abbrevName("Fransheska Echevarria"));
+
+    // Exercise 3 : SwapCase
+    // Instructions: Write a JavaScript function which takes a string as an argument and swaps the case of each character.
+
+    function upperLower(string){
+        let result = "";
+        for (let char of string){
+            if (char === char.toUpperCase()){
+                result += char.toLowerCase();
+            } else {
+                result += char.toUpperCase();
+            }
+        }
+        return result;
+    }
+    console.log(upperLower("The Quick Brown Fox"));
+
+    // Exercise 4 : Omnipresent value
+    // Instructions
+    // Create a function that determines whether an argument is omnipresent for a given array.
+    // A value is omnipresent if it exists in every subarray inside the main array.
+
+    function isOmnipresent(arrays, number){
+        for (let array of arrays){
+            let found = false; // for each sub-array reset to false when looping through them for first time one by one
+
+            // check elements in current sub-array
+            for (let n of array){            
+                if (n === number){
+                    found = true;
+                    break; //stop checking THIS subarray
+                }
+            }
+            if (!found) { // if the found is still false in this sub-array, return false
+                return false;
+            }
+        }
+        return true; // if we finish all sub-arrays without failing
+    }
+
+    console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1));
+    console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6));
+
+    // Exercise 5 : Red table
+    // Copy the code above and write some Javascript code to color all diagonal table cells in red.
+    let table = document.body.firstElementChild;
+    for (let i=0; i<table.rows.length; i++){
+        const row = table.rows[i];
+        const cell = row.cells[i];
+        cell.style.backgroundColor = "red";
+    }
+    </script>
+</body>
+</html>

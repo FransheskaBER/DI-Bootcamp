@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Exercises XP Ninja
+
+    // What we will learn:
+    // Variables, Conditionals, Loops
+    // Functions
+    // DOM Manipulation
+
+
+    // Exercise 1: Random Number
+    // Instructions
+    // Get a random number between 1 and 100.
+    // Console.log all even numbers from 0 to the random number.
+
+    const randomNumber = Math.floor(Math.random() * 101)
+    for (let i=0; i<randomNumber; i++){
+        if (i % 2 === 0){
+            console.log(i);
+        }
+    }
+
+    // Exercise 2: Capitalized letters
+    // Instructions
+    // Create a function that takes a string as an argument.
+    // Have the function return:
+    // The string but all letters in even indexes should be capitalized.
+    // The string but all letters in odd indexes should be capitalized.
+    // Note:
+
+    // Index 0 will be considered even.
+    // The argument of the function should be a lowercase string with no spaces.
+
+    function capi(string){
+        let str1 = "";
+        let str2 = "";
+        for (let i=0; i<string.length; i++){
+            if (i % 2 === 0){
+                str1 += string[i].toUpperCase();
+                str2 += string[i];
+            } else{
+                str1 += string[i]; // return original
+                str2 += string[i].toUpperCase();
+            }
+        }
+        return `${str1}, ${str2}`;
+    }
+    console.log(capi("abcdef"));
+
+    // Exercise 3 : Is palindrome?
+    // Instructions
+    // Write a JavaScript function that checks whether a string is a palindrome or not.
+    // Note A palindrome is a word, phrase or sequence that is spelled the same both backwards and forward, e.g., madam, bob or kayak.
+
+    function isPalindrome(string){
+        let reverseW = string.split("").reverse().join("");
+        if (string === reverseW){
+            return `'${string}' is a palindrome word`;
+        } else {
+            return `'${string}' is NOT a palindrome word`;
+        }
+    };
+
+    console.log(isPalindrome("madam"));
+    console.log(isPalindrome("hello"));
+    console.log(isPalindrome("kayak"));
+
+
+    // Exercise 4 : Biggest Number
+    // Instructions
+    // Create a function called biggestNumberInArray(arrayNumber) that takes an array as a parameter and returns the biggest number.
+    // Note : This function should work with any array;
+    
+    function biggestNumberInArray(arrayNumber){
+        let currentNumber = 0;
+        for (number of arrayNumber){
+            if (!isNaN(number) && number > currentNumber){
+                currentNumber = number;
+            }
+        }
+        return currentNumber;
+    };
+    console.log(biggestNumberInArray([-1,0,3,100, 99, 2, 99]));
+    console.log(biggestNumberInArray(['a', 3, 4, 2]));
+    console.log(biggestNumberInArray([]));
+
+    // Exercise 5: Unique Elements
+    // Instructions
+    // Write a JS function that takes an array and returns a new array with only unique elements.
+
+    function uniqueElement(array){
+        let newArray = [];
+        for (item of array){
+            if (!newArray.includes(item)){
+                newArray.push(item);
+            }
+        }
+        return `newList = ${newArray}`;
+    }
+    console.log(uniqueElement([1,2,3,3,3,3,4,5])); // newList = [1,2,3,4,5]
+    console.log(uniqueElement([0,0,0,0,1,2,2,2,2,3,3,3,3,4,5])); // newList = [0,1,2,3,4,5]
+
+    // Exercise 6 : Calendar
+    // Instructions
+    // Create a function called createCalendar(year, month)
+    // The function should create a calendar for the given year/month.
+    // The calendar should be a table, where a week is <tr>, and a day is <td>. The table top should be <th> with weekday names: the first day should be Monday, and so on until Sunday.
+    // For instance, createCalendar(2012, 9) should generate the following calendar:
+    // Hint: There shouldn’t be any code in the HTML file. The table should be created from the JS file using the DOM.
+
+    function createCalendar(year, month){
+        // first create a table
+        const table = document.createElement("table");
+
+        // add the header row
+        const headerRow = document.createElement("tr");
+        const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        for (day of weekDays){
+            const th = document.createElement("th");
+            th.textContent = day;
+            headerRow.appendChild(th);
+        }
+        table.appendChild(headerRow);
+
+        // find out which weekday the month starts, in JS months start at 0 to add month -1
+        let date = new Date(year, month -1, 1);
+        let startDay = date.getDay(); // if its 0 then sunday, 1 is monday, etc...
+
+        // adjust that first day would be monday and not sunday
+        if (startDay === 0){ // sunday is currently 0
+            startDay = 7 // sunday is now 7
+            };
+        
+        let daysInMonth = new Date(year, month, 0).getDate() // 0 means one day before first of next month
+
+        // create more rows (days)
+        let tr = document.createElement("tr");
+
+        // create empty cell for days before the first day of the month
+        for (let i=0; i<startDay -1; i++){
+            tr.appendChild(document.createElement("td")); // it is creating blank cells
+        }
+
+        // loop through all days of the month
+        for (let i=1; i<daysInMonth; i++){
+            const td = document.createElement("td");
+            td.textContent = i;
+            tr.appendChild(td);
+
+            // if sunday, start a new row
+            if ((i + startDay -1) % 7 === 0) {
+                table.appendChild(tr);
+                tr = document.createElement("tr");
+            }
+        }
+        
+        if (tr.children.length > 0){
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table);
+    }
+
+    console.log(createCalendar(2025, 9))
+    </script>
+</body>
+</html>

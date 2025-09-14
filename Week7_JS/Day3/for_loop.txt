@@ -29,3 +29,35 @@ for (var temp = 0; temp < 5; temp++) {
   // Runs 5 times, with values of temp 0 through 4.
   console.log(temp + ": Institute!");
 }
+
+
+
+const basket = ["apple", "oranges", "grapes"];
+
+for (let i=0; i<basket.lenght; i++) {
+  console.log(basket[i]);
+}
+
+basket.forEach(item => {
+  console.log(item);
+})
+
+
+- for of > iterating, go one by one through the aaray basket and look at each item in the basket,
+you can iterate over arrays and strings. iterate is only for arrays and strings.
+
+for (item of basket) {
+  console.log(item);
+}
+
+- for in > work only for objects properties, we are no iterating, we are enumerating over each property
+so we can see the properties. enumerate is only for objects
+const detailedBaskets = {
+  apples: 5, 
+  oranges: 10, 
+  grapes: 1000
+}
+
+for (item in detailedBaskets) {
+  console.log(item)
+}
