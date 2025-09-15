@@ -1,77 +1,66 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav></nav>
-
-    <script src="ExercisesXP.js">
-
     // 🌟 Exercise 1 : Scope
     // Instructions
     // Analyse the code below, and predict what will be the value of a in all the following functions.
     // Write your prediction as comments in a js file. Explain your predictions.
 
-    // function funcOne(){
-    //     let a = 5; // with "const" > TypeError: Assignment to constant variable.
-    //     if(a>1){
-    //         a=3;
-    //     }
-    //     alert(`inside the funcOne function ${a}`);
-    // }
-    // console.log(funcOne()); // 3
+    function funcOne(){
+        let a = 5; // with "const" > TypeError: Assignment to constant variable.
+        if(a>1){
+            a=3;
+        }
+        alert(`inside the funcOne function ${a}`);
+    }
+    console.log(funcOne()); // 3
     
     // when you change let a=5 to a const a=5 you get a type error, because yuo cannot reassign a const so a=3 in the
     // if condition drops an error. With const once you give a variable a value, you cannot change it. 
     // With let a=5, let alows you to change variable a to when you change it to 3, then the alert will print the updated value.
 
-    // let a = 0;
-    // function funcTwo() {
-    //     a = 5;
-    // }
+    let a = 0;
+    function funcTwo() {
+        a = 5;
+    }
 
-    // function funcThree() {
-    //     alert(`inside the funcThree function ${a}`);
-    // }
+    function funcThree() {
+        alert(`inside the funcThree function ${a}`);
+    }
 
-    // console.log(funcThree()) // alert 0 
-    // console.log(funcTwo()) // undefined 
-    // console.log(funcThree()) // alert 5
+    console.log(funcThree()) // alert 0 
+    console.log(funcTwo()) // undefined 
+    console.log(funcThree()) // alert 5
 
     // when you console log separately the second funcThree resets to 0 so it prints the alert with 0 but because you are
     // run them together one by one, the funcTwo sets a to 5 so the second funcThree will print the alert with 5.
     // with const you will get an type error because const variables can not have reassigned values, so you get first
     // the alert with 0 and then the type error in funcTwo.
 
-    // function funcFour() {
-    // window.a = "hello";
-    // }
-    // function funcFive() {
-    //     alert(`inside the funcFive function ${a}`);
-    // }
+    function funcFour() {
+    window.a = "hello";
+    }
+    function funcFive() {
+        alert(`inside the funcFive function ${a}`);
+    }
 
-    // console.log(funcFour()); // undefined
-    // console.log(funcFive()); // hello
+    console.log(funcFour()); // undefined
+    console.log(funcFive()); // hello
     // the first funcFour doesnt return anything, hence undefined. When calling the funcFive, because in funcFour, we
     // assign a to hellow so it will alert "hello".
 
-    // let a = 1;
-    // function funcSix() {
-    //     let a = "test";
-    //     alert(`inside the funcSix function ${a}`);
-    // }
-    // console.log(funcSix()); // test
-    // console.log(a); // 1
-    // // it prints the aler with "test" because a was reassigned to test in the funcSix. 
+    let a = 1;
+    function funcSix() {
+        let a = "test";
+        alert(`inside the funcSix function ${a}`);
+    }
+    console.log(funcSix()); // test
+    console.log(a); // 1
+    // it prints the aler with "test" because a was reassigned to test in the funcSix. 
 
-    // let a = 2;
-    // if (true) {
-    //     let a = 5;
-    //     alert(`in the if block ${a}`); // 5
-    // }
-    // console.log(alert(`outside of the if block ${a}`)); // 2
+    let a = 2;
+    if (true) {
+        let a = 5;
+        alert(`in the if block ${a}`); // 5
+    }
+    console.log(alert(`outside of the if block ${a}`)); // 2
     // // in the if block, the variable's value stays the same only in the if block not outside. 
 
 
@@ -210,8 +199,3 @@
         displayJuice();
     }
     makeJuice2("large");
-
-    </script>
-
-</body>
-</html>
