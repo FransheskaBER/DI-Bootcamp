@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+
+        // .REDUCE()
+
+        const numbers = [2, 4, 6];
+        const totalMultiplication = numbers.reduce((runningTotal, number) => runningTotal * number, 1);
+        console.log(totalMultiplication); //48
+
+        const letters = ["a", "b", "c"];
+        const string = letters.reduce((currentResult, letter) => currentResult + letter , "");
+        console.log(string); // "abc"
+
+        const words = ["I", "love", "pizza"];
+        const sentence = words.reduce((currentStr, word) => currentStr + " " + word , "" );
+        console.log(sentence.trim()); // "I love pizza"
+
+        const words2 = ["I", "love", "pizza"];
+        const sentence2 = words2.reduce((currentStr, word) => currentStr + " " + word);
+        console.log(sentence2); // "I love pizza"
+
+
+
+
+
+    </script>
+</body>
+</html>
