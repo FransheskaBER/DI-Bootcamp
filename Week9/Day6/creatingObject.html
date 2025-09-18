@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="creatingObjs.js">
+    // Daily challenge : Creating Objects
+
+    // What You will learn :
+    // Create Objects
+
+    // Instructions
+    // In this exercise, you will use object oriented programming concepts to define and use a custom object in JavaScript.
+
+    // Create a class named Video. The class should be constructed with the following parameters:
+    // title (a string)
+    // uploader (a string, the person who uploaded it)
+    // time (a number, the duration of the video - in seconds)
+    // Create a method called watch() which displays a string as follows:
+    // “uploader parameter watched all time parameter of title parameter!”
+    // Instantiate a new Video instance and call the watch() method.
+    // Instantiate a second Video instance with different values.
+
+    class Video {
+        constructor(title, uploader, time) {
+            this.title = title;
+            this.uploader = uploader;
+            this.time = time;
+        }
+
+        watch() {
+            return `${this.uploader} watched all ${this.time} of ${this.title}!`;
+        }
+    }
+
+    const newVideo = new Video("Juice choreography", "Fransheska", 60);
+    console.log(newVideo.watch());
+
+    const anotherVid = new Video("How to invest", "Yotam", 150);
+    console.log(anotherVid.watch());
+
+    // Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
+    // Think of the best data structure to save this information within the array.
+    // Bonus: Loop through the array to instantiate those instances.
+
+    const videoData = [
+        { title: "Learn JS in 10 Minutes", uploader: "CodeWithAmy", time: 600 },
+        { title: "Cute Dog Compilation", uploader: "PetLoversChannel", time: 420 },
+        { title: "Epic Mountain Drone Footage", uploader: "TravelVids", time: 300 },
+        { title: "How to Cook Perfect Pasta", uploader: "ChefMarco", time: 720 },
+        { title: "Top 10 Chess Strategies", uploader: "ChessMaster101", time: 900 },
+    ];
+
+    console.log(videoData[0]);
+
+    const allVideos = videoData.map(data => new Video(data.title, data.uploader, data.time));
+    allVideos.forEach(video => {
+        console.log(video.watch());
+    })
+
+
+
+
+
+    </script>
+</body>
+</html>
