@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="exercisesXP.js">
+
+    // 🌟 Exercise 1 : Location
+    // Instructions
+    // Analyze the code below. What will be the output?
+
+    const person = {
+        name: 'John Doe',
+        age: 25,
+        location: {
+            country: 'Canada',
+            city: 'Vancouver',
+            coordinates: [49.2827, -123.1207]
+        }
+    }
+
+    const {name, location: {country, city, coordinates: [lat, lng]}} = person;
+
+    console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+    // Ouput: "I am John Doe, from Vancouver, Canada. Latitude (49.2827), Longitude(-123.1207)"
+
+    const user = {
+        name: "yotam",
+        family: {
+            parents:{
+                mom: "Dovrat",
+                dad: "Youval",
+                siblings: ["Yarden", "Asaf"]
+            } 
+        }
+    }
+
+    const {family: {parents: {siblings: [sister, brother_]}}} = user; 
+    console.log(sister);
+    console.log(brother_);
+
+    const {family: {parents: {siblings: [, brother]}}} = user;
+    console.log(`Printing just the second item of the array in siblings: ${brother}`)
+
+    const {family: {parents: {dad: father}}} = user;
+    console.log(father);
+
+
+    // 🌟 Exercise 2: Display Student Info
+    // Instructions
+    // Using the code above, destructure the parameter inside the function and return a string as the example seen below:
+    //output : 'Your full name is Elie Schoppik'
+
+    function displayStudentInfo(objUser){
+        const {first, last} = objUser;
+        console.log(`Your full name is ${first} ${last}`)
+    }
+
+    displayStudentInfo({first: 'Elie', last:'Schoppik'});
+
+
+    // 🌟 Exercise 3: User & id
+    // Instructions
+    // Using methods taught in class, turn the users object into an array.
+    // FYI : The number is their ID number.
+    // Modify the outcome of part 1, by multipling the user’s ID by 2.
+    
+    const users = {
+        user1: 18273,
+        user2: 92833,
+        user3: 90315
+    }
+
+    console.log(Object.entries(users));
+    // Excepted output: [ [ 'user1', 18273 ], [ 'user2', 92833 ], [ 'user3', 90315 ] ]
+
+    const newIds = Object.entries(users).map(([key, value]) => [key, value*2]);
+    console.log(newIds);
+    // Excepted output: [ [ 'user1', 36546 ], [ 'user2', 185666 ], [ 'user3', 180630 ] ]
+
+
+    // Exercise 4 : Person class
+    // Instructions
+    // Analyze the code below. What will be the output?
+
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+
+    const member = new Person('John');
+    console.log(typeof member);
+    // Object
+
+
+    // 🌟 Exercise 5 : Dog class
+    // Instructions
+    // Using the Dog class below:
+    
+    class Dog {
+        constructor(name) {
+            this.name = name;
+        }
+    };
+
+    // Analyze the options below. Which constructor will successfully extend the Dog class?
+    
+    // 1
+    class Labrador extends Dog {
+        constructor(name, size) {
+            this.size = size; // ❌ Error → You used this before calling super(name).
+        }
+    };
+
+    // 2
+    class Labrador extends Dog {
+        constructor(name, size) { // ✅ Correct → Calls the parent constructor with name as a parameter
+            super(name);         //     and then with super, and then sets its own property size with this.
+            this.size = size;    
+        }
+    };
+
+    // 3
+    class Labrador extends Dog {
+        constructor(size) { // ❌ Error → name is not defined as a parameter in the constructor
+            super(name);
+            this.size = size;
+        }
+    };
+
+    // 4
+    class Labrador extends Dog {
+        constructor(name, size) {
+            this.name = name;
+            this.size = size;
+        }
+    };
+
+    // To succesfully extend a class usin the word "extends" you must first call that argugment as a parameter in the constructor and then
+    // use "super(...)" and then set your own parameter with this.
+    
+
+    
+    // 🌟 Exercise 6 : Challenges
+    // Evaluate these (ie True or False)
+
+    // [2] === [2] > False
+    // {} === {} > False
+
+    // ✅ In JavaScript, arrays and objects are compared by reference, not by value.
+    // The only time === is true is when you compare the exact same reference, like:
+
+    const a = [2];
+    const b = a;
+    console.log(a === b); // true
+
+
+    // What is, for each object below, the value of the property number and why?
+    const object1 = { number: 5 }; // 5
+    const object2 = object1; // same as object 1
+    const object3 = object2; // same as object 1
+    const object4 = { number: 5}; // 5
+
+    object1.number = 4; 
+    console.log(object2.number) // 4 - use same reference as obj1
+    console.log(object3.number) // 4 - use same reference as obj1
+    console.log(object4.number) // 5
+
+
+    // Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin etc …
+    class Animal{
+        constructor(name, type, color){
+            this.name = name;
+            this.type = type;
+            this.color = color;
+        }
+    }
+
+    // Create a class Mammal that extends from the Animal class. Inside the class, add a method called sound().
+    // This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color)
+    // as well as the sound it makes.
+    class Mammal extends Animal {
+        constructor(name, type, color){
+            super(name, type, color);
+        }
+        
+        sound(sound){
+            console.log(`${this.name} is a ${this.color} ${this.type} and makes the sound ${sound}`)
+        }
+    }
+    
+    // Create a farmerCow object that is an instance of the class Mammal. The object accepts a name, a type and a color and
+    // calls the sound method that “moos” her information.
+    // For example: Moooo I'm a cow, named Lily and I'm brown and white
+    const FarmerCow = new Mammal ("Pepper", "cow", "white and black");
+    FarmerCow.sound("mooooo....");
+
+    </script>
+</body>
+</html>
