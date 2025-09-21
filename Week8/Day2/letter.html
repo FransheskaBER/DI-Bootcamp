@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // Daily Challenge : Letters
+
+    // What You will learn :
+    // Use the DOM, Forms and event listeners
+
+
+    // Instructions
+    // Daily challenge : Show only the letters
+    // Create an input type text that takes/shows only letters. (ie. numbers and special characters won’t be accepted)
+
+    // Hint: use one of the following events to remove any character that is not a letter
+
+    // keyup event
+    // or keypress event
+    // or keydown event
+    // or input event
+
+    // Hint : Check out keycodes in Javascript or Regular Expressions
+
+    document.addEventListener("keydown", (e) => {
+        let code = e.key.charCodeAt(0); // The charCodeAt(0) takes the character code so you can check if it falls in the range of letter
+
+        // the codes of letters are:
+        // 65-90 for A until Z
+        // 97-122 for a until z
+
+        if ((code >= 65 && code <=90) || (code >=97 && code <=122)){
+            console.log(e.key);
+        } else {
+            console.log("Can't print. It is not a letter");
+        }
+    });
+
+
+    </script>
+</body>
+</html>
