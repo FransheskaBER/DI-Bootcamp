@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <img src="screenshot.png">
+    </main>
+    <script>
+    
+    // Mini Project - Drumset
+
+    // What you will learn
+    // DOM events
+    // DOM tree
+    // HTML Audio
+
+    // Project Brief
+    // Create a drumset using HTML, CSS, JS.
+
+    // Goal of this Mini project
+    // This looks complex, but it’s pretty simple.
+
+    // Get the clicked element, or key press.
+    // Use it’s value to get the correct audio element.
+    // Play the audio element.
+
+    // Hints
+    // Focus on the JS. Get it working. Make it look pretty later.
+    // Look up how to play audio in HTML and JS. (w3schools)
+    // Add event listeners for keyboard and/or mouse clicks.
+    // for keyboard events, you can get the key by looking at the property keyCode of the event object
+    // for mouse click events, you can get the key by looking at the this object.
+    // Get started with this repository
+
+    // The repo contains a folder with soundfiles.
+
+    const sounds = {
+        97: "sounds/boom.wav",
+        115: "sounds/clap.wav",
+        100: "sounds/hihat.wav",
+        102: "sounds/kick.wav",
+        103: "sounds/openhat.wav",
+        104: "sounds/ride.wav",
+        106: "sounds/snare.wav",
+        107: "sounds/tink.wav",
+        108: "sounds/tom.wav",           
+    }
+
+
+     document.addEventListener("keydown", (e) => {
+        let code = e.key.charCodeAt(0); // The charCodeAt(0) takes the character code so you can check if it falls in the range of letter
+
+        // the codes of letters are:
+        // 65-90 for A until Z
+        // 97-122 for a until z
+
+        if (code >= 65 && code <=90){
+            code += 32; // so now all keywords are lowercase
+        }
+
+        if (sounds[code]) { // does this keyword exist in my sounds object above? Does this object sounds have this keyword?
+            new Audio(sounds[code]).play() //play the value of that keyword which it is the file path
+        }
+    });
+
+
+    </script>
+</body>
+</html>
