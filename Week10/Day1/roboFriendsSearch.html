@@ -2,9 +2,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Robofriends</title>
     <link rel="stylesheet" href="roboFriends.css">
     <link href="https://fonts.cdnfonts.com/css/sega-logo-font" rel="stylesheet">
+    <style>
+    header {
+        background-color: green;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 2rem;
+        font-family: 'SEGA LOGO FONT', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .searchBar {
+        padding: 10px;
+    }
+
+    input {
+        width: 350px;
+        height: 35px;
+        padding-left: 10px;
+        font-size: 1rem;
+    }
+
+    main {
+        background-color: blueviolet;
+        background-image: url(circuit-pattern.png);
+    }
+
+    .cardContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 100px;
+    }
+
+    .card {
+        background-color: #8be0dc;
+        background-image: url(card-pattern.png);
+        border-radius: 15px;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    img {
+        background-color: grey;
+        border-radius: 200px;
+    }
+    </style>
                 
 </head>
 <body>
@@ -19,7 +71,7 @@
         </div>
     </main>
 
-    <script src="roboFriendsSearch.js">
+    <script>
 
     // Mini-Project - Robo-Friends Search
 
