@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Exercises XP Ninja
+
+    // What we will learn
+    // Advanced functions
+
+    // Exercise 1 : Merge Words
+    // Instructions
+    // Create a function such as mergeWords('Hello')() that returns the following string: 'Hello'
+    // When the function is called without any arguments return a string where all words have been merged into a sentence.
+
+    // For example
+    // mergeWords('There')('is')('no')('spoon.')();
+    // should return 'There is no spoon.'
+    // Below is a verbose JavaScript solution, turn this into a currying function.
+
+    function mergeWords(string) {
+    return function(nextString) {
+    if (nextString === undefined) { //if the string is undefined like () then stop and return string
+        return string;
+    } else {
+        return mergeWords(string + ' ' + nextString); // otherwise if the nextstring has a string, add it to the main string, and continnue adding
+                                                        // all the nextstrings that are being passed until you see undefined > ()
+    }
+    }
+    }
+
+    const mergedwords2 = (mainStr) => (nextStr) => nextStr === undefined ? mainStr : mergedwords2(`${mainStr} ${nextStr}`);
+    console.log(mergedwords2("I")("Love")("JS")());
+    console.log(mergedwords2("Hello")());
+
+    </script>
+</body>
+</html>

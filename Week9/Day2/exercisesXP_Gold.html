@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Exercises XP Gold
+    // Last Updated: September 22nd, 2023
+
+    // What we will learn
+    // Advanced functions
+
+    // Exercise 1 : Nested functions
+    // Using the code below, and before executing it, predict the outcome and explain how you came to this conclusion.
+    // Change the code below to nested arrow functions.
+
+    let landscape = function() {
+
+    let result = "";
+
+    let flat = function(x) {
+    for(let count = 0; count<x; count++){
+        result = result + "_";
+    }
+    }
+
+    let mountain = function(x) {
+    result = result + "/"
+    for(let counter = 0; counter<x; counter++){
+        result = result + "'"
+    }
+    result = result + "\\"
+    }
+
+    flat(4);
+    mountain(4);
+    flat(4)
+
+    return result;
+    }
+
+    console.log(landscape()) 
+    console.log("\\") // it prints one \
+    // output: ____/''''\____
+    // Explanation:
+    // The variable "landscape" is a function, and that function starts with the variable "result" that takes builds up a string. The function calls two nested
+    // functions "flat" and "mountain", that append pieces of string to the main variable result. Both nested functions take a parameter. The flat nested func
+    // append the string "_" to the results x amount of times. The mountain nested func appends a slack / then ' x amount of times and ends with a backlash \
+
+    //nested arrow functions:
+    let landscape2 = () => {
+
+    let result = "";
+    let flat = x => {
+    for(let i=0; i<x; i++) result += "_";
+    };
+
+    let mountain = x => {
+        result += "/";
+        for(let i=0; i<x; i++) result += "'";
+        result += "\\";
+    };
+
+    flat(6);
+    mountain(6);
+    flat(6)
+    return result;
+};
+
+console.log(landscape2())
+
+
+    // Exercise 2 : Closure
+    // Instructions
+    // Analyse the code below, and before executing it, predict the outcome of the last line.
+
+    const addTo = x => y => x + y; // this func takes a parameter and returns a nested func
+    const addToTen = addTo(10); // here we are saying 10 is the fixed parameter for the first func "x" addTo and that gives us back a nested func, we save that nested
+                                // func in the variable addToTen
+    console.log(addToTen(3)); // now we are calling the variable addToTen that has the nested func with parameter 3 which is "y"
+    
+    // predicted outcome: 13
+
+
+    // Exercise 3 : Currying
+    // Instructions
+    // Analyse the code below, and before executing it, predict the outcome of the last line.
+    
+    const curriedSum = (a) => (b) => a + b
+    console.log(curriedSum(30)(1));
+    // predicted outcome: 31
+
+
+
+    // Exercise 4 : Currying
+    // Analyse the code below, and before executing it, predict the outcome of the last line.
+    const curriedSum2 = (a) => (b) => a + b
+    const add5 = curriedSum2(5)
+    console.log(add5(12));
+    // predicted outcome: 17
+
+
+
+    // Exercise 5 : Composing
+    // Analyse the code below, and before executing it, predict the outcome of the last line.
+    const compose = (f, g) => (a) => f(g(a));
+    const add1 = (num) => num + 1;
+    const add_5 = (num) => num + 5;
+    compose(add1, add_5)(10)
+    // predicted outcome: 16
+
+
+
+    </script>
+</body>
+</html>
