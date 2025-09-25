@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Exercises XP Ninja
+    // Last Updated: March 21st, 2025
+
+    // What you will learn:
+    // Array methods
+    // Destructuring
+
+
+    // Exercise 1 : Dog age to Human years
+    // Instructions
+    // Using the following data
+
+    const data = [
+    {
+        name: 'Butters',
+        age: 3,
+        type: 'dog'
+    },
+    {
+        name: 'Cuty',
+        age: 5,
+        type: 'rabbit'
+    },
+    {
+        name: 'Lizzy',
+        age: 6,
+        type: 'dog'
+    },
+    {
+        name: 'Red',
+        age: 1,
+        type: 'cat'
+    },
+    {
+        name: 'Joey',
+        age: 3,
+        type: 'dog'
+    },
+    {
+        name: 'Rex',
+        age: 10,
+        type: 'dog'
+    },
+    ];
+    // Use a loop to find the sum of the dogs’ ages in human years.
+    // Hint: 1 dog year equals 7 human years
+    // Using the reduce() method, find the sum of the dogs’ ages in human years.
+    
+    const dogs = data.filter(animal => animal.type === "dog");
+    console.log(dogs);
+
+    let ageSum = 0
+    dogs.forEach(dog => ageSum += dog.age);
+    console.log(ageSum*7);
+
+    const dogHumanYearsArr = dogs.map(dog => dog.age * 7);
+    console.log(dogHumanYearsArr)
+
+    const sumHumanYears = data.reduce((acc, animal) => {
+        if (animal.type === "dog"){
+            return acc + (animal.age * 7);
+        } else {
+            return acc;
+        }
+    }, 0);
+    console.log(sumHumanYears);
+
+
+    // Exercise 2 : Email
+    // Instructions
+    // Clean up this email to have no whitespaces. Do it in a single line (return a new string).
+    const userEmail3 = ' cannotfillemailformcorrectly@gmail.com '
+
+    const newStr = userEmail3.trim();
+    console.log(newStr);
+
+
+
+
+    // Exercise 3 : Employees #3
+    // Instructions
+    // Using this array
+    const users = [
+        { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+        { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+        { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+        { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+        { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+        { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
+        { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
+    ];
+    // Change the structure of the users array. The user’s full name should be the key and the user’s role should be the value.
+    // Example: { 'Bradley Bouley': 'Full Stack Resident' }
+    // Hint: Step one, create an empty object.
+    const newUsers = users.reduce((acc, item) => {
+        const key = `${item.firstName} ${item.lastName}`;
+        const value = item.role;
+        acc[key] = value;
+        return acc;
+    }, {})
+
+    console.log(newUsers);
+
+
+    // Exercise 4 : Array to Object
+    // Instructions
+    // Using this array
+    const letters = ['x', 'y', 'z', 'z'];
+
+    // Use a for loop to get this output { x: 1, y: 1, z: 2 };
+    let counts = {};
+
+    for (let i=0; i<letters.length; i++){
+        let letter = letters[i]
+        if (counts[letter]){
+            counts[letter]++;
+        } else {
+            counts[letter] = 1;
+        }      
+    }
+    console.log(counts)
+    
+    // Use the reduce() method to get this output { x: 1, y: 1, z: 2 };
+    const newLetters = letters.reduce((acc, letter) => {
+        if (acc[letter]){
+            acc[letter] ++
+        } else {
+            acc[letter] = 1
+        }
+        return acc;
+    }, {})
+    console.log(newLetters);
+
+
+
+    </script>
+</body>
+</html>

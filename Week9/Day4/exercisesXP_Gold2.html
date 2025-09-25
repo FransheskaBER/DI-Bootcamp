@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // <!-- Exercises XP Gold
+    // Last Updated: September 22nd, 2023
+
+    // What you will learn:
+    // JS scope
+    // Ternary operator
+    // Template Strings
+    // Array Methods
+
+    // Exercise 1: Sum elements
+    // Instructions
+    // Write a JavaScript program to find the sum of all elements in an array.
+
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let total = 0;
+
+    array.forEach((number) => {
+        total += number;
+    });
+    console.log(total);
+
+    // Exercise 2 : Remove Duplicates
+    // Instructions
+    // Write a JavaScript program to remove duplicate items in an array.
+
+    let duplicatesArr = [1, 2, 2, 3, 3, 4, 5, 5, 6, 7];
+
+    let uniqueArr = duplicatesArr.filter((item, index) => {
+        return duplicatesArr.indexOf(item) === index;
+    })
+
+    console.log(uniqueArr);
+
+
+
+    // Exercise 3 : Remove certain values
+    // Instructions
+    // Write a JavaScript function to remove: null, 0, "", false, undefined and NaN values from an array.
+    let SampleArray = [NaN, 0, 15, false, -22, '',undefined, 47, null];
+
+    let newArr = SampleArray.filter(Boolean); //Boolean(value) converts anything to true/false. So filtering out “falsy” values can be written as this
+    console.log(newArr);
+    // Expected result : [15, -22, 47]
+
+
+    // Exercise 4 : Repeat please !
+    // Instructions
+    // Write a JavaScript function to concatenate a given string n times (default is 1).
+    // Create the repeat function yourself:
+
+    function repeatStr(string, number=1){
+        newStr = "";
+        for (let i=0; i<number; i++){
+            newStr += string;
+        }
+        return newStr;
+    }
+
+    console.log(repeatStr("ha!",3));
+
+
+    // Exercise 5 : Turtle & Rabbit
+    // For this exercise, look at the lesson More JS methods.
+
+    // Using this code :
+
+    const startLine = '     ||<- Start line';
+    let turtle = '🐢';
+    let rabbit = '🐇';
+
+    // Line up the Turtle and the Rabbit at the start line.
+    // Expected Output:
+
+    //     When you write:
+    console.log(startLine);
+    console.log(turtle.padStart(startLine.indexOf("S")-1));
+    console.log(rabbit.padStart(startLine.indexOf("S")-1));
+
+    //     It should look like this:
+
+    //     '     ||<- Start line'
+    //     '       🐢'
+    //     '       🐇'
+
+
+    // What happens when you run turtle = turtle.trim().padEnd(9, '='); ? -->
+    </script>        
+    </body>
+</html>

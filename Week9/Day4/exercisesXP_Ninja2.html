@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Exercises XP Ninja
+    // Last Updated: September 22nd, 2023
+
+    // What you will learn:
+    // JS scope
+    // Ternary operator
+    // Template Strings
+    // Array methods
+
+
+    // Exercise 1 : Menu
+    // Instructions
+    // Using the array below:
+
+    const menu = [
+    {
+        type : "starter",
+        name : "Houmous with Pita"
+    },
+    {
+        type : "starter",
+        name : "Vegetable Soup with Houmous peas"
+    },
+    {
+        type : "dessert",
+        name : "Chocolate Cake"
+    }
+    ]
+    // Using an array method and ternary operator, check if at least one element in the menu array is a dessert.
+    const hasDessert = menu.some(item => item.type === "dessert");
+    console.log(hasDessert)
+
+
+    // Using an array method, check if all the elements in the array are starters.
+    const allstarter = menu.every(item => item.type === "starter");
+    console.log(allstarter);
+
+    // Using an array method, check if there is at least one element in the array that is a main course.
+    // If not, add a main course of your choice to the array.
+    const hasMainCourse = menu.some(item => item.type === "main course");
+    console.log(hasMainCourse)
+
+    // Using this array :
+    const vegetarian = ["vegetable", "houmous", "eggs", "vanilla", "potatoes" ]
+    // Using an array method, add a key “vegetarian” (a boolean) to the menu array. The value of the key
+    // should be true if the name of the course contains at least one element from the vegetarian array.
+
+    const updatedMenu = menu.map(item => {
+        const isVeg = vegetarian.some(veg => 
+            item.name.toLowerCase().includes(veg.toLowerCase())
+        );
+        return { ...item, vegetarian: isVeg};
+    });
+    console.log(updatedMenu);
+
+    menu.forEach(item => {
+        const isVeg = vegetarian.some(veg => 
+            item.name.toLowerCase().includes(veg.toLowerCase())
+        );
+        item.vegetarian = isVeg
+    });
+    console.log(menu);
+
+
+
+    // Exercise 2 : Chop into chunks
+    // Instructions
+    // Write a JavaScript function that takes 2 parameters: a string and a number.
+    // The function should chop the string into chunks of your chosen length (the second parameter), and the outcome should be represented in an array.
+    // Example:
+    // console.log(string_chop('developers',2)); 
+    // ["de", "ve", "lo", "pe", "rs"] 
+
+    function stringChop(string, number){
+        let newStr = [];
+        for (let i=0; i<string.length; i+=number){
+            newStr.push(string.slice(i, i+number));
+        }
+        return newStr
+    }
+    console.log(stringChop("developers", 3));
+
+
+    // Exercise 3 : You said string ?
+    // Instructions
+    // Write a JavaScript function to find a word within a string.
+    // console.log(search_word('The quick brown fox', 'fox')); 
+    // "'fox' was found 1 times." 
+    function searchWord(string, word){
+        const words = string.split(" ");
+        const count = words.filter(w => w === word).length;
+        return `"${word}" was found ${count} times`
+    };
+    console.log(searchWord("The the quick quick brown fox fox", "fox"))
+
+
+    // Exercise 4 : Reverse Array
+    // Instructions
+    // Write a function called reverseArray which accepts an array and returns the array with all values reversed.
+    // See if you can do this without creating a new array!
+    // Examples:
+
+    function reverseArray(array){ //e.g. [1, 2, 3, 4, 5]
+        for (let i=0; i < Math.floor(array.length / 2); i++){
+            const tempNum = array[i]; // e.g. 0 which is "1"
+            const lastIndex = array.length - 1 - i; // e.g. 5-1-0=4 so the index 4 which is "5"
+            array[i] = array[lastIndex]; // we are saying that index 0 now is index 4 so 5 and not 1 [5, ..]
+            array[lastIndex] = tempNum; // now we are saying the last index was the tem index which is 0 whihc was number 1 > [5,....,1]
+        }
+        return array;
+        };
+
+    console.log(reverseArray([1,2,3,4,5])); // [5,4,3,2,1]
+    console.log(reverseArray([1,2])); // [2,1]
+    console.log(reverseArray([])); // []
+    console.log(reverseArray([1,2,3,4,5,6,7,8,9,10])); // [10,9,8,7,6,5,4,3,2,1]
+
+
+    </script>
+</body>
+</html>
