@@ -1,29 +1,40 @@
-# Challenges
-# Last Updated: November 15th, 2024
-
-# What you will learn
-# Conditionals
-# Loops
-# Functions
-
+# CHALLENGES
 
 # Exercise 1
 # Instructions
 # Write a script that inserts an item at a defined index in a list.
+fruits = ["Orange", "Banana", "Apple", "Strawberry"]
+print(fruits)
 
+fruits.insert(4, "Kiwi")
+print(fruits)
 
 
 # Exercise 2
 # Instructions
 # Write a script that counts the number of spaces in a string.
-
+users = "I love python and coding"
+spaces = users.count(" ")
+print(spaces)
 
 
 # Exercise 3
 # Instructions
 # Write a script that calculates the number of upper case letters and lower case letters in a string.
+string = "I Love Python"
 
+def upperLower(text):
+    countUpper = 0
+    countLower = 0
+    for char in text:
+        if char.isupper():
+            countUpper += 1
+        elif char.islower():
+            countLower += 1
+    print(f"Total upper case letters: {countUpper}")
+    print(f"Total upper case letters: {countLower}")
 
+upperLower(string)
 
 # Exercise 4
 # Instructions
@@ -166,6 +177,4 @@
 
 # Example:
 # input : "mypassword"
-# output: "***********"
-
-
+# output: ***********
