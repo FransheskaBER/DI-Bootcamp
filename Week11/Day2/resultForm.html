@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Result</title>
+</head>
+<body>
+  <h1>Form submitted!</h1>
+  <p>This is form2.html — check the URL to see the data.</p>
+  <section id="datasection"></section>
+
+  <script>
+    const datasection = document.getElementById("datasection");
+    
+    const params = new URLSearchParams(window.location.search);
+    // optional solution:
+    // Extract values
+        // const name = params.get("name");
+        // const lastname = params.get("lastname");
+
+    // Insert into section
+        // const section = document.getElementById("output");
+        // section.textContent = `Name: ${name}, Last Name: ${lastname}`;
+    obj = {}
+    for (const [key, value] of params.entries()){
+        obj[key] = value;
+    }
+    const prettyJSONobj = JSON.stringify(obj, null, 4)
+
+
+    datasection.textContent = prettyJSONobj;
+
+
+  </script>
+</body>
+</html>

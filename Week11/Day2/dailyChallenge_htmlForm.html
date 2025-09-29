@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HRML FORM</h1>
+
+    <form id="myForm" action="" method="GET">
+        <input type="text" placeholder="John" name="name">
+        <input type="text" placeholder="Doe" name="lastname">
+        <button type="submit">Send</button>
+        <p id="output"></p>
+    </form>
+
+    <script>
+        const data = new URLSearchParams(window.location.search);
+        
+        const obj = {};
+        for (const [key, value] of data.entries()){
+            obj[key] = value
+        }
+
+        const JSONobj = JSON.stringify(obj, null, 2)
+
+        const dataOutput = document.getElementById("output");
+        dataOutput.textContent = JSONobj;
+        
+    </script>
+</body>
+</html>
