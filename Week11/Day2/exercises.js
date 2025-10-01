@@ -17,29 +17,29 @@
     // Where will the sent data appear? to my local URL
 
     // Get the query string from the current URL
-    // const queryString = window.location.search;
-    // console.log(queryString);
+    const queryString = window.location.search;
+    console.log(queryString);
 
     // // Turn it into a URLSearchParams object
-    // const params = new URLSearchParams(queryString);
+    const params = new URLSearchParams(queryString);
 
     // // prevent default reload
-    // document.getElementById("myForm").addEventListener("submit", (e) => {
-    //     e.preventDefault();
-    // })
+    document.getElementById("myForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+    })
 
     // // convert query string from URL to object
-    // obj = {};
-    // for (const [key, value] of params.entries()){
-    //     obj[key] = value
-    // }
-    // console.log(obj);
+    obj = {};
+    for (const [key, value] of params.entries()){
+        obj[key] = value
+    }
+    console.log(obj);
 
-    // const stringfyObj = JSON.stringify(obj);
-    // console.log(stringfyObj);
+    const stringfyObj = JSON.stringify(obj);
+    console.log(stringfyObj);
 
-    // const stringtoObjParse = JSON.parse(stringfyObj);
-    // console.log(stringtoObjParse)
+    const stringtoObjParse = JSON.parse(stringfyObj);
+    console.log(stringtoObjParse)
 
     // 🌟 Exercise 2 : HTML Form #2
     // Instructions
