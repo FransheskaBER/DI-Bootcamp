@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 
+    let pizza = new Promise((resolve, reject) => {
+    let available = true;
+
+    if (available) {
+        resolve("Pizza is here!");
+    } else {
+        reject("Sorry, no pizza");
+    }
+    });
+
+    pizza
+    .then(message => console.log("Success:", message))
+    .catch(error => console.log("Error:", error))
+    .finally(() => console.log("Done waiting."));
+
+    // output:
+    // Fetching user from server...
+    // Success: Pizza is here!
+    // Done waiting.
+
+
+    // imagine you are waiting for data from a server. We will use "setTimeout" to fake the waiting.
+    function fetchUser(){
+        return new Promise((resolve, reject) => {
+            console.log("Fetching user from server...");
+
+            setTimeout(() => {
+                let success = true;
+                
+                if (success) {
+                    resolve({id: 1, name: "Fransheska"});
+                } else {
+                    reject("server error: couldn't fetch user")
+                }
+            }, 2000);
+        });
+    }
+    
+    fetchUser()
+        .then(user => {
+            console.log("user fetched: ", user);
+            return user.name.toUpperCase();
+        })
+        .then(upperName => {
+            console.log("Uppercase name: ", upperName);
+        })
+        .catch(error => {
+            console.log("Ooops: ", error);
+        })
+        .finally(() => {
+            console.log("Done trying to fetch user")
+        });
+
+        // Output:
+        // user fetched:  {id: 1, name: 'Fransheska'}
+        // Uppercase name:  FRANSHESKA
+        // Done trying to fetch user
+
+    
+
+
+    </script>
+</body>
+</html>
