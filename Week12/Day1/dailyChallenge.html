@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body{
+            background-color: bisque;
+            min-height: 100vh;  
+            display: flex; /* use flexbox for centering */
+            justify-content: center; /* center horizontally */
+            align-items: center; /* center vertically */
+        }
+
+        #container{
+            display: flex;
+            flex-direction: column; /* stack elements vertically */
+            align-items: center;
+            height: 400px;
+            width: 350px;
+            padding: 24px 28px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        #myForm{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        label{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+
+        label + label {
+            margin-top: 16px;
+        }
+
+        .btn-group {
+            align-self: center;
+            margin-top: 16px;
+        }
+
+        select, input[type="number"] {
+            padding: 6px 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>Currency Converter</h1>
+        <form id=myForm action="">
+            <label>FROM:
+                <select id="baseCurrency" name="baseCurrency" class="currencyList"></select>
+            </label>
+            <label>TO:
+                <select id="targetCurrency" name="targetCurrency" class="currencyList"></select>
+            </label>
+            <label for="amount">AMOUNT:
+                <input id="amount" name="amount" type="number">
+            </label>
+            <div class="btn-group">
+                <button id="convertBtn">Convert</button>
+                <button id="swapBtn" type="button" aria-label="Swap currencies"><i class="fa-solid fa-up-down"></i></button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="currencyConverter.js"></script>
+</body>
+</html>
