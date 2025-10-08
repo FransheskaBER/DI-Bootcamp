@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #a89089;
+        }
+
+        .container {
+            background-color: #d8cfcd;
+            padding: 40px;
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        #btn {
+            background-color: #4fb6b2;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quote {
+            font-size: 22px;
+            color: #555d60;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        .footer{
+            display: flex;
+            justify-content: space-between;/* puts heart left, author right */
+            align-items: center;
+        }
+
+        .author{
+            font-size: 16px;
+            color: #4fb6b2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 10px;
+            font-style: italic;
+            text-align: right;
+        }
+        .fa-regular.fa-heart{
+            color: red;
+        }
+        .fa-solid.fa-heart{
+            color: red;
+        }
+        #likes {
+            visibility: hidden;
+        }
+        #previousQ:disabled {
+            opacity: 0.45;               /* dim it */
+            cursor: not-allowed;          /* show disabled cursor */
+        }
+        #nextQ:disabled {
+            opacity: 0.45;               /* dim it */
+            cursor: not-allowed;          /* show disabled cursor */
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    
+    <section class="container">
+        <button id="btn" type="button">Generate Quote</button>
+        <h2 class="quote"></h2>
+        <div class="footer">
+            <p id="likes">
+                <i id="heart" class="fa-solid fa-heart"></i>
+                <span id="likeCount"></span>
+            </p>
+            <p class="author"></p>
+        </div>
+        <button id="CharWithSpace">Get All Characters</button>
+        <button id="CharNoSpace">Get Characters No Spaces</button>
+        <button id="totalWords">Get All Words</button>
+        <button id="likeBtn" class="like-button"><i class="fa-regular fa-heart"></i></button>
+        <p id="successMsg"></p>
+    </section>
+
+    <form id="myForm" action="" method="GET">
+        <label>Quote <input type="text" name="quote" required></label>
+        <label>Author <input type="text" name="author" required></label>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <h1>Search Your Favorite Quote</h1>
+    <div>
+        <form id="searchBox">
+            <label>Type the name of the author
+                <input type="text" name="author" required>
+            </label>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <section class="container">
+        <h2 id="quoteSearch"></h2>
+        <p id="authorSearch"></p>
+        <button id="previousQ">Previous Quote</button>
+        <button id="nextQ">Next Quote</button>
+    </section>
+    <script src="quoteGenerator.js"></script>
+</body>
+</html>
