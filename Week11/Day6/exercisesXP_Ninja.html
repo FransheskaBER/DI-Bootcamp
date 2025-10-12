@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XP Ninja</title>
+    <style>
+        #gifContainer{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+            grid-template-rows: repeat(3, 1fr); /* 3 equal-height rows */
+            gap: 10px; /* space between grid items (optional) */
+            padding-top: 20px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="Exercise1">
+        <h1>EXERCISE 1 - Giphy API #3</h1>
+        <form id="searchForm">
+            <input type="text" name="gif" placeholder="e.g., happy">
+            <button type="submit">Find</button>
+            <button id="deleteAll" type="button">Delete All</button>
+            <div id="gifContainer"></div>
+        </form>
+    </div>
+    <script src="XP_Ninja.js"></script>
+</body>
+</html>
