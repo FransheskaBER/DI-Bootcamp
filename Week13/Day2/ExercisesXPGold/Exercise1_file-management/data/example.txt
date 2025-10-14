@@ -1,0 +1,1 @@
+I'm the "example.txt" file inside the folder "data"
