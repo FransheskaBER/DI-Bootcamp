@@ -15,24 +15,24 @@ app.listen(2000, () => {
 
 
 // RETURN DATA FROM A DATABASE:
-// app.get("/api/products", (req, res) => {
-//     res.json(products);
-// });
+app.get("/api/products", (req, res) => {
+    res.json(products);
+});
 
 // RETURN PART OF THE DATABASE (in this example everything except price):
-// app.get("/api/products", (req, res) => {
-//   const partial_products = products.map((product) => {
-//     return { id: product.id, name: product.name };
-//   });
-//   res.json(partial_products);
-// });
+app.get("/api/products", (req, res) => {
+  const partial_products = products.map((product) => {
+    return { id: product.id, name: product.name };
+  });
+  res.json(partial_products);
+});
 
 // RETURN ONLY 1 PRODUCT WITH A SPECIFIC ID:
-// app.get("/api/products/:productID", (req, res) => {
-//     const id = Number(req.params.productID);
-//     const product = products.find(product => product.id === id);
-//     res.json(product);
-// })
+app.get("/api/products/:productID", (req, res) => {
+    const id = Number(req.params.productID);
+    const product = products.find(product => product.id === id);
+    res.json(product);
+})
 
 
 // QUERY STRING = RETURN ALL ITEMS THAT START WITH A SPECIFIC WORD OR LETTER/ SEARCH STH WITH FILTER OPTIONS
