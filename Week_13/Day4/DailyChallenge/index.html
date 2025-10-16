@@ -1,0 +1,32 @@
+<html lang="en"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- sets proper character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- mobile-friendly sizing -->
+  <title>Emoji Guessing Game</title>
+  <style>
+    #randomEmoji {
+        font-size: 100px;
+    }
+    label { 
+        display: block; margin: 6px 0; /* one option per line */
+    } 
+  </style>
+</head>
+<body>
+  <h1>Emoji Guessing Game</h1>
+
+  <!-- We won't use the action attribute; JS will do fetch() on submit -->
+  <form id="gameForm"> <!-- we attach a submit listener in script.js -->
+    <p>Choose the correct name of this emoji:</p>
+
+    <div id="randomEmoji" aria-live="polite"></div> <!-- where we show the emoji -->
+
+    <div id="optionsContainer"></div> <!-- where we render the radio options -->
+
+    <button type="submit">Submit</button> <!-- submit triggers fetch() -->
+  </form>
+
+  <script src="script.js"></script> <!-- client logic -->
+</body>
+</html>
