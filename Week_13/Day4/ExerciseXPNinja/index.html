@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <main>
+        <h1>Quiz Game</h1>
+
+        <div id="screen">
+            <div id="question"></div>
+            <form id="options"></form>
+
+            <div id="feedback"></div>
+            <div id="controls">
+                <button id="submitBtn" type="button">Submit</button>
+                <button id="nextBtn" type="button" disabled>Next</button>
+            </div>
+        </div>
+
+        <div id="final" style="display:none;"></div>
+    </main>
+    <script src="script.js" defer></script> <!-- what "defer" does is tells the browser "Download this script now, but don’t run it until the entire HTML has been parsed."-->
+</body>
+</html>
