@@ -1,97 +1,116 @@
-const emojis = [
-  { emoji: "😀", name: "grinning face" },                     
-  { emoji: "😂", name: "face with tears of joy" },            
-  { emoji: "😍", name: "smiling face with heart-eyes" },
-  { emoji: "🤔", name: "thinking face" },
-  { emoji: "😎", name: "smiling face with sunglasses" },
-  { emoji: "🥳", name: "partying face" },
-  { emoji: "😴", name: "sleeping face" },
-  { emoji: "😡", name: "angry face" },
-  { emoji: "😢", name: "crying face" },
-  { emoji: "❤️", name: "red heart" }
-];
+let score = 0;
+let emojisObj = []
+let currentIndex = 0;
 
-const emojiEl = document.getElementById("randomEmoji");        // where the emoji character goes
-const optionsEl = document.getElementById("optionsContainer");  // where the radio buttons go
-const formEl = document.getElementById("gameForm");             // the form we submit
+const emoji = document.getElementById("emoji");  
+const options = document.getElementById("options");
+const feedback = document.getElementById("feedback");
+const submit = document.getElementById("submitBtn");
+const next = document.getElementById("nextBtn");
+const final = document.getElementById("final");
+const mainScreen = document.getElementById("mainScreen")  
 
-let currentCorrectAnswer = null;                                // we keep the correct name to send to server
-
-// Fisher–Yates shuffle to randomize arrays (unbiased)
-function shuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {                     // walk from end to start
-    const j = Math.floor(Math.random() * (i + 1));             // pick random index 0..i
-    [a[i], a[j]] = [a[j], a[i]];                               // swap
-    }
-    return a;                                                     // return shuffled copy
-}
-
-// Create one "round": pick a random emoji, build 3 distractors, render 4 radio options
-function newRound() {
-    // 1) pick a random emoji as the correct one
-    const correctIndex = Math.floor(Math.random() * emojis.length);  // random index
-    const correct = emojis[correctIndex];                            // the chosen emoji object
-    currentCorrectAnswer = correct.name;                              // remember the correct name
-    
-    // 2) pick 3 distractors (different names)
-    const pool = emojis.filter(e => e.name !== correct.name);        // everything but the correct one
-    const distractors = shuffle(pool).slice(0, 3);                   // take any 3 from the shuffled pool
-
-    // 3) build the 4 options (names only) and shuffle them
-    const options = shuffle([correct.name, ...distractors.map(d => d.name)]); // array of strings
-
-    // 4) render emoji
-    emojiEl.textContent = correct.emoji;                              // show big emoji
-
-    // 5) render options as radio buttons
-    optionsEl.innerHTML = "";                                         // clear previous
-    options.forEach((name) => {
-        const label = document.createElement("label");                  // one label per line
-        const input = document.createElement("input");                  // radio input
-        input.type = "radio";                                           // single-choice control
-        input.name = "emoji";                                           // same name groups the radios
-        input.value = name;                                             // value we will submit
-        input.required = true;                                          // force user to pick one
-
-        label.appendChild(input);                                       // add input to label
-        label.appendChild(document.createTextNode(" " + name));         // readable option text
-        optionsEl.appendChild(label);                                   // add to container
-    });
-}
-
-// Handle form submit with fetch → POST /game
-formEl.addEventListener("submit", async (e) => {
-    e.preventDefault();                                               // stop normal form navigation
-
-    const data = new FormData(formEl);                                // read form values
-    const guess = data.get("emoji");                                  // radios return a single string
-
-    // Prepare the minimal payload that the server expects
-    const payload = {
-        guess,                                                           // user's choice (string)
-        correctAnswer: currentCorrectAnswer                              // correct name we chose client-side
-    };
-
+window.addEventListener("DOMContentLoaded", async () => {
     try {
-        const res = await fetch("/game", {                                 // relative path (same origin)
-            method: "POST",                                                // POST as requested
-            headers: { "Content-Type": "application/json" },               // tell server it's JSON
-            body: JSON.stringify(payload)                                  // send guess + correctAnswer
-            });
+        const response = await fetch("/api/emojis");
+        emojisObj = await response.json();
 
-        const json = await res.json();                                   // read server response { message }
-        alert(json.message);                                             // show simple feedback (prompt requirement)
+        if (!Array.isArray(emojisObj) || emojisObj.length === 0){
+            emoji.textContent = "No question available";
+            submit.disabled = true;
+            return;
+        }
 
-        formEl.reset();                                                  // clear the selection
-        newRound();                                                      // immediately show a new emoji round
-    } catch (err) {
-        console.error("Submit error:", err);                             // helpful console log for debugging
-        alert("Something went wrong. Please try again.");                // basic error feedback
+        showEmojiAndOptions();
+
+    } catch (err){
+        emoji.innerHTML = "Failed to load question";
+        console.log(err);
     }
 });
 
-// boot the first round on page load
-newRound();                                                          // show first emoji + options
+function showEmojiAndOptions(){
+    options.innerHTML = "";
+    const currentEmoji = emojisObj[currentIndex];
+    
+    emoji.textContent = currentEmoji.emoji;
+
+    currentEmoji.options.forEach((option, index) => {
+        const optionIndex = `option-${index}`;
+
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        
+        input.type = "radio";
+        input.name = "option";
+        input.value = index;
+        input.id = optionIndex;
+
+        label.setAttribute("for", optionIndex);
+        label.textContent = option;
+
+        const wrapper = document.createElement("div");
+        wrapper.appendChild(input);
+        wrapper.appendChild(label);
+
+        options.appendChild(wrapper);
+    }); 
+}
+
+submit.addEventListener("click", async() => {
+    const selectedOption = new FormData(options).get("option");
+
+    if (selectedOption === null){        // we are choising "null" because that's what FormData() returns when there is not value
+        feedback.textContent = "Please choose an asnwer";
+        return;
+    }
+
+    const choiceIndex = Number(selectedOption); // we get the value of this input (name: option / value: index)
+    const emojiId = Number(emojisObj[currentIndex].id);
+
+    try {
+        const response = await fetch("/api/answer", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ emojiId, choiceIndex })
+        });
+
+        if (!response.ok){
+            const text = await response.text(); // the text() is a built in method of fetch() that returns regular text, so response.text() means “read whatever the server sent (like an error message) as plain text.”
+            feedback.textContent = `Error: ${text}`;
+            return;
+        }
+
+        const data = await response.json(); // { correct: boolean }
+        if (data.correct){
+            score += 1;
+            feedback.textContent = "Correct";
+        } else {
+            feedback.textContent = "Incorrect";
+        }
+
+        // Allow moving on to the next quesiton:
+        next.disabled = false;
+    }catch (err){
+        feedback.textContent = "Network error submitting answer";
+        console.log(err);
+    }
+});
+
+next.addEventListener("click", async () => {
+    currentIndex += 1;
+    feedback.textContent = "";
+    next.disabled = true;
+
+    if (currentIndex >= emojisObj.length){
+        // show final
+        mainScreen.style.display = "none"; // hide question area
+        final.style.display = "block"; // show final score area
+        final.textContent = `Final score: ${score} / Total questions: ${emojisObj.length}`
+        return;
+    }
+
+    showEmojiAndOptions();
+});
 
 
