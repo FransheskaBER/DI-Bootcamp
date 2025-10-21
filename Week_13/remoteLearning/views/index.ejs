@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs'); %>
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs'); %>
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="text-center mb-2">Welcome to the <%=restaurantName%>! We serve the best pizzas</h2>
+            <h3 class="text-center mb-2">Here's our menu:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <%if (pizzaMenu.length !== 0){%>
+        <div class="d-flex flex-row bd-highlight mb-3 justify-content-evenly align-items-center mt-5">
+            <%pizzaMenu.forEach(menu => {%>
+            <div class="card col-4" style="width: 18rem;">
+                <img src="images/pizza_icon.png"
+                    class="card-img-top text-center col-md-3 offset-md-3"
+                    style="width: 40%;">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Pizza:</b> <%=menu.name%></h5>
+                    <h6 class="card-title"><b>Price:</b> <%=menu.price%>$</h5>
+                    <h6 class="card-title text-center text-primary"><b>Ingredients:</b></h6>
+                    <p class="card-text text-center">
+                        <span><%=menu.ingredients.join(", ")%></span>
+                    </p>                
+                </div>
+            </div>
+            <% }) %>
+            <% } else { %>
+            <div class="col-md-12">
+                <h4>We are currently no serving any pizza.</h4>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs'); %>
+</body>
+</html>
