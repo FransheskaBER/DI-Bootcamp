@@ -31,9 +31,7 @@ app.post("/users", async (req, res) => {
         const { name, email } = req.body;
         if (!name || !email) return res.status(400).json({ error: "Name and email required" });
 
-        const [newUser] = await db("users")
-            .insert({ name, email, created_at: new Date() })
-            .returning("*");
+        const [newUser] = await db("users").insert({ name, email, created_at: new Date() }).returning("*");
         
         res.status(201).json(newUser);
     } catch (err) {
@@ -105,7 +103,11 @@ app.get("/or", async(req, res) => {
     }
 });
 
-
+// Transactions = group several DB operations into one package: if one step failes, none of the changes are saved:
+await db.transaction(async trx => {     // trx is just a variable for your transactions
+    await trx("accounts").where({ id: 1 }).decrement("balance", 100);
+    await trx("account").where({ id: 2 }).increment("balance", 100);
+});
 
 
 const PORT = 3000;
