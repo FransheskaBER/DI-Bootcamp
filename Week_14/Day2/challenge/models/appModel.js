@@ -2,6 +2,11 @@
 import db from "../config/db.js";
 
 // ---------------- CORE "READ" FUNCTIONS ---------------- 
+export async function getAllUsers(){ 
+    return await db('users').select('*')
+    // SELECT * FROM users 
+}
+
 export async function getUserById(id){ 
     return await db('users').where({ id }).first();
     // SELECT * FROM users WHERE id = ? LIMIT 1

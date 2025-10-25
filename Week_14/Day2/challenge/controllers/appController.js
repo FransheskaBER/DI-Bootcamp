@@ -1,5 +1,6 @@
 import db from "../config/db.js"
 import {
+    getAllUsers,
     getUserById,
     userExistsByEmail,
     getUserByUsername,
@@ -14,6 +15,24 @@ import bcrypt from "bcrypt";
 
 const hashRounds = 10;
 
+export async function getUsers(req, res, next){
+    try {
+        const users = await getAllUsers();
+        res.status(200).json(users);
+    } catch(err){
+        next(err);
+    }
+}
+
+export async function getUser(req, res, next){
+    try {
+        const id = req.params.id;
+        const user = await getUserById(id);
+        res.status(200).json(user);
+    } catch(err){
+        next(err);
+    }
+} 
 // REGISTRATION
 export async function userRegistration(req, res, next){
     try{
