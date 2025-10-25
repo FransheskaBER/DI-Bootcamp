@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login to your account</h1>
+
+    <form id="loginForm">
+        <input type="text" name="username" id="username" placeholder="username" required>
+        <input type="text" name="password" id="password" placeholder="password" required>
+        <button type="submit">Log in Now</button>
+    </form>
+    <div id="loginfeedback"></div>
+
+    <hr>
+
+    <section id="updateInfoSection" hidden>
+        <h1>Update your details</h1>
+        <form id="updateForm">
+            <input type="text" name="first_name" id="firstName" placeholder="first name">
+            <input type="text" name="last_name" id="lastName" placeholder="last name">
+            <input type="text" name="email" id="email" placeholder="email">
+            <input type="text" name="username" id="username" placeholder="username">
+            <button type="submit">Save Changes</button>
+        </form>
+        <div id="changesFeedback"></div>
+    </section>
+
+    <hr>
+
+    <section id="updatePassSection" hidden>
+        <h1>Update your password</h1>
+        <form id="passwordForm">
+            <input type="text" name="oldpassword" id="oldpassword" placeholder="Enter your current password" required>
+            <input type="text" name="newpassword" id="newpassword" placeholder="Enter your new password" required>
+            <button type="submit">Change Password</button>
+        </form>
+        <div id="passwordFeedback"></div>
+    </section>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginFeedback = document.getElementById("loginfeedback")
+
+        const passForm = document.getElementById("passwordForm");
+        const passFeedback = document.getElementById("passwordFeedback");
+
+        const detailsForm = document.getElementById("updateForm");
+        const detailsFeedback = document.getElementById("changesFeedback");
+
+        const infoSection = document.getElementById("updateInfoSection");
+        const passSection = document.getElementById("updatePassSection");
+
+        let currentId = null;
+
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(loginForm);
+            const loginObj = {
+                username: formData.get("username"),
+                password: formData.get("password")
+            };
+
+            const response = await fetch("/login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(loginObj),
+            });
+
+            if (!response.ok){
+                loginFeedback.textContent = data.error || "Login failed";
+                currentId = null;
+                return;
+            }
+
+            const data = await response.json();
+            loginFeedback.textContent = data.message
+            currentId = data.id;
+            infoSection.hidden = false;
+            passSection.hidden = false;
+
+            loginForm.reset();
+        });
+
+        detailsForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            if (currentId === null) {
+                detailsFeedback.textContent = "Please login first.";
+                return;
+            }
+
+            const formData = new FormData(detailsForm);
+            const detailsObj = {};
+
+            const f = formData.get("first_name")?.trim();
+            const l = formData.get("last_name")?.trim();
+            const em = formData.get("email")?.trim();
+            const un = formData.get("username")?.trim();
+
+            if (f) detailsObj["first_name"] = f;
+            if (l) detailsObj["last_name"] = l;
+            if (em) detailsObj["email"] = em;
+            if (un) detailsObj["username"] = un;
+
+            if (Object.keys(detailsObj).length === 0) {
+                detailsFeedback.textContent = "Nothing to update.";
+                return;
+            }
+
+            const response = await fetch(`/${currentId}/details`, {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(detailsObj),
+            });
+
+
+
+            if (!response.ok){
+                detailsFeedback.textContent = data.error || "updated failed";
+                currentId = null;
+                return;
+            }
+
+            const data = await response.json();
+            
+            detailsFeedback.innerHTML = `
+            This is your updated info:<br>
+            First Name: ${data.first_name ?? ""}<br>
+            Last Name: ${data.last_name ?? ""}<br>
+            Email: ${data.email ?? ""}<br>
+            Username: ${data.username ?? ""}
+            `;
+            
+            detailsForm.reset();
+        });
+
+        passForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            if (currentId === null) {
+                passFeedback.textContent = "Please login first.";
+                return;
+            }
+
+            const formData = new FormData(passForm);
+            const passObj = {
+                oldPassword: formData.get("oldpassword"),
+                newPassword: formData.get("newpassword")
+            }
+
+            const response = await fetch(`/${currentId}/password`, {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(passObj),
+            });
+                
+            if (!response.ok){
+                passFeedback.textContent = data.error || "Password change failed";
+                currentId = null;
+                return;
+            }
+
+            const data = await response.json(); 
+            passFeedback.textContent = data.message;
+
+            passForm.reset();
+        });
+    </script>
+</body>
+</html>
