@@ -1,0 +1,84 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "description": "Get milk, eggs, and bread from the supermarket",
+      "completed": false,
+      "priority": "medium",
+      "due_date": "2025-10-27"
+    },
+    {
+      "id": 2,
+      "title": "Finish coding challenge",
+      "description": "Complete the REST API exercise for the bootcamp",
+      "completed": false,
+      "priority": "high",
+      "due_date": "2025-10-28"
+    },
+    {
+      "id": 3,
+      "title": "Call mom",
+      "description": "Check in with mom to see how she’s doing",
+      "completed": true,
+      "priority": "low",
+      "due_date": "2025-10-25"
+    },
+    {
+      "id": 4,
+      "title": "Read JavaScript article",
+      "description": "Read about closures and callbacks on MDN",
+      "completed": false,
+      "priority": "medium",
+      "due_date": "2025-10-29"
+    },
+    {
+      "id": 5,
+      "title": "Update resume",
+      "description": "Add new project details from bootcamp to resume",
+      "completed": false,
+      "priority": "high",
+      "due_date": "2025-11-01"
+    },
+    {
+      "id": 6,
+      "title": "Plan weekend trip",
+      "description": "Look for Airbnb options for the December getaway",
+      "completed": true,
+      "priority": "low",
+      "due_date": "2025-10-24"
+    },
+    {
+      "id": 7,
+      "title": "Clean workspace",
+      "description": "Organize desk and delete unnecessary files",
+      "completed": false,
+      "priority": "low",
+      "due_date": "2025-10-30"
+    },
+    {
+      "id": 8,
+      "title": "Prepare for presentation",
+      "description": "Review slides and practice the final project pitch",
+      "completed": false,
+      "priority": "high",
+      "due_date": "2025-11-03"
+    },
+    {
+      "id": 9,
+      "title": "Pay internet bill",
+      "description": "Pay the monthly Bezeq internet bill online",
+      "completed": true,
+      "priority": "medium",
+      "due_date": "2025-10-20"
+    },
+    {
+      "id": 10,
+      "title": "Exercise",
+      "description": "Do a 30-minute workout or a walk outside",
+      "completed": false,
+      "priority": "medium",
+      "due_date": "2025-10-27"
+    }
+  ]
+}
