@@ -1,0 +1,17 @@
+{
+  "name": "taskapi",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Fransheska",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "users": "node models/appModel.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "yargs": "^18.0.0"
+  }
+}

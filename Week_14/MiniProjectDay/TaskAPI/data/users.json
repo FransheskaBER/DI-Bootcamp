@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "first_name": "Updated Name",
+    "last_name": "Updated Last Name",
+    "email": "fransheska@example.com",
+    "username": "fransheska",
+    "password": "fransheskaSecret"
+  },
+  {
+    "id": 2,
+    "first_name": "Yotam",
+    "last_name": "Cohen",
+    "email": "yotam@example.com",
+    "username": "yotam",
+    "password": "$2b$10$I9WwZc3HCD0J2WJ7V7DrmO.qZcFQn/1usD60RzLODvf6JBWUqNmkK"
+  }
+]
