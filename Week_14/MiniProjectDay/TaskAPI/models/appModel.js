@@ -20,7 +20,7 @@ export function register(body){
     const users = loadUsers();
     const { username, email } = body;
     if (!isUnique(users, username, email)){
-        throw new Error("Username or email is already in use");
+        throw new Error("Username already exists");
     }
 
     const newUser = { id: users.length + 1, ...body };

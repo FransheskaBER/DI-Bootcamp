@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login:</h1>
+    <form id="myform">
+        <label>Username <input type="text" name="username" value="" placeholder="e.g., johnny"></label><br><br>
+        <label>Password <input type="text" name="password" value="" placeholder="e.g., secret123"></label><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="section">
+        <p id="feedback"></p>
+    </div>
+    
+    <script defer>
+
+        // DOMS
+        const myform = document.getElementById("myform");
+        const feedback = document.getElementById("feedback");
+        const section = document.getElementById("section");
+
+        myform.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formdata = new FormData(myform);
+            const body = {
+                username: formdata.get("username"),
+                password: formdata.get("password")
+            };
+
+            try {
+                const res = await fetch("/users/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    if (res.status === 404) {
+                        feedback.textContent = "Username is not registered";
+                        const link = document.createElement("a");
+                        link.href = "http://localhost:7700/registration.html";
+                        link.textContent = "Got to the Register Page."
+                        section.appendChild(link);
+                        return;
+                    }
+                    
+                    if (res.status === 401){
+                        feedback.textContent = data.error || "Wrong credentials";
+                        return;
+                    }
+
+                    // default for other errors
+                    feedback.textContent = data.error || "Login failed.";
+                    return; 
+                }
+
+                feedback.textContent = `Hi ${body.username}, welcome back again!`
+            } catch(err){
+                feedback.textContent =  "Network error, please try again later.";
+            }
+
+            myform.reset();
+        });
+
+
+    </script>
+</body>
+</html>

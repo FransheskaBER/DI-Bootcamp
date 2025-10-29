@@ -14,5 +14,21 @@
     "email": "yotam@example.com",
     "username": "yotam",
     "password": "$2b$10$I9WwZc3HCD0J2WJ7V7DrmO.qZcFQn/1usD60RzLODvf6JBWUqNmkK"
+  },
+  {
+    "id": 3,
+    "first_name": "yotam",
+    "last_name": "cohen",
+    "email": "yotamcohen@example.com",
+    "username": "yotamchn",
+    "password": "$2b$10$dOgC4t0AQPM/yKfIO7VCBuKFXoU7byVKSz5q3kB7y020gRDlHkVpO"
+  },
+  {
+    "id": 4,
+    "first_name": "Yuriko Sahomy",
+    "last_name": "Echevarria Rojas",
+    "email": "yuriko@example.com",
+    "username": "yuriko",
+    "password": "$2b$10$Ya1Y7IABLvL/BIoBgOxscOxEQy3jn8dHePbaerIXFj6I31xnzl0b."
   }
 ]
