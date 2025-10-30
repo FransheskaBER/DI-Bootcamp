@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
         if (!posts || posts.length === 0) throw new Error("No posts found");
         res.render("pages/index.ejs", { posts, error: null });
     } catch (err){
-        res.render("pages/index", { posts: [], error: err.message });
+        res.render("pages/index.ejs", { posts: [], error: err.message });
     }
 })
 

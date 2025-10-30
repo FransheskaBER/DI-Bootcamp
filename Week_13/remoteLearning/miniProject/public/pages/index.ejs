@@ -4,11 +4,115 @@
         <%- include('../partials/header') %>
 
         <% if (error) { %>
-            <p style="color: red"><%= error %></p>
+        <p style="color: red"><%= error %></p>
         <% } %>
 
-        <%- include('../partials/posts', { posts }) %>
+        <div>
+            <% if (!posts || posts.length === 0) { %>
+                <p>No posts found.</p>
+            <% } else { %>
+                <ul class="list-group">
+                    <% posts.forEach(post => { %>
+                        <li class="list-group-item">
+                            <a href="<%= post.link %>" target="_blank" rel="noopener"><%= post.title %></a>
+                            <small><%= post.pubDate %></small>
+                            <div><%= post.contentSnippet || '' %></div>
+                            <% if (post.categories && post.categories.length){ %>
+                                <div>Categories: <%= post.categories.join(', ') %></div>
+                            <% } %>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </div>
 
         <%- include('../partials/footer') %>
     </body>
 </html>
+
+<!-- code in server.js -->
+ <!-- import Parser from "rss-parser";
+import express from "express";
+import cors from "cors";
+import path from "path";
+
+const app = express();
+
+app.use(express.json());
+app.use(cors()); // allows all origins
+app.use(express.urlencoded({ extended: false })); // form parsing
+
+app.set("views", path.join(process.cwd(), "public"));
+app.set("view engine", "ejs");
+
+const parser = new Parser();
+
+async function getFeed() {
+    const feed = await parser.parseURL(`https://thefactfile.org/feed/`);
+    // feed.items.forEach(item => console.log(item.title));
+    return feed.items;
+}
+
+function buildCategories(posts){
+    return [...new Set(posts.flatMap(post => post.categories || []).filter(Boolean))];
+}
+
+app.get("/", async (req, res) => {
+    try {
+        const posts = await getFeed();
+        if (!posts || posts.length === 0) throw new Error("No posts found");
+        res.render("pages/index.ejs", { posts, error: null });
+    } catch (err){
+        res.render("pages/index.ejs", { posts: [], error: err.message });
+    }
+})
+
+app.get("/search", async (req, res) => {
+    try {
+        const posts = await getFeed();
+        const categories = buildCategories(posts);
+        res.render("pages/search.ejs", { posts: [], categories, error: null });
+    } catch (err){
+        res.render("pages/search.ejs", { posts: [], categories, error: err.message });
+    }
+})
+
+app.post("/search/title", async (req, res) => {
+    try {
+        const { title } = req.body;
+        if (!title) {
+            return res.render("pages/search.ejs", { posts: [], categories, error: "Please enter a title to search."});
+        }
+        const posts = await getFeed();
+        const categories = buildCategories(posts);
+
+        const t = title.trim().toLowerCase();
+        const filtered = posts.filter(post => (post.title || "").toLowerCase().includes(t));
+
+        res.render("pages/search.ejs", { posts: filtered, categories, error: filtered.length ? null : `No posts found for title "${title}"` });
+    } catch (err){
+        res.render("pages/search.ejs", { posts: [], categories, error: err.message || "Search failed" });
+    }
+})
+
+app.post("/search/category", async (req, res) => {
+    try {
+        const { category } = req.body;
+        if (!category) {
+            return res.render("pages/search.ejs", { posts: [], error: "Please choose a category to search."});
+        }
+        const posts = await getFeed();
+        const categories = buildCategories(posts);
+
+        const c = category.trim().toLowerCase();
+        const filtered = posts.filter(post => (post.categories || []).some(cat => (cat || "").toLowerCase().includes(c)));
+        res.render("pages/search.ejs", { posts: filtered, categories, error: filtered.length ? null : `No posts found for category "${category}"` });
+    } catch (err){
+        res.render("pages/search.ejs", { posts: [], categories, error: err.message || "Search failed" });
+    }
+})
+
+
+
+const PORT = 8800;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); -->
