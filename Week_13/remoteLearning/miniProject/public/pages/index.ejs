@@ -1,0 +1,14 @@
+<html lang="en">
+    <%- include('../partials/head') %>
+    <body>
+        <%- include('../partials/header') %>
+
+        <% if (error) { %>
+            <p style="color: red"><%= error %></p>
+        <% } %>
+
+        <%- include('../partials/posts', { posts }) %>
+
+        <%- include('../partials/footer') %>
+    </body>
+</html>

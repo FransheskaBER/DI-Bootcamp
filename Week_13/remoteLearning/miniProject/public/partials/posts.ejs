@@ -1,0 +1,18 @@
+<div>
+    <% if (!posts || posts.length === 0) { %>
+        <p>No posts found.</p>
+    <% } else { %>
+        <ul class="list-group">
+            <% posts.forEach(post => { %>
+                <li class="list-group-item">
+                    <a href="<%= post.link %>" target="_blank" rel="noopener"><%= post.title %></a>
+                    <small><%= post.pubDate %></small>
+                    <div><%= post.contentSnippet || '' %></div>
+                    <% if (post.categories && post.categories.length){ %>
+                        <div>Categories: <%= post.categories.join(', ') %></div>
+                    <% } %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</div>
