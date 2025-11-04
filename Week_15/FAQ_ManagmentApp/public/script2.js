@@ -4,6 +4,11 @@ const publishTable = document.getElementById("published-faqs-table");
 const publishFaqTableBody = publishTable.querySelector("tbody");
 const searchInput = document.getElementById("faq-search");
 const categoryFilter = document.getElementById("faq-category-filter");
+const openChatBtn = document.getElementById("openChatBtn");
+const dialogChat = document.getElementById("chat");
+const closeChat = document.getElementById("closeChat");
+const chatForm = document.getElementById("chatForm");
+const chatBody = document.getElementById("chatBody"); 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPublishedFaqs().catch((err) => {
@@ -75,3 +80,43 @@ function populateFilterOption(categories){
         renderPublishedRows(visibleFaqs);
     });
 }
+
+openChatBtn.addEventListener("click", () => {
+    dialogChat.showModal();
+})
+
+closeChat.addEventListener("click", () => {
+  dialogChat.close();
+})
+
+
+function appendMessage(userQuery, role) {
+    const bubble = document.createElement('div');
+    bubble.className = `chat-message ${role}`;
+    bubble.textContent = userQuery;
+    chatBody.appendChild(bubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+chatForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const userQuery = msg.value.trim();
+  if (!userQuery) return;
+
+  appendMessage(userQuery, 'user');
+  msg.value = '';
+  msg.focus();
+
+  try {
+    const res = await fetch('/faqs/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: userQuery })
+    });
+    const data = await res.json();
+    appendMessage(data.answer ?? 'No answer found.', 'bot');
+  } catch (err){
+    appendMessage('Something went wrong.Try again', 'bot');
+    console.log(err);
+  }
+});

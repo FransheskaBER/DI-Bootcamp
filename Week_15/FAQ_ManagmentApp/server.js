@@ -8,6 +8,6 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use("/faqs", faqRouter);
 
-const PORT = process.env.APP_PORT || 8900;
+const PORT = process.env.APP_PORT || 2200;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}/`));
 
