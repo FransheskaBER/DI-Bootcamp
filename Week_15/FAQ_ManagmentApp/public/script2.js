@@ -8,7 +8,10 @@ const openChatBtn = document.getElementById("openChatBtn");
 const dialogChat = document.getElementById("chat");
 const closeChat = document.getElementById("closeChat");
 const chatForm = document.getElementById("chatForm");
-const chatBody = document.getElementById("chatBody"); 
+const chatBody = document.getElementById("chatBody");
+const voiceToogle = document.getElementById("voiceToogle");
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPublishedFaqs().catch((err) => {
@@ -120,3 +123,60 @@ chatForm.addEventListener("submit", async (e) => {
     console.log(err);
   }
 });
+
+
+// Speech recognition
+let recognition;
+let isListening = false;
+
+if (SpeechRecognition && voiceToogle){
+  recognition = new SpeechRecognition();
+  recognition.lang = 'en-US';
+  recognition.interimResults = true;
+  recognition.maxAlternatives = 1;
+
+  recognition.addEventListener('result', (e) => {
+    const transcript = Array.from(e.results)
+      .map(result => result[0]?.transcript ?? '')
+      .join(' ')
+      .trim();
+    
+    if (transcript){
+      msg.value = transcript;
+    }
+
+    // auto stop once user stops speaking
+    if (e.results[0]?.isFinal){
+      toggleListening(false);
+    }
+  });
+
+  recognition.addEventListener('error', (e) => {
+    console.log('Speech recognition error:', e.error);
+    toggleListening(false);
+  });
+
+  voiceToogle.addEventListener("click", () => {
+    toggleListening(!isListening);
+  });
+} else if (voiceToogle){
+  voiceToogle.disabled = true;
+  voiceToogle.title = 'Voice input not supported in this browser'
+}
+
+function toggleListening(shouldListen){
+  if (!recognition) return;
+  if (shouldListen){
+    recognition.start();
+    isListening = true;
+    voiceToogle.textContent = '⏹';
+    voiceToogle.setAttribute('aria-pressed', 'true');
+    voiceToogle.title = 'Stop listening';
+  } else {
+    recognition.stop();
+    isListening = false;
+    voiceToogle.textContent = '🎤';
+    voiceToogle.setAttribute('aria-pressed', 'false');
+    voiceToogle.title = 'Start voice input';
+  }
+}
