@@ -1,0 +1,13 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week2/Day3/tic-tac-toe.py
+suggestions for improvement:
+- The player input should explicitly handle invalid input (non-A1-C3 format) more robustly, potentially with a loop to keep asking until valid input is given.
+- The `check_winner` function is well-implemented but could be slightly improved for readability by extracting the winning-combination checks into smaller helper functions, making the code more modular and easier to understand.
+- The game alternates between 'X' and 'Y', not 'X' and 'O' as specified in the instructions.  Change 'Y' to 'O'.
+- Add a more informative message at the beginning of the game explaining how to enter coordinates (e.g., 'Enter row (A, B, or C) and column (1, 2, or 3), e.g. A1').
+- Consider adding a more visually appealing board representation, perhaps with numbered cells instead of just letters and numbers.
+Brief justification:
+- correctness: The code implements the core functionality of Tic-Tac-Toe: board representation, player input, win condition checks, tie condition checks, and game loop.  It successfully manages player turns, updates the board, and determines the winner or a tie. However, there is a minor deviation in using 'Y' instead of 'O' and the input validation could be more thorough.  The functionality directly addresses all aspects laid out in the Chapter Content/Questions, making the correctness score high.
+- readability: The code is mostly readable, with functions logically separated.  However, some improvements could be made to enhance clarity, especially in the input validation and win condition checks.  Using helper functions in `check_winner` would enhance modularity and make the code easier to follow. The use of a dictionary to map input to coordinates is a clever approach, improving readability over nested if-else statements.
+- performance: The code's performance is excellent for this simple game. The algorithms used for checking the win condition and for the game loop are efficient, without unnecessary computations or redundancies. The runtime is minimal for the game's scale.
+- security: The code doesn't have any obvious security vulnerabilities since it's a simple, self-contained game. No external data or user input is processed in a way that could introduce security risks.
+

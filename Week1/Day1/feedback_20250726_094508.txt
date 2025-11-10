@@ -1,0 +1,13 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week1/Day1/ExercisesXP.py
+suggestions for improvement:
+- Exercise 1:  The 'Hello World' output should be printed four times, but the code prints five. Correct the number of print statements.
+- Exercise 3: Instead of printing 'Can't compare string to number', the code should print the actual output of the comparison (False because the types are different).
+- Exercise 8: The responses are subjective and not very funny.  Consider more humorous or creative responses for both matching and non-matching names.
+- Exercise 8 and 9: Add error handling for non-numeric input. Currently, if the user inputs text instead of a number, the code will crash.
+- General Readability: Use more descriptive variable names (e.g., instead of `a` and `b`, use `number1` and `number2`). Add comments to explain complex logic where necessary.
+Brief justification:
+- correctness: The code addresses most exercises correctly. Exercise 1 has a minor output discrepancy (5 lines instead of 4), and Exercise 3 needs to actually evaluate and print the comparison results, not just a textual description.  All exercises directly relate to the chapter content (print statements, variables, math operations, comparisons, if statements, and user input).
+- readability: The code is mostly readable, but some variable names (e.g., `a`, `b`) are not descriptive.  Also, the comments in Exercise 3 aren't ideally formatted and a bit misleading (they describe instead of evaluate).  Adding more descriptive names and comments would improve readability.
+- performance: The code's performance is good for the given tasks.  The algorithms used are efficient for the scale of the problems.
+- security: The code has a security risk in Exercises 8 and 9.  It doesn't handle non-numeric input from the user, which can lead to runtime errors. Input validation is needed to enhance security.
+
