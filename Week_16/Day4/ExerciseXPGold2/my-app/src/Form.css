@@ -1,0 +1,25 @@
+.bookForm{
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  width: 400px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background: #d9d9d9;
+  border-radius: 50px;
+}
+
+.bookForm input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.bookForm button {
+    display: block;
+    margin-top: 12px;
+    background-color: aquamarine;
+}
+
+.bookForm h1{
+  color: green;
+}
