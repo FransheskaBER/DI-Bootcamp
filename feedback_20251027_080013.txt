@@ -1,0 +1,16 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_14/MiniProjectDay/TaskMgmtAPI/server.js
+suggestions for improvement:
+- The code sets up the Express app and integrates the tasks router but doesn't include the actual implementation of the routes and the JSON file interaction, which are crucial for fulfilling the requirements.
+- The error handling is a good start, but more specific error handling related to file operations in the routes is needed.
+- The tasksRouter import suggests the existence of a separate file for routes but that file was not provided.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_14/MiniProjectDay/TaskMgmtAPI/routes/tasksRoutes.js
+suggestions for improvement:
+- Consider using asynchronous file system operations (fs.promises) to prevent blocking the event loop, especially for larger JSON files.
+- Implement more robust error handling, such as logging errors or providing more informative error messages to the client.
+- Add validation to check data types and formats (e.g., ensure `completed` is a boolean, `priority` is within an acceptable range, and `due_date` is a valid date).
+- For PUT requests, consider allowing partial updates (i.e., allowing the user to update only specific fields instead of requiring all fields to be present).
+- Implement pagination for the GET /tasks route to handle large datasets efficiently.
+Correctness: 90%
+-----
