@@ -1,0 +1,36 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/Car.jsx
+suggestions for improvement:
+- The provided code does not contain the carinfo object creation in App.js as requested.
+- The code assumes that `Garage.jsx` is in the same directory when it should be in the Components folder.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/Color.jsx
+suggestions for improvement:
+- Checker failed to provide a response.
+Correctness: N/A%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/Events.jsx
+suggestions for improvement:
+- Consider using a more concise way to toggle the state, for example: `setToggle(prev => !prev)`.
+- For better readability, extract the logic inside `changeToggle` to a separate function with a more descriptive name.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/Garage.jsx
+suggestions for improvement:
+- This code snippet only implements the Garage component from exercise 1. It should be part of a larger submission implementing all exercises.
+- The Garage component correctly uses props to render the size, as per the instructions.
+- Consider providing the entire application structure (App.js, Car.js, Events.js, Phone.js, Color.js) to get a comprehensive review.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/Phone.jsx
+suggestions for improvement:
+- Consider using a simple `setColor('blue')` instead of toggling between black and blue if the requirement is just to change the color to blue.
+- You can destructure the state variables for better readability: `const { brand, model, color, year } = state;`
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding keys to the components rendered in the return statement for better performance, especially if you're rendering lists of components.
+- Ensure that all components are correctly implemented according to their respective exercise instructions. (Implementation details are in the Car.jsx, Events.jsx, Phone.jsx, and Color.jsx files and not provided, thus assumed to be correct.)
+Correctness: 100%
+-----
