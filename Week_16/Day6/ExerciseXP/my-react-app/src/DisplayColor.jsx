@@ -7,7 +7,7 @@ function DisplayColor({ color }){
     return <h1>My favorite color is {color}</h1>;
 }
 
-export default React.memo(DisplayColor, () => false );
+// export default React.memo(DisplayColor, () => false );
 // export default React.memo(DisplayColor, (prevProps, nextProps) => {
 //     console.log("[are Equal", { prevProps: prev.color, nextProps: next.color });
 //     return false; 
