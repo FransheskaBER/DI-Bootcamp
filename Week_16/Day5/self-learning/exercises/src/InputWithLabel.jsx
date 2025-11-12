@@ -2,7 +2,13 @@ export default function InputWithLabel({ id, label, type, value, onChange }){
     return (
         <>
         <label htmlFor={id}>{label}</label>
-        <input id={id} type={type} value={value} onChange={onChange} />
+        {
+        type === "textarea" ? (
+            <textarea id={id} value={value} onChange={onChange}></textarea>
+        ) : (
+            <input id={id} type={type} value={value} onChange={onChange} />
+        )
+        }
         </>
     );
 }

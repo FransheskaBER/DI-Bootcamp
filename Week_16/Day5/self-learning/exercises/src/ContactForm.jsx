@@ -11,6 +11,7 @@ export default function ContactForm(){
     function handleSubmit(e){
         e.preventDefault();
         console.log(form);
+        setForm({ name: "", email:"", message: "" }) // to reset your form
     }
 
     return (
