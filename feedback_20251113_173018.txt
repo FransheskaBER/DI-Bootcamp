@@ -1,0 +1,23 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/App.jsx
+suggestions for improvement:
+- The `BuggyCounter` and `ErrorBoundary` components are not included in this file.  Ensure they are imported and properly implemented as described in Exercise 1.  It looks like they might exist in separate files (BuggyCounter.jsx, ErrorBoundary.jsx) but are not included in the main App.js code.
+- The original DisplayColor.jsx file imports and exports Child, which doesn't appear to have been the intention. The instructions ask for the Child component to be within the same file, so this should be fixed. It also results in naming conflicts since DisplayColor is also exported.
+- Avoid unnecessary comments and console logs in production code.  Consider removing or commenting out console.log statements in useEffect hooks.
+- For Exercise 2, explicitly include `shouldComponentUpdate` returning true in the DisplayColor.jsx component to match part 1 of the problem. If you include it, mention it in the comments, even though it should always return true. This will highlight that you have considered this lifecycle method.
+- For Exercise 3, move the Child component to `App.js`, and be sure to make it a class component so that it utilizes `componentWillUnmount`.
+Correctness: 90%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/BuggyCounter.jsx
+suggestions for improvement:
+- The code only implements the `BuggyCounter` component but doesn't include the `ErrorBoundary` component or any of the simulation logic described in Exercise 1. The provided code does not fulfill the requirements of the exercise.
+- The provided code does not address any of the requirements outlined in Exercise 2 or Exercise 3 which involve implementing lifecycle methods like `shouldComponentUpdate`, `componentDidUpdate`, `getSnapshotBeforeUpdate`, and `componentWillUnmount`. Consequently, it fails to implement any of the specific functionalities requested in those exercises.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/DisplayColor.jsx
+suggestions for improvement:
+- The provided code snippets partially address Exercise 3 related to the unmounting lifecycle, specifically the `componentWillUnmount` equivalent using the `useEffect` hook.  It does not include code for Exercise 1 or 2.
+- For Exercise 3, the component should be a class component to accurately reflect how `componentWillUnmount` is used. Consider converting `Child` into a class component.
+- There's missing code for ErrorBoundary and BuggyCounter (Exercise 1) and shouldComponentUpdate, componentDidUpdate, and getSnapshotBeforeUpdate examples (Exercise 2). Add those.
+- For Exercise 2, include state and logic for changing the favoriteColor as described in the exercise.
+Correctness: 20%
+-----
