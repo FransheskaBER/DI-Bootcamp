@@ -7,6 +7,19 @@ import DisplayColor from './DisplayColor.jsx';
 import { useLayoutEffect } from 'react';
 import Child from './DisplayColor.jsx';
 
+// function Child({ show }){
+
+//     useEffect(() => {
+//         console.log("Header mounted");
+
+//         return () => alert("Header will be unmounted");
+//     }, [show])
+
+//     if (!show) return null;
+//     return <header>Hello World!</header>
+// }
+
+// export default React.memo(Child);
 
 function App() {
   const [show, setShow] = useState(true);
