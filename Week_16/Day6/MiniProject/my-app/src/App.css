@@ -1,0 +1,26 @@
+.navbar-brand {
+  color: blue;
+  font-weight:bolder;
+  font-size: xx-large;
+}
+.left {
+  padding-top: 1.5rem;
+  background-color: lightcyan;
+  height: calc(100vh - 4rem);
+  text-align: left;
+}
+
+.right {
+  padding-top: 1.5rem;
+  background-color: lightgray;
+  height: calc(100vh - 4rem);
+}
+
+.images img {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.text-danger[role="alert"] {
+  font-weight:bolder;
+}
