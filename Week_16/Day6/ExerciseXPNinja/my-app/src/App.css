@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: black;
+}
+
+/* .ring-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+.second-active {
+  font-weight: 1000;
+  font-size: large;
+}
+
+.ring{
+  /* position: relative;
+  width: 1000px;      /* or the largest ring size */
+  height: 1000px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footerSpan {
+  position: static;      /* cancels the absolute positioning */
+  top: auto;
+  left: auto;
+  transform: none;
+  margin-top: auto;      /* now it can use flexbox spacing */
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.ring-track {
+  transition: transform 0.3s ease-out
+}
+
+.ring-dash {
+  transform-origin: center;
+  animation: ring-spin 20s linear infinite;
+}
+
+.year,
+.month {
+  width: 100%;
+  color: white;
+  font-size: 2.5rem;
+}
