@@ -1,0 +1,12 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week2/Day5/ExercisesXP.py
+suggestions for improvement:
+- In Exercise 1, the `print` statement could be slightly improved for clarity. Instead of "with", consider using "who is"
+- In Exercise 2, the `bigger_dog` function could be simplified.  A single `if/else` would suffice.
+- Exercise 3's `Song` class could benefit from adding error handling to the `__init__` method to better check the `lyrics` input.  The current check isn't comprehensive enough to handle unexpected inputs.
+- In Exercise 4, the `sell_animal` method is inconsistently implemented. It adds an animal if it is not found.  It should only remove animals.
+Brief justification:
+- correctness: All four exercises correctly implement the specified classes and methods, fulfilling all stated requirements in the chapter content.  Each exercise directly addresses the described tasks using classes, objects, instantiation, methods, and attributes as instructed.
+- readability: The code is generally well-structured and easy to follow.  Minor improvements in variable naming and function design could enhance readability further.  The use of f-strings for printing enhances readability.
+- performance: The code's performance is adequate for the tasks. No significant performance bottlenecks are present.  The algorithms used are efficient for the scale of the problems.
+- security: No significant security vulnerabilities are present in the provided code. Input validation in Exercise 3 could be improved, but this is a minor point, and there are no obvious security concerns.
+
