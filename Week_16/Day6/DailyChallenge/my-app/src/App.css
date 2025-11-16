@@ -1,0 +1,24 @@
+#root {
+  height: 100vh;
+}
+
+.myForm{
+  background: #deb887;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.header {
+  color: white;
+  background: #3b3636;
+  padding: 10px;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.output{
+  background: #1e5555;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+}
