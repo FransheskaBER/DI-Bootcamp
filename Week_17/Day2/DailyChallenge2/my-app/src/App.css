@@ -1,0 +1,36 @@
+#root {
+  grid-column: 2;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 640px) 1fr; /* middle column sized as you like */
+  align-items: start;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.countryBtn{
+  margin: 15px;
+  background: gray;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px;
+  width: 50%;
+}
+
+.suggestions{
+  background: darkgoldenrod;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 50%;
+  text-align: center;
+  margin: 16px auto 0;
+}
+
+.container {
+  background: lightgray;
+  padding: 50px;
+}
