@@ -1,0 +1,24 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/server.js
+suggestions for improvement:
+- Consider adding some logging or error handling for unexpected issues during the RSS feed parsing to improve debugging.
+- Implement input sanitization to prevent potential injection attacks, especially in the search routes.
+- Add caching to the RSS feed data to reduce the number of requests to the external feed.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/pages/index.ejs
+suggestions for improvement:
+- Consider adding error handling or validation for user inputs to prevent potential issues.
+- Implement input sanitization to prevent XSS vulnerabilities, especially when displaying post content.
+- The `buildCategories` function could be optimized to avoid unnecessary iterations.
+Correctness: 85%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/pages/search.ejs
+suggestions for improvement:
+- The server.js file is commented out. Make sure to uncomment it to run the application. 
+- The server.js code uses modern JavaScript syntax (import/export) which is good, but requires proper setup (e.g., Babel or ES modules in Node.js).  It should be transpiled or configured to run in Node.js.
+- Consider using environment variables for sensitive information like the port number.
+- Implement error handling to gracefully manage potential issues such as network errors or invalid RSS feed data.
+- The HTML structure in search.ejs is functional but could benefit from improved semantics and accessibility. Ensure form elements have labels associated with them.
+- Validate and sanitize user inputs (title and category) in the server-side code to prevent potential security vulnerabilities like cross-site scripting (XSS) or injection attacks.
+Correctness: 0%
+-----
