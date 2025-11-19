@@ -1,0 +1,31 @@
+
+.Btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.d-flex{
+  margin: 30px;
+}
+
+.navbar-brand{
+  padding: 15px;
+  font-size: 5rem;
+}
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.album img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* crops while keeping a uniform rectangle */
+  display: block;
+}
