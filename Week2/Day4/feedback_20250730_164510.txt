@@ -1,0 +1,11 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week2/Day4/DailyChallenge.py
+suggestions for improvement:
+- Challenge 1 is almost perfect; however, it lacks error handling for edge cases such as empty input or input with only spaces.  Add checks to handle these scenarios gracefully.
+- In Challenge 2, the `longest_sentence` function doesn't correctly identify the longest word because it uses `sentence.split()` which splits on whitespace.  It should split on punctuation or utilize a regular expression to correctly handle punctuation within the words as specified in the instructions.
+- Both challenges could benefit from more descriptive variable names. For example, instead of `string`, use `input_string`.
+Brief justification:
+- correctness: Challenge 1 correctly implements the sorting of comma-separated words.  It utilizes `split()`, `sorted()`, and `join()` which are all aligned with the chapter's content on strings, lists, and sorting. However, it lacks input validation. Challenge 2's `longest_sentence` function has a fundamental flaw: it splits the sentence by whitespace, ignoring the requirement to treat punctuation as part of the word. This significantly reduces its correctness score.
+- readability: The code is well-structured and easy to follow for both challenges. The use of comments is helpful.  However, more descriptive variable names would improve readability.
+- performance: Both functions have good performance for the intended tasks. The algorithms are efficient and there are no obvious performance bottlenecks.
+- security: There are no apparent security vulnerabilities in the code.  The code only uses basic string manipulation and sorting functions.
+
