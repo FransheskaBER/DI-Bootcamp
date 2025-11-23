@@ -1,6 +1,7 @@
 import { useState } from "react";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+const APIkey = "";
 export default function Home({ onAddFav }) {
     const [city, setCity] = useState("");
     const [displayCity, setDisplayCity] = useState("");
