@@ -1,0 +1,43 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/server.js
+suggestions for improvement:
+- Consider adding some error handling or validation for the RSS feed URL to prevent crashes if the URL is invalid.
+- Add comments to improve the understanding of what each function does.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/pages/index.ejs
+suggestions for improvement:
+- The provided code snippet is an EJS template file, likely for rendering HTML. However, it's impossible to assess its correctness without seeing the `server.js` file and how the data is passed to this template.
+- The EJS template includes partials (`head`, `header`, `posts`, `footer`). It uses `<%- include(...) %>` to include these partials, which is the correct way to include EJS partials.
+- The template also checks for an `error` variable and displays it in red if it exists. This is a good practice for error handling.
+- Without knowing the context of how this template is used and what data it receives, it's impossible to determine if it fulfills the requirements of the chapter.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/pages/search.ejs
+suggestions for improvement:
+- The provided file is an EJS template for the search page, not the `server.js` file as requested in the instructions. The task asks to create a server that handles routes and integrates RSS feed parsing.
+- The server-side logic for fetching and filtering posts based on title and category is missing.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/partials/footer.ejs
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/partials/head.ejs
+suggestions for improvement:
+- This code snippet only covers the `head.ejs` file. To properly assess the submission, it needs to include other relevant files like `server.js`, `index.ejs`, `search.ejs`, `header.ejs`, `footer.ejs`, and `posts.ejs`. Without the server-side logic and other view components, it's impossible to evaluate its full functionality.
+- The `head.ejs` file correctly includes Bootstrap CSS, sets the character set, viewport, and title as instructed. However, it is just a small part of the entire project.
+- The instructions are asking for a Node.js/Express application. The provided file should be part of a Node.js application with `server.js` handling the routes and data fetching, and ejs templates for rendering.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/partials/header.ejs
+suggestions for improvement:
+- This code only provides the HTML for the header/navbar part. To make it complete it should include the server.js file including the routes and the different files such as head.ejs, footer.ejs, index.ejs, search.ejs, and posts.ejs.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/partials/posts.ejs
+suggestions for improvement:
+- This code snippet is a partial EJS template for displaying RSS feed posts. It's not a complete, runnable application. Therefore it does not address the full scope of the project as described in the chapter content.
+- To fulfill the chapter requirements, you'll need to create the Node.js server with Express, implement the routes, fetch the RSS feed, parse it, and pass the data to the EJS templates for rendering.
+Correctness: 0%
+-----
