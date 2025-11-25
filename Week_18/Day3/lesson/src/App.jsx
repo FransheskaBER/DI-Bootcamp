@@ -6,6 +6,7 @@ import Counter from './useReducer/useReducer.jsx';
 import ShoppingCart from './useReducer/ShoppingCart.jsx';
 import { InputFocus, Counter2 } from './useRef/useRef.jsx';
 import TrackClicks from './useRef/TrackClicks.jsx';
+import OnlineLesson from './OnlineLesson.jsx';
 
 
 function App() {
@@ -31,7 +32,6 @@ function App() {
     <InputFocus />
     <Counter2 />
     <TrackClicks />
-
 
     </>
   )
