@@ -1,0 +1,12 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week1/Day5/DailyChallenge.py
+suggestions for improvement:
+- In Challenge 1, you could add input validation to handle cases where the user enters non-alphabetic characters.  This would improve robustness.
+- In Challenge 2, the repeated code for processing `items_purchase` and `wallet` could be refactored into a function to improve readability and maintainability. This would also make the code more concise and easier to understand.
+- For Challenge 2, consider using a more descriptive variable name instead of `can_purchase`. A name like `affordable_items` would enhance readability.
+- The error handling in Challenge 2 could be improved. Instead of simply printing 'You can't afford buying any item', it might be better to return 'Nothing' as specified in the instructions to maintain consistency with the example outputs.
+Brief justification:
+- correctness: Both Challenge 1 and Challenge 2 correctly implement the functionalities described in the chapter content. Challenge 1 accurately creates a dictionary mapping letters to their indices in a given word, utilizing user input, loops, and conditional statements as specified. Challenge 2 successfully processes a dictionary of items and prices, cleans the price strings, converts them to integers, compares them against a user's budget, and returns a sorted list of affordable items or 'Nothing' if nothing is affordable.  All examples provided in the chapter content are correctly handled by the code.
+- readability: The code is generally well-structured and easy to follow. The use of descriptive variable names is good, and comments help explain the logic.  However, some code repetition in Challenge 2 and a lack of input validation in Challenge 1 slightly detract from readability.
+- performance: The performance of the code is acceptable for small inputs. However, in Challenge 2, the repeated code for processing the 'items_purchase' data could be optimized.  For very large datasets, the repeated loops could lead to performance issues. The current implementation has a time complexity that's roughly linear in the size of the input, which is decent but could be improved with the refactoring suggested above. 
+- security: The code does not contain any obvious security vulnerabilities. It deals only with user input that is directly used for calculations and output, and there are no external dependencies or interactions that would introduce security risks.
+

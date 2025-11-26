@@ -1,0 +1,40 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding more descriptive class names or comments to enhance readability.
+- Using a try-catch block inside the async function is good for error handling, but consider adding specific error handling logic based on the type of error encountered.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/ErroBoundary.jsx
+suggestions for improvement:
+- This code snippet only shows an error fallback component, but the exercise asks for several components, including `ErrorBoundary`, `HomeScreen`, `ProfileScreen`, and `ShopScreen`, along with React Router setup and JSON data display/posting.
+- The provided code doesn't address the core requirements of any of the exercises.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/Example1.jsx
+suggestions for improvement:
+- This code snippet only provides the solution for Example1 of Exercise 3. To fully address the exercises, code for ErrorBoundary, React Router setup, HomeScreen, ProfileScreen, ShopScreen, PostList and Example2, Example3 components is required.
+- For Exercise 1, ensure the ErrorBoundary component correctly catches errors in the ShopScreen.
+- For Exercise 2 and 3, ensure the data is correctly fetched and rendered in the specified components.
+- For Exercise 4, the fetch request should be implemented with async/await and the button click should trigger the POST request.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/Example2.jsx
+suggestions for improvement:
+- The component should be a class component as specified in Exercise 3.
+- Consider using more descriptive variable names.
+- Add some styling or structure to make the output more visually appealing and match the example in the prompt more closely.
+- Consider error handling or default values if `data.Skills` or the nested properties are undefined to avoid potential runtime errors.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/Example3.jsx
+suggestions for improvement:
+- The code appears to be related to Exercise 3 but it is incomplete. The instructions included Exercise 1 (ErrorBoundary and React Router), Exercise 2 (Display JSON Data), Exercise 3 (Display and Parse JSON data), and Exercise 4 (Post JSON data). This code snippet only addresses a part of Exercise 3, without including the other exercises. There is also a syntax error with the <p> tag.
+- Ensure all required components are implemented and correctly integrated as described in the instructions for Exercises 1-4.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/PostList.jsx
+suggestions for improvement:
+- Consider adding PropTypes to the PostList component to document the expected shape of the data.
+- The component could be made more reusable by accepting the 'posts' data as a prop, rather than importing it directly.
+Correctness: 100%
+-----
