@@ -1,0 +1,23 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding keys to the mapped list in UserFavoriteAnimals for better performance.
+- The component structure and separation of concerns are good.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/ExerciseXP/my-app/src/UserFavAnimals.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/ExerciseXP/my-app/src/Exercise3.jsx
+suggestions for improvement:
+- Consider using more descriptive names for CSS classes if the project grows.
+- For better security, especially in forms, handle form submissions and input validation within the React component.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/ExerciseXP/my-app/src/Exercise3.css
+suggestions for improvement:
+- The code provided is a CSS snippet and is completely unrelated to the React/JSX exercises presented in the chapter content. The exercises involve creating React components, using JSX, passing props, and applying styles using inline styles and CSS files, not just presenting a CSS snippet in isolation.
+- Consider including code snippets demonstrating the React components and JSX elements created as requested, demonstrating how styles are applied to the React elements.
+Correctness: 0%
+-----

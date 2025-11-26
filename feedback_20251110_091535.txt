@@ -1,0 +1,12 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/dailyChallenge/my-app/src/Carousel.jsx
+suggestions for improvement:
+- Consider extracting the image data (URLs and alt text) into a separate array or object to improve maintainability and readability, especially if you anticipate adding more images.
+- While inline styling is used for the main div, consider using CSS classes for a more organized and maintainable styling approach, especially if more styling is needed.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day2/dailyChallenge/my-app/src/App.jsx
+suggestions for improvement:
+- The code snippet provided only shows the `App.jsx` component and its usage of `<ImageCarousel />`. To properly assess the code, the contents of `Carousel.jsx` would need to be provided.
+- Without the Carousel component, it is impossible to verify if the implementation is making use of `react-responsive-carousel` as instructed.
+Correctness: 0%
+-----
