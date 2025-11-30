@@ -1,0 +1,53 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/main.jsx
+suggestions for improvement:
+- This code snippet only sets up the React application with Redux. It doesn't implement any of the core functionalities described in the chapter content, such as managing tasks, handling dates, or implementing task actions (add, edit, delete).
+- Implement the Redux store with the structure needed to manage tasks for different days. Define actions and reducers for adding, editing, and deleting tasks. Create the React components for the calendar/date picker, task display, and task management, and connect them to the Redux store.
+Correctness: 10.0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/App.jsx
+suggestions for improvement:
+- The provided App.js component handles date selection and task display, but it lacks the Redux store configuration, action definitions, reducer implementation, and the connection of components to the Redux store as outlined in the instructions. The component uses react-redux useSelector hook, which shows the intention of using redux, but redux is not set up according to the instructions. Therefore, the code is not fulfilling the core requirements of the chapter content.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/AddTask.jsx
+suggestions for improvement:
+- The code only implements adding a task. You need to implement editing and deleting tasks as well.
+- The code uses Date.now() for generating IDs, which is generally acceptable for small applications, but consider using a more robust ID generation strategy (like UUIDs) for larger applications to avoid potential collisions.
+- The component only handles adding tasks, while the instructions outline the need for components to display tasks, allow editing, and deleting.
+- The `date &&` conditional rendering could be handled more gracefully, perhaps with a loading state or a placeholder message if the date is not yet available.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/RemoveTask.jsx
+suggestions for improvement:
+- The provided code only implements the task removal functionality. Consider providing all the components, including reducers, actions, and other react components for a complete daily planner application as described in the prompt.
+- Provide an example of how `id` is passed to the `RemoveTask` component. Showing the component's usage context would improve understanding.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/EditTask.jsx
+suggestions for improvement:
+- The code covers task editing functionality but misses the broader context of a daily planner application as described in the instructions. It doesn't include the Redux store setup, action definitions, reducers, date picker component, or task creation/deletion, which are significant parts of the prompt.
+- The code lacks error handling and input validation, which are crucial for a production-ready application.
+- Consider breaking down the component into smaller, more manageable pieces to improve readability and maintainability.
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/DisplayTasks.jsx
+suggestions for improvement:
+- The code snippet focuses solely on displaying tasks and includes components for editing and deleting. However, the broader instructions also mention the necessity of store setup, action and reducer definitions, a calendar/date picker component, and integration with the Redux store for adding tasks. It only partially fulfills the requirements.
+- Consider using more descriptive variable names (e.g., `allTasksForDate` instead of `selectedTasks`).
+- The conditional rendering could be improved by providing a message when there are no tasks for a given date.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/store/slice.js
+suggestions for improvement:
+- The reducer doesn't explicitly manage tasks for *different* days as outlined in the problem description. It operates on a single array of tasks.
+- The initial state should be an object where keys are dates, and values are arrays of tasks for that date, to align with the requirements.
+- Consider using `immer` or similar techniques for more concise and readable immutable state updates, especially in the `edit` reducer.
+- Add validation for the payload in each reducer to ensure data integrity (e.g., checking if required fields are present).
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/store/store.js
+suggestions for improvement:
+- The code only configures the Redux store. It needs to include action definitions, reducer implementations, React components for the calendar/date picker, task display, and task management, as well as integration of these components with the Redux store.
+- The reducer setup seems correct given the limited scope, but it needs to be expanded to handle the specific actions (add, edit, delete) mentioned in the instructions.
+Correctness: 0%
+-----
