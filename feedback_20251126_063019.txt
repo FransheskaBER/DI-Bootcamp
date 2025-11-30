@@ -1,0 +1,33 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/TaskMgmnContext.jsx
+suggestions for improvement:
+- Consider adding more specific type definitions for the state and actions to improve type safety.
+- The reducer logic could be made slightly more concise by using object spread syntax more consistently.
+- While not a security vulnerability, it's good practice to sanitize user input (e.g., `newTitle`) before updating the state, especially if you're rendering it directly to the DOM.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/AddNewTask.jsx
+suggestions for improvement:
+- The provided code only implements the addition of new tasks, which was likely a feature from a previous exercise.  It does not include the editing or filtering functionalities requested in the prompt. Therefore, it does not address the core requirements of the challenge.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/UpdateTask.jsx
+suggestions for improvement:
+- Implement filtering of tasks by completion status using buttons and the reducer. The current code only handles editing and marking tasks as complete.
+- Consider using `useRef` to manage the input field for editing tasks, as suggested in the instructions, although `useState` also works.
+- Ensure that the `TaskMgmnContext.jsx` file contains the implementation of the reducer with the actions for editing and filtering tasks.
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/FilterTasks.jsx
+suggestions for improvement:
+- Consider providing more explicit labels for 'true' and 'false' options (e.g., 'Completed' and 'Active').
+- While a select dropdown works, buttons might provide a better user experience for filtering, as suggested in the instructions. It is subjective but, the instructions suggest button use.
+- Ensure proper error handling within the `filterTasks` function in the context to handle cases where filtering might fail.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/DisplayAllTasks.jsx
+suggestions for improvement:
+- The filtering logic could be improved by handling different filter types more explicitly in the reducer, rather than directly in the component.
+- The code lacks a mechanism to *actually* edit the tasks and update the task text. There is `UpdateTask` component used but its implementation is not shown, so it is not possible to assess whether it allows editing of tasks.
+- The `deleteTasks` implementation isn't shown, and it's unclear how it relates to task editing or filtering. If this functionality is kept, its implementation details need to be shown to confirm compliance with the instructions.
+Correctness: 50%
+-----
