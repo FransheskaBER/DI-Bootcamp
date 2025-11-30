@@ -1,0 +1,45 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/main.jsx
+suggestions for improvement:
+- The code snippet shows the entry point to a react application and the configuration of Redux, this needs to implement the required functionality mentioned in the prompt.
+- The code doesn't define any actions, reducers, or components for the daily planner application, which are essential for managing tasks.
+- The application lacks functionality for tasks management (add, edit, delete) and viewing tasks for specific days. It should implement the Calendar/Date Picker, Task Display Component, and Task Management Components
+Correctness: 10.0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/AddTask.jsx
+suggestions for improvement:
+- The code only implements the 'add' task functionality. It should also include implementations for editing and deleting tasks as specified in the Chapter Content/Questions.
+- The code lacks the Redux store configuration and reducer implementation as outlined in steps 1, 2, and 3 of the instructions. While `useDispatch` is used, the store itself is not set up here.
+- The code does not include functionality for selecting different days using a calendar or date picker (step 4). The `date` prop is used but how it's obtained isn't clear within this component.
+- The component should be connected to the Redux store using `connect` from `react-redux` for better integration, as described in instruction 7. Currently, it only uses `useDispatch`.
+- Consider adding input validation to prevent empty tasks from being added.
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/RemoveTask.jsx
+suggestions for improvement:
+- The provided code only implements the 'remove task' functionality. It needs to include functionalities for adding, editing, viewing tasks, date picking, and Redux store configuration as mentioned in the problem description.
+- The component needs to be integrated into a larger application context with a date picker and task display.
+- Consider adding prop types for better type safety and documentation.
+Correctness: 20%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/EditTask.jsx
+suggestions for improvement:
+- Consider adding validation to the input field to prevent empty tasks or limit character length.
+- Implement proper error handling in case the `edit` action fails (e.g., due to network issues or invalid data).
+- While the component handles editing, the instructions cover adding and deleting as well; ensure these functionalities are covered elsewhere in the application. Also, the prompt mentioned selecting tasks for a particular day. It is unclear how this edit component fits into that broader picture.
+- Explore using `useCallback` for `handleToggleEdit` to prevent unnecessary re-renders if it's passed as a prop to child components.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/DisplayTasks.jsx
+suggestions for improvement:
+- The code only implements displaying, editing and removing tasks. It does not implement adding tasks, which is a major requirement.
+- The filtering of tasks by date could be improved for performance, especially with a large number of tasks. Consider using a more efficient data structure in the Redux store to facilitate quicker lookups by date.
+- The code could benefit from more robust error handling, particularly when dealing with potentially invalid date formats or unexpected data structures in the Redux store.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/store/slice.js
+suggestions for improvement:
+- The code only provides the Redux slice for managing tasks. It doesn't include the React components for the UI, calendar integration, or connecting the components to the Redux store as requested by the instructions.
+- The initial state should be an object where keys are dates and values are arrays of tasks, enabling task management for different days. Current implementation manages all tasks in a single array.
+- Consider using a more robust method for updating the task, such as creating a new object with the updated properties instead of using Object.assign to ensure immutability.
+Correctness: 60%
+-----
