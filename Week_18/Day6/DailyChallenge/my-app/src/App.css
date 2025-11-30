@@ -4,39 +4,77 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.addTask {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  align-content: center;
+  margin: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+}
+.taskForm button {
+  width: 140px;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 1rem;
+}
+.taskForm input {
+  width: 200px;
+  height: 20px;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.taskList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;      /* stretch across the row */
 }
 
-.card {
-  padding: 2em;
+.tasksWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;     /* cross‑axis */
+  justify-content: center; /* main axis */
+  gap: 12px;
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.completed {
+  text-decoration: line-through;
+}
+
+.task-date {
+  background-color: #ffd89a !important;
+  border-radius: 8px;
+}
+
+.task-date:hover {
+  background-color: #ffca6f !important;
+}
+
+
+
+/* Make the selected day always stand out */
+.react-calendar__tile--active {
+  border: 2px solid #0d6efd; /* blue */
+  border-radius: 8px;
+  background: white;          /* or whatever you like */
+}
+
+/* Optional: keep hover/focus nice too */
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #e7f1ff;
 }

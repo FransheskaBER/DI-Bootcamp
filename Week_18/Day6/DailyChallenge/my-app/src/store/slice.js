@@ -14,8 +14,7 @@ const tasksSlice = createSlice({
             Object.assign(selectedTask, updates);
         },
         remove(state, action) {
-            const { id } = action.payload;
-            return state.filter(t => t.id !== id);
+            return state.filter(t => t.id !== action.payload);
         }
     },
 });
