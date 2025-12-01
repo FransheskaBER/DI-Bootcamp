@@ -1,0 +1,8 @@
+/* index.css or global.css */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  margin: 0;
+}
