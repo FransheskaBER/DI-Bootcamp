@@ -1,0 +1,49 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/AddTodo.jsx
+suggestions for improvement:
+- The code only implements the 'add todo' functionality. It's missing the implementation for toggling a todo's completion status and removing a todo, as requested in the instructions. Consider adding those functionalities to fulfill all requirements.
+- Add corresponding reducers and actions for completing and removing the todos.
+- Consider error handling, for example, if dispatch fails.
+- Although the code works, the `id` generation might not be the best approach. Using a dedicated library for generating unique IDs (like UUID) can be more reliable.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/RemoveTodo.jsx
+suggestions for improvement:
+- Provide the reducer, actions, store configuration, and the React component that displays the todo list to assess the correctness of the entire application.
+- Consider adding prop types for better code maintainability and clarity.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/CompleteTodo.jsx
+suggestions for improvement:
+- The component should receive a boolean value for the completed prop, and the checkbox should reflect this boolean state directly.
+- Instead of using `e.target.value`, `e.target.checked` should be used to get the boolean value of the checkbox.
+- The local state `taskComplete` isn't needed as you already have `completed` as a prop.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/DisplayTodos.jsx
+suggestions for improvement:
+- Consider moving the conditional rendering logic (todos.length > 0 ? ... : ...) into a separate function or component for better readability.
+- Ensure that the `CompleteTodo` and `RemoveTodo` components correctly dispatch actions to update the Redux store based on user interactions.
+- Add PropTypes to the component to explicitly define the expected data types for the props, which enhances code maintainability and reduces potential errors.
+- Sanitize the `task.title` when rendering it to prevent potential cross-site scripting (XSS) vulnerabilities, especially if the titles are user-generated.
+- Use memoization techniques (e.g., React.memo) to prevent unnecessary re-renders of the component if the `todos` prop hasn't changed.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- The code is incomplete. While it sets up the basic structure of a React-Redux application for a todo list, it doesn't include the actual Redux logic (actions, reducers) or the detailed implementation of the `AddTodo` and `DisplayTodos` components as described in the instructions.
+- It lacks the specific implementation of Redux actions, reducers, and the connection of React components to the Redux store. Without these elements, the application cannot manage the todo list state effectively.
+- The instructions also mentioned testing the application and applying CSS styling, which is not present in the code.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/store/todoStore.js
+suggestions for improvement:
+- The code only shows the creation of the Redux store using Redux Toolkit, and imports a `todoReducer`. It doesn't define the actions, action creators, or the structure of the `todoReducer` itself.  The task requires defining actions for adding, toggling, and removing todos. It also needs to implement the reducer logic for these actions.
+- While Redux Toolkit simplifies Redux development, the core concepts of actions and reducers still need to be explicitly defined to fully address the exercise.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/store/todoSlice.js
+suggestions for improvement:
+- Consider standardizing on either mutating or immutable updates. While Immer allows mutation, explicitly immutable updates are often easier to reason about and debug in complex applications.
+- Add type definitions to the parameters of the reducer functions
+Correctness: 100%
+-----

@@ -1,0 +1,15 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/App.jsx
+suggestions for improvement:
+- Consider moving the styles for the details tag in the ErrorBoundary component to a CSS file for better organization and maintainability.
+- The comments within the code are helpful, but ensure they remain updated as the code evolves.
+- There are some unused import statements that should be removed to improve code clarity.
+Correctness: 90%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/DisplayColor.jsx
+suggestions for improvement:
+- The provided code only implements the Child component and a DisplayColor component, and some commented-out components. It doesn't include the BuggyCounter, ErrorBoundary, or lifecycle methods as described in Exercise 1, Exercise 2 and Exercise 3. Therefore, the correctness is low.
+- The code is relatively readable, but could benefit from more descriptive variable names and comments.
+- The use of React.memo is good for performance.
+- The code doesn't seem to have any specific security vulnerabilities.
+Correctness: 20%
+-----
