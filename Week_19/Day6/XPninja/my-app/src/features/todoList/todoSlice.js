@@ -22,7 +22,15 @@ const todoSlice = createSlice({
     reducers: {
         setFilter(state, action) {
             state.filter = action.payload;
-        }
+        },
+        removeTodo(state, action) {
+            const todoIndex = state.todos.findIndex(todo => todo.id === action.payload);
+            state.todos.splice(todoIndex, 1);
+        },
+        completeTodo(state, action) {
+            const selectedTodo = state.todos.find(todo => todo.id === action.payload);
+            selectedTodo.done = !selectedTodo.done;
+        },
     },
 });
 
@@ -50,5 +58,5 @@ export const selectFilteredTodosCount = createSelector(
 );
 
 
-export const { setFilter } = todoSlice.actions;
+export const { setFilter, removeTodo, completeTodo } = todoSlice.actions;
 export default todoSlice.reducer;

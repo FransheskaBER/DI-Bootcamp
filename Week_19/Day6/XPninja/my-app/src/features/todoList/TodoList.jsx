@@ -1,12 +1,29 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectFilter, selectFilteredTodos, selectFilteredTodosCount } from "./todoSlice.js";
-import { setFilter } from "./todoSlice.js";
+import { selectFilter, selectFilteredTodos, selectFilteredTodosCount, setFilter, removeTodo, completeTodo } from "./todoSlice.js";
+import { useCallback } from "react";
+import RemoveTodo from "./RemoveTodo.jsx";
+import CompleteTodo from "./CompleteTodo.jsx";
 
 export default function TodoList() {
     const filter = useSelector(selectFilter);
     const filteredTodos = useSelector(selectFilteredTodos);
     const totalTodos = useSelector(selectFilteredTodosCount);
     const dispatch = useDispatch();
+
+    const handleRemove = useCallback(
+        (id) => {
+            dispatch(removeTodo(id));
+        },
+        [dispatch]
+    );
+
+    const handleComplete = useCallback(
+        (id) => {
+            dispatch(completeTodo(id));
+        },
+        [dispatch]
+    );
+
 
     return (
         <>
@@ -19,7 +36,11 @@ export default function TodoList() {
         <div>
             <h2>{filter} Todos: </h2>
             {filteredTodos.map(todo => (
-                <p key={todo.id}>{todo.title}</p>
+                <div>
+                    <CompleteTodo checked={todo.done} handleChange={() => handleComplete(todo.id)}/>
+                    <p key={todo.id}>{todo.title}</p>
+                    <RemoveTodo handleRemove={() => handleRemove(todo.id)} />
+                </div>
             ))}
             <h3>Total Number of todos: {totalTodos}</h3>
         </div>
