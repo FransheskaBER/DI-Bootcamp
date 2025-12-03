@@ -1,0 +1,12 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/DailyChallenge1/backEnd/server.js
+suggestions for improvement:
+- Consider adding more comprehensive error handling and input validation to improve the security of the application.
+- For larger applications, consider structuring the server code into separate modules for routes and middleware to improve maintainability.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/DailyChallenge1/frontEnd/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding error handling for the `fetch` calls to provide more informative feedback to the user.
+- For larger applications, using a state management library (like Redux or Context API) can improve the maintainability of state across different components.
+Correctness: 100%
+-----
