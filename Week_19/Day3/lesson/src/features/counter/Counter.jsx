@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, reset, addByVal } from "./counterSlice.js";
+import { increment, decrement, reset, delayIncrementAsync, addByVal } from "./counterSlice.js";
 import { useRef } from "react";
 
 export default function Counter() {
     const count = useSelector(state => state.counterReducer.count);
+    const status = useSelector(state => state.counterReducer.status);
     const dispatch = useDispatch();
     const num1 = useRef()
     const num2 = useRef()
@@ -17,7 +18,7 @@ export default function Counter() {
     return (
         <>
         <h2>Counter</h2>
-        <h3>Count: {count}</h3>
+        <h3>Count: {status === "loading" ? "Loading..." : count}</h3>
         <button onClick={() => dispatch(increment())}> + </button>
         <button onClick={() => dispatch(decrement())}> - </button>
         <button onClick={() => dispatch(reset())}> Reset </button>
@@ -28,6 +29,7 @@ export default function Counter() {
                 Add Input
             </button>
         </div>
+        <button onClick={() => dispatch(delayIncrementAsync())}> Delay Async </button>
         </>
     );
 }
