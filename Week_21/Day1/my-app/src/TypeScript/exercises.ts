@@ -68,9 +68,9 @@ console.log(formatValue(34));
 
 
 
-function fail(message: string): never {
-    throw new Error(message);
-}
+// function fail(message: string): never {
+//     throw new Error(message);
+// }
 // console.log(fail("ERROR"));
 
 type Command = "start" | "stop" | "pause";
