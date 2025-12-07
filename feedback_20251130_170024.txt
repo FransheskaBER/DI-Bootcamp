@@ -1,0 +1,40 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/store/slice.js
+suggestions for improvement:
+- The code only implements the Redux slice for managing tasks, but it doesn't address the requirement of organizing tasks by day. The state is a simple array, not a structure that maps days to tasks. This is a major deviation from the specified requirements.
+- Consider using a more descriptive name for the slice to enhance readability.
+- There's no error handling if selectedTask is undefined in the edit reducer. It's good that there's a check but nothing happens after. Consider throwing an error or logging a message for debugging purposes.
+- The initial state should consider the date. It's now just an array of tasks, instead it should be a map of dates and an array of tasks.
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/RemoveTask.jsx
+suggestions for improvement:
+- The component directly addresses removing tasks, but it lacks context within the broader application described in the prompt (daily planner, date selection, adding/editing tasks). It only implements a small portion of the required functionality.
+- Consider adding props for task details to improve user experience, such as task name. Also consider adding a conditional to check if a task really exists before attempting to remove it.
+- Error handling could be improved. What if the `id` doesn't exist? What if the remove function fails for some reason? It does not show any loading/error messages to improve UX.
+- The code lacks error handling and potentially could improve validation by not using indexes as ID's to have predictable ID's. Index based ID's will cause issues if task in the middle are removed.
+Correctness: 10.0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/EditTask.jsx
+suggestions for improvement:
+- The component only handles editing and toggling the 'done' state of a single task. To fully address the chapter's requirements, you need to create components for viewing tasks for a specific day, adding new tasks, and deleting tasks, as well as integrating a date picker.
+- Consider adding error handling (e.g., validation for the task title input).
+- Implement the Redux store configuration and reducer logic as outlined in the instructions, since only the dispatch of the edit action is shown here.
+Correctness: 60%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/DisplayTasks.jsx
+suggestions for improvement:
+- Consider adding a check for when `allTasks` is undefined or null to prevent potential errors.
+- The filtering logic (`allTasks.filter(tasks => tasks.date === date)`) assumes that the `date` property within each task object is a string in the same format as the `date` prop passed to the component. Implement error handling and type validation to address unexpected data formats.
+- Implement better error handling or user feedback when `selectedTasks` is empty to avoid a potentially confusing user experience.
+- Consider memoizing `prettyDate` and `selectedTasks` using `useMemo` to improve performance by preventing unnecessary re-renders when `date` doesn't change.
+- Ensure proper input sanitization in the EditTask component (not shown but implied by the code) to prevent XSS vulnerabilities.
+- Consider using a more efficient data structure (e.g., a Map) in the Redux store to store tasks by date for faster lookups, especially if the number of tasks is large.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/DailyChallenge/my-app/src/AddTask.jsx
+suggestions for improvement:
+- The code only implements the 'add task' functionality and doesn't include edit or delete functionalities as asked in the instructions.
+- The code does not include the Redux store configuration or the reducer implementation.
+- The code lacks error handling and input validation.
+Correctness: 50%
+-----

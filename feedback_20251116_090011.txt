@@ -1,0 +1,13 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/DailyChallenge/my-app/src/App.jsx
+suggestions for improvement:
+- The App component should manage the state of the form inputs and handle the form submission.  It should also include the handleChange function as specified in the instructions.
+- The App component needs to pass the state and the handleChange function as props to the Form component.
+- The App component should construct the URL upon form submission and redirect the user to that URL.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/DailyChallenge/my-app/src/Form.jsx
+suggestions for improvement:
+- Consider extracting the form component into a separate file for better organization, especially as it grows.
+- The ternary operator for Nuts free, Lactose free and Vegan meal outputs can be improved for a specific output, since the output it self is displaying the diet as a whole
+Correctness: 100%
+-----
