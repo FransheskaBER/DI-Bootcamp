@@ -1,0 +1,12 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day3/CalculatorChallenge/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding input validation to prevent non-numeric inputs or division by zero.
+- Use more descriptive names for the 'action' values in the select options (e.g., 'add', 'subtract' instead of 'a', 's').
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day3/CalculatorChallenge/my-app/src/App.css
+suggestions for improvement:
+- This code is CSS styling and doesn't implement the React calculator functionality described in the prompt.
+- The challenge requires React components, state management, and event handling, none of which are present in the provided CSS.
+Correctness: 0%
+-----
