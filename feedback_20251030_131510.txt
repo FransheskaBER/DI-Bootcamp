@@ -1,0 +1,14 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/server.js
+suggestions for improvement:
+- Consider adding some error handling to the getFeed function.
+- The category search could be improved by using a more precise matching algorithm instead of `.includes()`.
+Correctness: 95%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_13/remoteLearning/miniProject/public/pages/search.ejs
+suggestions for improvement:
+- Install all the required libraries
+- The `rss-parser` import statement should use `require` instead of `import`, aligning with the instructions.
+- Verify that the view engine setup correctly uses `path.join(__dirname, 'public')` to resolve the path to the 'public' directory where views are stored.
+- Ensure the correct file path is specified when rendering pages, e.g., `res.render('pages/index')` and that this path is relative to the `views` directory
+Correctness: 0%
+-----
