@@ -1,0 +1,43 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/App.jsx
+suggestions for improvement:
+- The provided code only sets up the basic structure of the application by including the necessary components. It does not implement the core functionalities requested in the prompt: editing tasks, filtering tasks by completion status, using useRef for task editing, and implementing corresponding reducer actions.
+- The code lacks the implementation of editing tasks, which requires adding edit buttons or input fields to each task, handling state updates for edited task text, and dispatching an 'EDIT_TASK' action.
+- The filtering functionality is missing, requiring buttons or controls to filter tasks by completion status, updating the state to reflect the selected filter, and dispatching a 'FILTER_TASKS' action.
+- The code doesn't showcase the use of useRef, which is supposed to be used in the editing feature.
+- There are no reducer actions for editing and filtering tasks.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/AddNewTask.jsx
+suggestions for improvement:
+- The provided code only implements the 'Add New Task' functionality. It does not include the requested 'Edit Tasks' and 'Filter Tasks' features using `useRef`, `useContext`, and `useReducer`, as outlined in the chapter content.
+- The code is missing the implementation of `EDIT_TASK` and `FILTER_TASKS` actions in the reducer.
+- The code lacks conditional rendering for displaying tasks based on the selected filter.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/DisplayAllTasks.jsx
+suggestions for improvement:
+- Implement the task filtering functionality as described in the instructions. Add buttons to filter tasks by completion status (e.g., show all, show completed, show active). The current code includes a basic filter, but it's not controlled by user interaction.
+- The component UpdateTask (which is not provided) must implement the editing functionality using useRef. There should be an edit button and input field.
+- The reducer logic for EDIT_TASK and FILTER_TASKS is missing.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/FilterTasks.jsx
+suggestions for improvement:
+- The code implements filtering, but it uses a dropdown instead of buttons as suggested. Consider using buttons for a more intuitive user experience.
+- The code directly calls `filterTasks` within the `handleChange` function, which is acceptable but could be separated for clearer logic.  It correctly uses `useContext` to access the filtering function.
+- The code handles the 'all' case correctly by passing `null` as the payload.  This depends on how the reducer handles a `null` filter.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/TaskMgmnContext.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ChallengeTaskMgmt/my-app/src/UpdateTask.jsx
+suggestions for improvement:
+- Implement task filtering by completion status using buttons, as described in the instructions.
+- Consider using `useRef` to focus on the input field when editing is enabled for better UX.
+- Move the logic for updating the state after editing into the reducer function for better state management practices.
+- Add error handling to avoid unexpected behavior such as empty strings.
+Correctness: 50%
+-----

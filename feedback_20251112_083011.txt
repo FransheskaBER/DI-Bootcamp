@@ -1,0 +1,12 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/DailyChallenge/my-app/src/App.jsx
+suggestions for improvement:
+- Consider extracting the language item rendering into a separate component for better organization, especially if the complexity increases.
+- While the code is efficient, explore memoization techniques (e.g., `useMemo`) if the component re-renders frequently and performance becomes an issue.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day4/DailyChallenge/my-app/src/App.css
+suggestions for improvement:
+- The provided code is CSS and does not address the React app instructions. The instructions require creating a React app with state management and event handling.
+- The CSS styles are unrelated to the React functionality requested in the prompt.
+Correctness: 0%
+-----
