@@ -1,0 +1,11 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day4/Challenge/buildingLibrarySystem.ts
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day4/Challenge/buildingLibrarySystem.js
+suggestions for improvement:
+- Consider adding more comprehensive error handling for cases where books are not found.
+- While the code functions correctly, ensure consistent use of types and interfaces throughout for better type safety.
+Correctness: 100%
+-----
