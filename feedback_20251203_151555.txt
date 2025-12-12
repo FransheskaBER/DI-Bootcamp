@@ -1,0 +1,105 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/store/store.js
+suggestions for improvement:
+- The provided code only sets up a basic Redux store. It needs to implement the actions, reducers, selectors, and components as outlined in the problem description to fully address the prompt.
+- The code lacks implementations for managing tasks and categories, including adding, editing, deleting, and updating task progress. These are crucial based on the problem description.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/App.jsx
+suggestions for improvement:
+- The provided code sets up the basic structure of a React application with Redux integration and routing, but it doesn't implement the specific features outlined in the challenge instructions. It lacks the implementation of Redux actions, reducers, selectors, and functional components for managing tasks and categories, as well as the task editing and completion functionalities.
+- The code only provides the basic app structure with routing to TaskPage and CategoryPage. The core functionality of creating selectors with `createSelector`, implementing `useCallback` for task editing and completion is missing.
+- The code doesn't include the implementation for calculating completed tasks or retrieving category details by ID.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/data.js
+suggestions for improvement:
+- This code only defines initial data (categories and tasks). It doesn't include any Redux setup, actions, reducers, selectors, or React components as required by the prompt.
+- The code lacks any implementation related to task editing or completion using useCallback as requested.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/trackerSlice.js
+suggestions for improvement:
+- Consider using more descriptive names for action payloads to improve readability (e.g., instead of `{ id, updates }`, use `{ taskId, taskUpdates }`).
+- While the `deleteCat` reducer handles re-assigning tasks from a deleted category to a default category, it could be more robust by ensuring that the `DEFAULT_CAT_ID` always exists in the `categories` array.
+- The selector `selectCategoryById` returns all categories if a categoryId is not provided. This is unexpected behavior given its name, and you may want it to return `undefined` or `null` if a categoryId is not provided.
+Correctness: 90%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/AddCategory.jsx
+suggestions for improvement:
+- The provided code only implements the 'add category' functionality. Consider expanding it to include edit and delete category actions as well.
+- While the component works, abstracting the form logic into a custom hook could improve readability and reusability if you plan to have multiple forms in your application.
+- Consider adding input validation to the form to ensure that the category name is not empty or too long.
+Correctness: 60%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/CategoryPage.jsx
+suggestions for improvement:
+- The provided code only renders `AddCategory` and `CategorySelector` components. It does not implement any of the Redux setup, actions, reducers, selectors, task editing, or task completion functionality as described in the problem statement.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/CategoryRow.jsx
+suggestions for improvement:
+- The provided code only implements a React component for displaying and editing categories. It does not implement any of the Redux-related tasks mentioned in the problem description, such as setting up the Redux store, defining actions and reducers, creating selectors, or using `useSelector` and `useCallback`.
+- The component relies on props like `onDelete`, `onEdit`, and `editingCatId` which suggests that the Redux logic (which is missing) would need to handle the state and dispatch relevant actions to update the store.
+- The code snippet is missing the Redux implementation, making it incomplete according to the problem statement.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/CategorySelector.jsx
+suggestions for improvement:
+- Consider using `useMemo` to memoize `uniqueColors` and `displayedCats` to prevent unnecessary re-renders when `categories` haven't changed. This directly addresses the 'Enhancing Redux Performance' aspect of the chapter.
+- The filtering logic in `displayedCats` can be simplified for better readability. Extract the filter conditions into separate functions or use a single `filter` call with combined conditions. This improves readability and maintainability.
+- While `useCallback` is used for `handleDeleteCat` and `handleEditToggle`, ensure that dependencies are correctly specified and that these callbacks are indeed passed down to child components to prevent unnecessary re-renders there as well.  This is relevant to performance optimizations.
+Correctness: 75%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/DeleteCategory.jsx
+suggestions for improvement:
+- The provided code only implements a `DeleteCategory` component, which is a small part of the requested functionality. It doesn't address the core requirements of setting up a Redux store, implementing actions and reducers for task and category management, creating selectors, or building the `TaskList` and `CategorySelector` components.  The memoization is a good practice, but irrelevant without the broader context.
+- The instructions explicitly mention Redux setup, actions, reducers, selectors, and components for task management, none of which are present in the submitted code.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/CategoryManagment/EditCategory.jsx
+suggestions for improvement:
+- The code only implements the editing of categories. It needs to also implement Redux setup, actions, reducers, selectors, TaskList component, CategorySelector component, task editing, and task completion as outlined in the instructions.
+- Consider moving the handleSubmit logic (dispatch and state reset) into a useCallback hook for performance improvements, especially if this component re-renders frequently.
+- It would be helpful to have validation on the input fields to ensure data integrity before dispatching the action.
+Correctness: 40%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/AddTask.jsx
+suggestions for improvement:
+- While the code implements adding a task, it doesn't address all the requirements outlined in the prompt, such as editing/deleting tasks/categories or using `createSelector` for derived data.
+- Consider extracting the form element into a separate component for better readability and reusability.
+- The `DEFAULT_CAT_ID` should be defined in a more robust manner, perhaps within the Redux store initialization or a configuration file.
+- Client-side validation for the form inputs should be added to improve data integrity and user experience.
+Correctness: 60%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/DeleteTask.jsx
+suggestions for improvement:
+- This code snippet only provides a delete button component, which is a very small part of the overall problem described in the Chapter Content/Questions. It does not address Redux setup, actions, reducers, selectors, or functional components as outlined in the problem. It's also missing all other parts of the described functionality like TaskList, CategorySelector, Task Editing, and Task Completion.
+- The provided button component is not linked to any Redux logic or actions. Therefore, it doesn't fulfill any of the requirements of the challenge.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/EditTask.jsx
+suggestions for improvement:
+- The `handleProgressChange` useCallback dispatches `updateProgress` immediately upon change, which might be too frequent. Consider debouncing or throttling this action, or only dispatching on form submission.
+- The component re-initializes the `updates` state after submitting, setting the values back to current values. While this aligns with closing the editor, consider if this is the best UX. It also sets the state twice upon progress bar change. The dispatch could be eliminated from the useCallback since the state changes are handled by the form submission.
+- Consider adding input validation to the form, especially for the date and progress fields.
+- The component lacks error handling. Implement error handling for actions like `editTask` and `updateProgress`.
+Correctness: 70%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/TaskList.jsx
+suggestions for improvement:
+- The selectors usage is not aligned with the instructions completely. `selectCategoryById` is missing.
+- The logic for filtering tasks based on category and completion status could be simplified using more efficient selector composition instead of conditional filtering within the component.
+- The TaskList component fetches all tasks and categories, which can be inefficient if the data is large. Consider fetching only the necessary data based on the current filters.
+Correctness: 60%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/TaskPage.jsx
+suggestions for improvement:
+- The provided code only renders `AddTask` and `TaskList` components. It does not include any Redux setup, actions, reducers, selectors, or the `CategorySelector` component as requested in the prompt.
+- The code doesn't implement task editing or completion functionalities using `useCallback`.
+Correctness: 0%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/Challenge/my-app/src/features/TaskManagment/UpdateProgress.jsx
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----

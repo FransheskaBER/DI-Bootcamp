@@ -1,0 +1,24 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/XP/my-app/src/features/todoSlice.js
+suggestions for improvement:
+- Consider adding type definitions for state and action payloads to improve code clarity and prevent potential type-related errors.
+- For better readability and maintainability, especially as the application grows, consider using a more descriptive variable name than 't' in the toggleTodo and removeTodo reducers.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/XP/my-app/src/features/TodoList.jsx
+suggestions for improvement:
+- Consider moving the div with the key to the TodoItem component for better encapsulation.
+- The commented-out button and its associated function should be removed to clean up the code if they are not needed.
+Correctness: 75%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/XP/my-app/src/features/TodoItem.jsx
+suggestions for improvement:
+- Consider using more descriptive variable names where appropriate to enhance readability.
+- The component could be made more reusable by accepting styling props.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/XP/my-app/src/features/AddTodo.jsx
+suggestions for improvement:
+- Consider using a more robust ID generation method than `Date.now()` for production applications.
+- The `console.log(newTask)` is useful for debugging but should be removed in production code.
+Correctness: 100%
+-----
