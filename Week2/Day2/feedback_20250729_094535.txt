@@ -1,0 +1,11 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week2/Day2/DailyChallenge.py
+suggestions for improvement:
+- The code correctly transforms the matrix string into a 2D list and filters alpha characters. However, it doesn't accurately implement step 4 (replacing symbols with spaces between alpha characters).  It replaces all non-alpha characters with spaces, not just those between alpha characters.
+- The code could be improved by adding more comments to explain the logic, especially in the column processing and symbol replacement parts.
+- The final message construction could be made more efficient by directly concatenating the characters during the column processing instead of iterating through the cleaned matrix again.
+Brief justification:
+- correctness: The code successfully completes steps 1, 2, and 3 as described in the chapter content. Step 3 (filtering alpha characters) is implemented correctly using the `.isalpha()` method. However, step 4 (replacing symbols with spaces *between* alpha characters) is incorrectly implemented. The code replaces all non-alphabetic characters with spaces, which deviates from the requirement to only replace groups of symbols between alphabetic characters. This reduces the correctness score. The final message construction is a direct consequence of the faulty step 4 implementation.
+- readability: The code is generally well-structured and easy to follow. The use of comments explains some parts, but more comments explaining complex logic (like the column iteration and alpha character filtering) would improve readability. Variable names are also descriptive.
+- performance: The code's performance is acceptable for the given input size. The nested loops are efficient enough for this case. The use of string concatenation in the final part is efficient, given that there is no string building from a large number of smaller strings.
+- security: There are no security concerns in this code as it only deals with string manipulation and does not interact with external resources or handle user input that could pose security risks.
+

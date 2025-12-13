@@ -1,0 +1,26 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- Consider adding more descriptive class names or comments to enhance readability further.
+- For better performance, especially with larger text inputs in the `TextCounter` component, you might explore debouncing the input change handler.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ExerciseXP/my-app/src/TextCounter.jsx
+suggestions for improvement:
+- Consider adding a CSS class to the input for styling purposes.
+- The component name 'TextCounter' could be more descriptive.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ExerciseXP/my-app/src/ThemeContext.jsx
+suggestions for improvement:
+- This code snippet defines a ThemeProvider and ThemeContext, which is a good start, but it doesn't implement the full exercises as described. There are two exercises, not just one.
+- Exercise 1 requires creating a theme switcher component that uses the context. This code provides the context but not the component.
+- Exercise 2 requires the use of useRef to implement a character counter. This code does not implement that functionality.
+- Exercise 3 requires the use of useReducer to manage todo items, which is not implemented here.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day4/ExerciseXP/my-app/src/ThemeSwitcher.jsx
+suggestions for improvement:
+- Consider adding more descriptive comments to explain the purpose of the component and its functionality.
+- The inline styling is acceptable for a small component, but for larger applications, consider using CSS classes for better maintainability.
+Correctness: 100%
+-----

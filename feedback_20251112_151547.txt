@@ -1,0 +1,26 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/App.jsx
+suggestions for improvement:
+- Separate the lifecycle methods (Exercise 2) and error boundary simulation (Exercise 1) into distinct components and files for better organization and to ensure each exercise is self-contained.
+- The Child component in App.js should render 'Hello World!' in a header tag and alert an unmounted message in componentWillUnmount, as specified in Exercise 3. Ensure this functionality is correctly implemented.
+- Refactor the App component to use separate components for each exercise, enhancing modularity and testability.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/BuggyCounter.jsx
+suggestions for improvement:
+- This code only implements the `BuggyCounter` component from Exercise 1. It needs to be extended to include the `ErrorBoundary` component and the different simulation scenarios.
+- The code uses functional components and hooks which while valid, are not aligned with the class component requirement from exercise 1.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/ErrorBoundary.jsx
+suggestions for improvement:
+- The provided code snippet relates to error handling but does not implement the error boundary as specified in Exercise 1, which involves creating class components, managing state, and simulating error scenarios. The code only shows a functional component for displaying an error message.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_16/Day6/ExerciseXP/my-react-app/src/DisplayColor.jsx
+suggestions for improvement:
+- The provided code only contains function components and useEffect hooks, not class components and lifecycle methods as required by the exercises.
+- The code does not include the ErrorBoundary component or any of the simulations described in Exercise 1.
+- The code does not implement the shouldComponentUpdate, componentDidUpdate, or getSnapshotBeforeUpdate methods as required by Exercise 2.
+- The Child component implementation is closer to the requirements of Exercise 3, but it uses useEffect instead of componentWillUnmount in a class component.
+Correctness: 0%
+-----
