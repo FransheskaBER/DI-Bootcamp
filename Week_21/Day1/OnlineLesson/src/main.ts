@@ -159,6 +159,75 @@ returnFirstEl(nums);
 const strs = ["a", "b", "c", "d"];
 returnFirstEl(strs);
 
+// type Functions
+
+type Operation = (num1: number, num2: number) => number;
+
+const sumAB: Operation = (a, b) => {
+    return a + b;
+};
+sumAB(5, 5);
+
+
+// DOM elements
+const myImg = document.querySelector("img") as HTMLImageElement
+myImg.src = "https://...";
+
+
+// Classes and Access Modifiers:
+// public > anywhere
+// protected > inside the class and subclasses
+// private > only inside the class
+
+class User {
+    public name: string;
+    private age: number;
+    protected active: boolean;
+
+    constructor(name: string, age: number, active: boolean) {
+        this.name = name;
+        this.age = age;
+        this.active = active;
+    }
+
+    // Methods
+    getAge(): number {
+        return this.age;
+    }
+
+    getactiveStatus(): boolean {
+        return this.active;
+    }
+}
+
+const userJohn = new User("John", 30, true);
+console.log(userJohn.getAge());
+console.log(userJohn.getactiveStatus());
+console.log(userJohn.name);
+
+class Student extends User {
+    constructor(name: string, age: number, active: boolean) {
+        super(name, age, active);
+    }
+
+    getStudentAge(): string {
+        return this.name + " is " + this.getAge() + " years old.";
+    }
+    isStudentActive(): string {
+        return this.name + " is " + this.getactiveStatus();
+    }
+}
+const stud1 = new Student("Marie", 22, false);
+console.log(stud1.name);
+console.log(stud1.getAge());
+console.log(stud1.getactiveStatus());
+console.log(stud1.getStudentAge());
+
+
+
+
+
+
 
 
 

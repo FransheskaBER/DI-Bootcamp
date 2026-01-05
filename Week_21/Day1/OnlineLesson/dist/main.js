@@ -99,4 +99,8 @@ const nums = [6, 7, 8, 9, 10];
 returnFirstEl(nums);
 const strs = ["a", "b", "c", "d"];
 returnFirstEl(strs);
+const sumAB = (a, b) => {
+    return a + b;
+};
+sumAB(5, 5);
 //# sourceMappingURL=main.js.map
