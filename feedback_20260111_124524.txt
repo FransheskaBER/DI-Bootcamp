@@ -1,0 +1,27 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day2/xp/my-app/src/App.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day2/xp/my-app/src/components/Greeting.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day2/xp/my-app/src/components/Counter.tsx
+suggestions for improvement:
+- The exercise asks to track the last action performed. This is missing.
+- The exercise asks to implement proper TypeScript types for all state variables, including the last action performed, which is missing.
+Correctness: 50%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day2/xp/my-app/src/components/UserCard.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day2/xp/my-app/src/components/UserList.tsx
+suggestions for improvement:
+- Consider moving the API endpoint to a configuration file or environment variable.
+- The `await new Promise` for artificial delay can be removed in production code.
+Correctness: 100%
+-----
