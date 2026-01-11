@@ -1,0 +1,10 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day2/Challenge/unionTypeValidator.ts
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day2/Challenge/unionTypeValidator.js
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----

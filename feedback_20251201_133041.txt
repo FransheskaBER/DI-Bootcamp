@@ -1,0 +1,52 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/store/store.js
+suggestions for improvement:
+- The provided code only sets up the Redux store, but it doesn't include actions, reducers, or components to manage tasks for different days as described in the problem. plannerSlice.js content is missing, so I can not test it.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/App.jsx
+suggestions for improvement:
+- The code only includes the App component which renders the Provider and TaskList. Components for adding, editing, deleting tasks, and a calendar/date picker are missing.
+- The implementation of Redux actions and reducers is not present in the provided code.  While the `store` is imported, the actual Redux logic is absent.
+- The TaskList component is mentioned but its content is not provided which makes it impossible to evaluate its correctness
+Correctness: 30%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/plannerSlice.js
+suggestions for improvement:
+- The reducer could be improved to manage tasks based on selected dates. Currently, it stores all tasks in a single array, which doesn't align with the requirement to manage tasks for *specific* days.
+- Consider using a date-keyed object in the state to store tasks for each day, which will make it easier to filter and display tasks based on the selected date.
+- The current implementation for editing and deleting tasks assumes the task ID is unique across all dates. This might not be the case, and it would be more robust to consider both the date and task ID.
+- Error handling for `editTask` and `deleteTask` can be improved. Currently, if a task isn't found, `editTask` does nothing silently, and `deleteTask` proceeds without throwing an error. Explicit error handling could prevent unexpected behavior.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/AddTask.jsx
+suggestions for improvement:
+- Consider adding input validation to prevent empty task titles.
+- You might want to add a success message or some visual feedback to indicate that the task was added successfully.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/Calendar.jsx
+suggestions for improvement:
+- Consider moving the `setSelectedDate` action dispatch outside of the Calendar component if it's only used by the AddTask component. This would improve separation of concerns.
+- The DatePicker component could be extracted into a separate file for better organization.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/DeleteTask.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/EditTask.jsx
+suggestions for improvement:
+- Consider adding error handling for cases where the editTask action might fail.
+- The component could be made more reusable by accepting a callback function for the editTask action instead of directly dispatching it. This would decouple the component from the specific Redux implementation.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day2/Challenge/my-app/src/features/TasksList.jsx
+suggestions for improvement:
+- The code does not present any Redux code, therefore it is impossible to evaluate it relative to the prompt.
+- There is no code for setting up a Redux store, defining actions, or creating reducers as instructed in the prompt.
+- The code should have included the implementation for `addTask`, `editTask`, and `deleteTask` actions, along with their corresponding reducers.
+- The code should include the implementation of the AddTask and DeleteTask components.
+- The code needs to demonstrate how the components interact with the Redux store using `useDispatch` to dispatch actions.
+Correctness: 0%
+-----
