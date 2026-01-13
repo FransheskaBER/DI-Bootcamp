@@ -1,0 +1,12 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week1/Day4/DailyChallenge.py
+suggestions for improvement:
+- In Challenge 1, the variable name `lenght` should be `length` for better readability and consistency with standard English spelling.
+- Add more comments to explain the logic in Challenge 2.  For instance, a comment explaining the purpose of the `if letters == 0 or ...` condition would improve readability.
+- For both challenges, consider adding input validation to handle cases where the user enters non-integer values (Challenge 1) or empty strings (Challenge 2). This would improve the robustness of the code.
+- For slightly better performance in Challenge 2, you could use a list to build the result and then join it into a string at the end, instead of repeatedly appending to a string.
+Brief justification:
+- correctness: Both challenges are solved correctly. Challenge 1 accurately generates a list of multiples as specified, using a `for` loop, list appending, and basic arithmetic. Challenge 2 correctly removes consecutive duplicate letters from a string using a `for` loop, string manipulation, and conditional statements.  Both programs directly address the problem statements and examples provided in the chapter content.
+- readability: The code is mostly readable.  However, minor improvements in variable names (Challenge 1) and comments (Challenge 2) would enhance understanding.  The logic is fairly clear, although some comments clarifying the `if` condition in Challenge 2 would help.
+- performance: The performance is good for the given tasks.  The algorithms used are efficient for the small input sizes expected in this context.  However, for larger strings in Challenge 2, using string concatenation repeatedly in a loop can be less efficient than using a list and joining it at the end. 
+- security: The code is secure as it does not handle any external data sources that might introduce vulnerabilities. Input validation (as suggested above) would further improve security by preventing unexpected errors and crashes.
+

@@ -1,0 +1,12 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day2/XP/exercisesXP.ts
+suggestions for improvement:
+- Consider adding comments to explain the purpose of each exercise, especially for more complex ones.
+- For exercise 7, it is commented out, if you want to make the project more complete it is better to write a functional example instead of code that is commented out.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day2/XP/tsconfig.json
+suggestions for improvement:
+- The provided code is a tsconfig.json file, which configures the TypeScript compiler. It doesn't address any of the exercises described in the chapter content, which involve writing TypeScript code to solve specific problems.
+- The tsconfig.json file is related to setting up a TypeScript project, but it's not a solution to the programming exercises.
+Correctness: 0%
+-----
