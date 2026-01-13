@@ -1,0 +1,12 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day4/XP/exercisesXP.js
+suggestions for improvement:
+- Consider adding comments to explain more complex logic.
+- Ensure consistent naming conventions across the project (e.g., subtract vs substract).
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day4/XP/exercisesXP.ts
+suggestions for improvement:
+- Consider adding comments to explain the purpose of each class and method, especially for those less familiar with the code.
+- For better readability and maintainability, consider using more descriptive variable names.
+Correctness: 100%
+-----

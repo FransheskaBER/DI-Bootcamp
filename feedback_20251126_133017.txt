@@ -1,0 +1,27 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/AddTodo.jsx
+suggestions for improvement:
+- Ensure that the other necessary Redux components (reducer, store configuration) are present and correctly implemented to fulfill the requirements of a complete React-Redux todo list application.
+- Consider adding input validation to prevent adding empty todos.
+- Think about handling potential errors when dispatching actions or updating the state.
+Correctness: 50%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/DisplayTodos.jsx
+suggestions for improvement:
+- Consider adding prop types for better component documentation and type safety.
+- Ensure that the `CompleteTodo` and `RemoveTodo` components properly dispatch Redux actions when interacted with, as per the instructions.
+- Implement the Redux store setup, actions, and reducers in separate files to enhance code organization and maintainability. The current code only shows the display component.
+Correctness: 70%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/store/todoStore.js
+suggestions for improvement:
+- The code only configures the Redux store. It does not implement any of the core functionalities described in the prompt, such as defining actions, reducers for adding, toggling, and removing todos, or creating React components that connect to the Redux store and dispatch actions.
+- It does not include the definition of action types, action creators, or reducers to handle the state of a todo list (adding, toggling, and removing todos).
+- It does not provide any React components to interact with the Redux store and display a todo list, add new todos, mark them as complete, or remove them.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_18/Day6/ExerciseXP/my-app/src/store/todoSlice.js
+suggestions for improvement:
+- Consider using `createSlice` from `@reduxjs/toolkit` for simpler reducer and action creation.  The current example already uses `createSlice`, so there is nothing to improve.
+- Ensure that the state updates are immutable, especially when not using Redux Toolkit. The current example uses the mutable style updates that are only applicable when using Redux Toolkit.
+Correctness: 100%
+-----
