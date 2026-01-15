@@ -1,0 +1,24 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day3/recipe-book-app/recipe-book/src/model/RecipeCollection.ts
+suggestions for improvement:
+- Consider adding error handling for `addRecipe`, `removeRecipe`, and `toggleFavorite` methods to gracefully handle unexpected situations.
+- Use more descriptive variable names where appropriate to enhance readability.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day3/recipe-book-app/recipe-book/src/model/RecipeItem.ts
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day3/recipe-book-app/recipe-book/src/templates/RecipeTemplate.ts
+suggestions for improvement:
+- Consider adding more specific class names or data attributes to the elements for easier styling and testing.
+- It might be useful to provide options for editing recipes, not just deleting them.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_22/Day3/recipe-book-app/recipe-book/src/main.ts
+suggestions for improvement:
+- Consider creating a separate function to handle the re-rendering logic (render and renderFavs) to avoid duplication in the removeRecipe and toggleFavorite callbacks.
+- The code could benefit from better error handling, especially when dealing with localStorage.
+- Consider using a more robust state management solution if the application grows in complexity.
+Correctness: 90%
+-----

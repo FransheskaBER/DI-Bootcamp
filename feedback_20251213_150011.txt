@@ -1,0 +1,11 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day6/Challenge/challenge.js
+suggestions for improvement:
+- Consider using template literals for improved readability.
+- Add type definitions for the input array and the return type of the `handleData` function to improve type safety and code clarity. Typescript was specified, but not utilized to it's full potential.
+Correctness: 100%
+-----
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_21/Day6/Challenge/challenge.ts
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----

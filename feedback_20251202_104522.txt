@@ -1,0 +1,25 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/XP/my-app/src/features/bookInventorySlice.js
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/XP/my-app/src/features/BookList.jsx
+suggestions for improvement:
+- Consider adding a default case or handling for when the genre is not one of the specified genres in the displayedBooks logic to avoid potential issues.
+- It may improve readability to extract the genre selection logic into a separate component.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/XP/my-app/src/store/store.js
+suggestions for improvement:
+- The provided code only sets up the Redux store. It does not include the initial state, define any selectors using `createSelector`, implement the React component `BookList`, implement any UI interactions, or include any tests. Therefore, it only partially addresses the problem.
+- The code is incomplete and does not fulfill the requirements of the exercise.
+Correctness: 0%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_19/Day6/XP/my-app/src/App.jsx
+suggestions for improvement:
+- The `BookList` component, Redux store setup, initial state, reducers, actions, and selectors are missing. You should implement the store with necessary middleware and reducers to manage the book inventory state.
+- Define the initial state with an array of books, including properties like id, title, author, and genre.
+- Implement the selectors using `createSelector` from `@reduxjs/toolkit` to filter books based on their genres (selectBooks, selectHorrorBooks, selectFantasyBooks, and selectScienceFictionBooks).
+- Implement UI interactions (buttons or a dropdown) within the `BookList` component to switch between different genres, dynamically updating the displayed book list according to the selected genre.
+Correctness: 70%
+-----

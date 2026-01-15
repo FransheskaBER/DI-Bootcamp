@@ -1,0 +1,11 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/pages/PostList.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day2/ExerciseXP/my-app/src/App.jsx
+suggestions for improvement:
+- Consider moving the `Exercise4` component to its own file for better organization.
+- The `<br />` and `<hr />` tags within `HomeScreen` could be styled with CSS classes for visual consistency and maintainability.
+Correctness: 100%
+-----

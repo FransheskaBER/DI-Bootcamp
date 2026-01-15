@@ -1,0 +1,14 @@
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day3/QuoteGenerator/my-app/src/App.jsx
+suggestions for improvement:
+- The condition `prev.showQuote && next === prev.showQuote` inside `displayQuote` is trying to access a property that does not exist. It should be `prev && next === prev`. This does not break the code though since `prev.showQuote` always evaluates to undefined.
+- Consider using more descriptive variable names (e.g., `nextQuote` instead of `next`).
+- Since the quotes are fetched from a local file, error handling can be simplified. The try-catch block might be overkill.
+Correctness: 100%
+-----
+URL: URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week_17/Day3/QuoteGenerator/my-app/src/App.css
+suggestions for improvement:
+- The provided code snippet appears to be CSS styling rather than React component code.  It doesn't implement the functionality described in the instructions for building a Random Quote Generator using React. It only provides some basic styling for elements with class names 'quote', 'author', and 'btn'.
+- To create the Random Quote Generator, you'll need to use React components, state management, and event handling. Start by creating a functional component that renders the quote and author. Use the `useState` hook to manage the current quote and author. Create a button that, when clicked, updates the state with a new random quote and author. Also, implement the logic to randomly change the background, header, and button colors.
+- The quote data needs to be managed within the React component, or imported from the provided file.
+Correctness: 0%
+-----

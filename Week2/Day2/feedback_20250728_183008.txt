@@ -1,0 +1,15 @@
+URL: https://github.com/FransheskaBER/DI-Bootcamp/blob/main/Week2/Day2/ExercisesXP.py
+suggestions for improvement:
+- Exercise 1: The docstring is good, but the instructions asked for a message about what *you* are learning;  the current message is generic.
+- Exercise 2: The solution hardcodes an author. The instructions only required the title.
+- Exercise 3: Good use of default parameters and f-strings.  The docstring could be improved to clearly state the default parameter.
+- Exercise 4: The function should not prompt the user for input.  The random number should be generated internally. The instructions state the function accepts a number between 1 and 100.
+- Exercise 5: Excellent use of default parameters and keyword arguments. The output message could be improved for clarity.
+- Exercise 6: The `make_great` function creates a *new* list instead of modifying the original list in place, which is a departure from the instructions. The function should modify the original list.
+- Exercise 7: The `main` function does not handle errors appropriately (for example, if no valid month is provided). The bonus parts (floating point and seasonal temperatures) are well implemented.
+Brief justification:
+- correctness: Most exercises correctly implement the core functionality described in the chapter content.  However, some solutions deviate from the specific requirements outlined (see feedback for details).  The bonus features in Exercise 7 are correctly implemented.
+- readability: The code is generally well-formatted and easy to understand.  Docstrings are present, but could be more precise in some cases (see feedback).
+- performance: The code is efficient and performs the tasks without unnecessary overhead. There are no significant performance concerns.
+- security: The code does not introduce any security vulnerabilities. Input is handled reasonably but not exhaustively in all exercises.
+
