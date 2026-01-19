@@ -76,6 +76,7 @@ export async function register(req: Request, res: Response): Promise<void> {
                 id: newUser.id,
                 username: newUser.username,
                 email: newUser.email,
+                avatar_url: newUser.avatar_url,
             },
         });
 
@@ -138,6 +139,7 @@ export async function login(req: Request, res: Response): Promise<void> {
                 id: user.id,
                 username: user.username,
                 email: user.email,
+                avatar_url: user.avatar_url,
             },
         });
 
@@ -194,6 +196,7 @@ export async function getCurrentUser(req: Request, res: Response): Promise<void>
             id: user.id,
             username: user.username,
             email: user.email,
+            avatar_url: user.avatar_url,
         });
     } catch (error) {
         console.error('Get current user error:', error);
@@ -211,6 +214,7 @@ export async function getAllUsersController(req: Request, res: Response): Promis
       id: user.id,
       username: user.username,
       email: user.email,
+      avatar_url: user.avatar_url,
     }));
     
     res.json(safeUsers);

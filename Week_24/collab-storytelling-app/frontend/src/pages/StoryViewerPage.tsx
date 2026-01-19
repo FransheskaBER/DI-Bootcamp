@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { setCurrentStory, removeStory } from '../features/storiesSlice';
-import { fetchStoryById, deleteStory } from '../services/api';
+import { fetchStoryById, deleteStory, getContributors, toggleCommentsEnabled } from '../services/api';
 import Contributors from "../components/Contributors";
-import { getContributors } from "../services/api";
+import Comments from "../components/Comments";
+import ShareButtons from "../components/ShareButtons";
 
 export default function StoryViewerPage() {
     const { id }= useParams<{ id: string }>();
@@ -59,6 +60,18 @@ export default function StoryViewerPage() {
         }
     }
 
+    async function handleToggleComments() {
+        if (!currentStory || !accessToken) return;
+
+        try {
+            const updatedStory = await toggleCommentsEnabled(currentStory.id, accessToken);
+            dispatch(setCurrentStory(updatedStory));
+        } catch (error: any) {
+            alert(error.message || 'Failed to toggle comments');
+        }
+    }
+
+
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-screen">
@@ -107,25 +120,27 @@ export default function StoryViewerPage() {
                         </p>
                     </div>
 
+                    <div className="divider"></div>
+
+                    <ShareButtons storyId={currentStory.id} title={currentStory.title} />
+
                     <Contributors storyId={currentStory.id} authorId={currentStory.author_id} />
+
+                    <Comments storyId={currentStory.id} storyAuthorId={currentStory.author_id} commentsEnabled={currentStory.comments_enabled ?? false} onToggleComments={handleToggleComments}/>
 
                     {(isAuthor || isContributor) && (
                     <div className="card-actions justify-end border-t pt-4">
-                        <Link
-                        to={`/stories/${currentStory.id}/edit`}
-                        className="btn btn-primary"
-                        >
-                        Edit Story
+
+                        <Link to={`/stories/${currentStory.id}/edit`} className="btn btn-primary">
+                            Edit Story
                         </Link>
+
                         {isAuthor && (
-                        <button
-                            onClick={handleDelete}
-                            className={`btn btn-error ${deleting ? 'loading' : ''}`}
-                            disabled={deleting}
-                        >
+                        <button onClick={handleDelete} disabled={deleting} className={`btn btn-error ${deleting ? 'loading' : ''}`}>
                             {deleting ? 'Deleting...' : 'Delete Story'}
                         </button>
                         )}
+
                     </div>
                     )}
                 </div>

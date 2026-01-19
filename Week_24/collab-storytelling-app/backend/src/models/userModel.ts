@@ -22,7 +22,7 @@ export async function findUserByEmail(email: string): Promise<User | null> {
 // find a user by id
 export async function findUserById(id: number): Promise<User | null> {
     const result = await pool.query(
-        'SELECT id, username, email, created_at FROM users WHERE id = $1',
+        'SELECT id, username, email, avatar_url, created_at FROM users WHERE id = $1',
         [id]
     );
     return result.rows[0] || null;
@@ -31,7 +31,7 @@ export async function findUserById(id: number): Promise<User | null> {
 // get all users
 export async function getAllUsers(): Promise<User[]> {
     const result = await pool.query(
-        'SELECT id, username, email, created_at FROM users'
+        'SELECT id, username, email, avatar_url, created_at FROM users'
     );
     return result.rows;
 }

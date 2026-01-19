@@ -10,6 +10,7 @@ import StoryViewerPage from './pages/StoryViewerPage'
 import EditStoryPage from './pages/EditStoryPage'
 import MyStoriesPage from './pages/MyStoriesPage'
 import { useAuthRefresh } from './app/hooks'
+import ProfilePage from './pages/ProfilePage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode}) {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
@@ -76,6 +77,12 @@ function App() {
         <Route path="/my-stories" element={
             <ProtectedRoute>
               <MyStoriesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/profile" element={
+            <ProtectedRoute>
+              <ProfilePage />
             </ProtectedRoute>
           }
         />

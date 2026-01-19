@@ -7,6 +7,7 @@ interface User {
   id: number;
   username: string;
   email: string;
+  avatar_url?: string;
 }
 
 interface ContributorWithUser extends Contributor {
@@ -128,11 +129,28 @@ export default function Contributors({ storyId, authorId }: ContributorsProps) {
         ) : (
           <ul className="space-y-2">
             {contributors.map((contributor) => (
+              
               <li key={contributor.id} className="flex justify-between items-center p-3 bg-base-100 rounded">
-                <div>
+                <div className="flex items-center gap-3">
+                  {/* Avatar */}
+                  <div className="avatar">
+                    <div className="w-10 rounded-full">
+                      {contributor.user?.avatar_url ? (
+                        <img src={contributor.user.avatar_url} alt={contributor.user.username} />
+                      ) : (
+                        <div className="bg-neutral text-neutral-content w-10 h-10 rounded-full flex items-center justify-center">
+                          <span className="text-sm">
+                            {contributor.user?.username?.charAt(0).toUpperCase() || '?'}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Username */}
                   <span className="font-semibold">{contributor.user?.username || 'Unknown'}</span>
-                  {/* <span className="text-sm text-base-content/60 ml-2">({contributor.user?.email})</span> */}
                 </div>
+                
                 {isAuthor && (
                   <button
                     onClick={() => handleRemoveContributor(contributor.id)}

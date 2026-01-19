@@ -36,13 +36,53 @@ export async function getStoriesByAuthor(authorId: number): Promise<Story[]> {
     return result.rows;
 }
 
-// update a story
+// update a story (auto-save previous versions)
 export async function updateStory(id: number, title: string, content: string): Promise<Story | null> {
-    const result = await pool.query(
-        'UPDATE stories SET title = $1, content = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3 RETURNING *',
-        [title, content, id]
-    );
-    return result.rows[0] || null;
+    const client = await pool.connect();
+
+    try {
+        await client.query('BEGIN');
+
+        // get the current story before updating
+        const currentStory = await client.query(
+            'SELECT * FROM stories WHERE id = $1',
+            [id]
+        );
+
+        if (currentStory.rows.length === 0) {
+            await client.query('ROLLBACK');
+            return null;
+        }
+
+        const story = currentStory.rows[0];
+
+        // get the latest version number for this story
+        const versionResult = await client.query(
+            'SELECT COALESCE(MAX(version_number), 0) as max_version FROM versions WHERE story_id = $1',
+            [id]
+        );
+        const nextVersion = versionResult.rows[0].max_version + 1;
+
+        await client.query(
+            'INSERT INTO versions (story_id, title, content, version_number) VALUES ($1, $2, $3, $4)',
+            [id, story.title, story.content, nextVersion]
+        );
+
+        // update the story
+        const result = await client.query(
+            'UPDATE stories SET title = $1, content = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3 RETURNING *',
+            [title, content, id]
+        );
+
+        await client.query('COMMIT');
+        
+        return result.rows[0];
+    } catch (error) {
+        await client.query('ROLLBACK');
+        throw error;
+    } finally {
+        client.release();
+    }
 }
 
 // delete a story
