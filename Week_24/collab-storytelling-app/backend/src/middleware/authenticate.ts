@@ -22,6 +22,7 @@ export function authenticateToken(req: Request, res: Response, next: NextFunctio
         res.status(401).json({ message: 'Access token required' });
         return;
     }
+    
 
     // verify the token
     jwt.verify(token, process.env.JWT_SECRET as string, (err, decoded) => {
